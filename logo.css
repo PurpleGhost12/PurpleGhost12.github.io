@@ -1,0 +1,85 @@
+.logo-frame
+{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.logo-out-border
+{
+    position: absolute;
+    top:0;
+    height: 100px;
+    width: 100px;
+    background-color: black; /*    0% 100%, 0% 0%, 100% 0%, 100% 100%, 50% 100%);*/
+    clip-path: polygon(50% 95%, 95% 30%, 80% 5%, 20% 5%, 5% 30%, 50% 95%, 
+     50% 100%, 0% 30%, 18% 0%, 82% 0%, 100% 30%, 50% 100%, 50% 95%);
+}
+.dimond-back
+{
+    position: absolute;
+    top:0;
+    height: 100px;
+    width: 100px;
+    background-color: cyan;
+    clip-path: polygon(50% 100%, 100% 30%, 80% 0%, 20% 0%, 0% 30%, 50% 100%);
+}
+
+.line2 /*middle*/
+{
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 93px;
+    left:4px;
+    top:28px
+}
+
+.line7 
+{
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 96px;
+    left:50px;
+    bottom:3px;
+    transform-origin: 0px;
+    transform: rotate(-108deg);
+}
+
+.line8 
+{
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 96px;
+    left:50px;
+    bottom:3px;
+    transform-origin: 0px;
+    transform: rotate(-72deg);
+}
+
+.line9
+{
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 34px;
+    left:50px;
+    top:0px;
+    transform-origin: 0px;
+    transform: rotate(52deg);
+}
+
+.line10
+{
+    background-color: black;
+    position: absolute;
+    height: 4px;
+    width: 34px;
+    left:50px;
+    top:0px;
+    transform-origin: 0px;
+    transform: rotate(128deg);
+}

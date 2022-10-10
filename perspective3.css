@@ -1,0 +1,177 @@
+#header-main
+{
+  width: 100%;
+  height: 70vh;
+}
+.up-header
+{
+  width: 100%;
+  height: 100px
+}
+
+.box-lines
+{
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top:100px;
+  overflow: hidden;
+  /*border-top: 10px solid var(--color-lines);
+  border-bottom: 10px solid var(--color-lines);*/
+  background-color: black;
+  
+}
+:root
+{
+  --height:50vh;
+  --percent:45%;
+  --color-lines:white;
+  --color-square:black;
+}
+.per
+{
+  position: absolute;
+  height:var(--percent);
+  width: 100%;
+  bottom: 0%;
+  perspective: var(--height);
+  perspective-origin: center;
+  overflow: hidden;
+  background-color: transparent;
+}
+.per2
+{
+  position: absolute;
+  height:var(--percent);
+  width: 100%;
+  top: 0%;
+  perspective: var(--height);
+  perspective-origin: center;
+  overflow: hidden;
+  transform: rotate(180deg);
+
+}
+.bottom-plane
+{
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  bottom:0%;
+  left:-50%;
+  background-image: -webkit-linear-gradient(var(--color-lines) 2px, transparent 2px), -webkit-linear-gradient(left, var(--color-lines) 2px, transparent 2px);
+  background-size: 5vw 5vw,5vw 5vw;/*background-size: 50px 50px,50px 50px;*/
+  background-position: 50%;
+  transform: rotateX(65deg) scale(1,2);
+  animation: planeMoveTop 5s infinite linear;
+}
+
+.top-plane
+{
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  bottom:0%;
+  left:-50%;
+  background-image: -webkit-linear-gradient(var(--color-lines) 2px, transparent 2px), -webkit-linear-gradient(right, var(--color-lines) 2px, transparent 2px);
+  background-size: 5vw 5vw,5vw 5vw;
+  background-position: 50%;
+  transform: rotateX(65deg) scale(1,2);
+  animation: planeMoveTop 5s infinite linear;
+}
+.plane-back1
+{
+  position: absolute;
+  height: calc(100% - var(--percent) - var(--percent) - 4px);
+  width: calc(100% - 4px);
+  top: var(--percent);
+  perspective: var(--height);
+  perspective-origin: center;
+ 
+}
+.plane-back
+{
+  position: absolute;
+  height: 100%;
+  width: 200%;
+  left:-50%;
+  background-image: -webkit-linear-gradient(left, var(--color-lines) 2px, transparent 2px);
+  background-size: 5vw 5vw,5vw 5vw;
+  background-position: 50%;
+  background-color: black;
+  border: 2px solid var(--color-lines);
+  transform: translateZ(0vh);
+}
+
+.text-box
+{
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  display: inline;
+  top: 0;
+  left: 0%;
+  animation: increase 0s linear;
+  animation-fill-mode: forwards;
+  z-index: 10;
+  background-color: transparent;
+}
+.text-box h1
+{
+  width: 100%;
+  line-height: 100%;
+  font-size: 150px;
+  font-weight: 900;
+  /*background: linear-gradient(to right, cyan 20%, magenta 40%, yellow 60%,cyan 80%);
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+  /*background-color: black;*/
+  color: transparent;
+  -webkit-text-stroke: 10px transparent;
+  /*text-shadow: black 0px 0px 100px;*/
+  /*font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: white;
+  text-shadow: 0 0 0 transparent, 
+  0 0 10px #9957fc, 
+  0 0 20px #5f2dab, 
+  0 0 40px #9957fc, 
+  0 0 100px #9957fc, 
+  0 0 200px #9957fc, 
+  0 0 300px #9957fc, 
+  0 0 500px #9957fc, 
+  0 0 1000px #9957fc;*/
+
+}
+
+@keyframes planeMoveTop {
+  from {
+    background-position: 50% 0%;
+  }
+  to {
+    background-position: 50% 5vw;
+  }
+}
+
+@keyframes increase{
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*below*/
+.panel
+{
+  position: absolute;
+  width: 100%;
+  height: 1000px;
+  top:calc(var(--height) + 20px);
+  background-image: -webkit-linear-gradient(left, var(--color-lines) 10px, transparent 10px);
+  /*background-size: 42.5vw 42.5vw,42.5vw 42.5vw;*//*  background-size: 425px 425px,425px 425px;*/
+  background-size: 14.2vw 14.2vw,14.2vw 14.2vw;
+  background-position: center;
+}

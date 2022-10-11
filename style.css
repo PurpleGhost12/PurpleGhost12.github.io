@@ -1,6 +1,6 @@
 body 
 {
-    background-color:  rgb(21, 0, 90);
+    background-color:  black;
     color: #000;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -47,6 +47,17 @@ html
     /*box-shadow: inset 0 0 50vw 0px cyan;*/
 }
 
+.all-dark
+{
+    background: transparent;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0 0 10px 2px black;
+}
+
 #header-big
 {
     /*background: var(--dark-color);*/
@@ -75,20 +86,8 @@ html
     padding-top: 5px;
     overflow: hidden;
 }
-.header-color
-{
-    font-size: 100px;
-    animation: cmyk 20s infinite linear;
-    animation-direction: alternate;
-}
-/*header decoration*/
-.all-line
-{
-    height: 100%;
-    width: 100%;
-    opacity: 50%;
 
-}
+
 
 #sidebar 
 {
@@ -126,21 +125,21 @@ html
 {
     width: 100%;
     min-height: 50vh;
-    display: inline-block;
     color:black;
     margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     /*background-color: rgb(68, 38, 115);*/
-    background-image: -webkit-linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
+    background-image: -webkit-linear-gradient(transparent 20px, rgb(211, 252, 255) 24px, transparent 28px),
+    -webkit-linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     -webkit-linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
     -webkit-linear-gradient(rgb(153, 190, 207), rgb(200, 238, 255), rgb(109, 136, 149));
     /*adaptive*/
-    background-image: linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
+    /*background-image: linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
-    linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));
+    linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));*/
 
-    background-size: 100vw 2px, 100vw 100vh, 100% 100%;
+    background-size:100% 100%, 100vw 2px, 100vw 100vh, 100% 100%;
 
     box-shadow: inset 0 0 5px 3px rgb(144, 185, 205),
     inset 0 0 10vw 3px rgb(39, 61, 72),
@@ -151,6 +150,31 @@ html
     position: absolute;
     width: 100%;
     left: 0;
+}
+.AddContent-right3, .AddContent-left3 /*  width: calc((100% - 1024px)/2);*/
+{
+    background-color: aqua;
+    color: var(--dark-color);
+    width:calc((100% - 1060px)/2);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline;
+    background-color: transparent;
+    border: 2px solid white;
+    height: 100vh;
+}
+.content-center
+{   
+    color:  black;
+    height: 100vh;
+    margin: 0 auto;    
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 1px solid white;
+    box-shadow: 0 0 5px white,
+    inset 0 0 5px 0 white;
+    /*background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.2) 100%);*/
+    background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.2) 100%);
 }
 #content p
 {
@@ -193,9 +217,10 @@ html
 {
     height: 50px;
     margin-top: 7px;
-    width: 110px;
+    width: 130px;
     display:inline-block;
     border: 3px solid transparent;
+    text-align: center;
 }
 
 #sidebar a 
@@ -204,9 +229,11 @@ html
 	padding:0 10px;
 	/*color:var(--middle-color);*/
     color: white;
-	font-size:20px;
-	line-height: 60px;
+	font-size:18px;
+	line-height: 50px;
 	text-decoration:none;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* меняем цвет при наведении */
@@ -246,19 +273,6 @@ html
     text-align: left;
 }
 
-/*animation*/
-@keyframes cmyk
-{
-    0%{
-        color: cyan;
-    }
-    50% {
-        color: magenta;
-    }
-    100%{
-        color: yellow;
-    }
-}
 /*тест запросов адаптивная верстка*/
 .testColor
 {
@@ -290,10 +304,26 @@ html
 @media  (max-width: 1024px)
 {
 
+    .content-center
+    {
+        width:calc(100% - 100px);
+        padding: 0px;
+        padding-top: 10px;
+    }
 }
 @media (min-width: 1024px)
 {
-
+    .content-center
+    {
+        width:calc(1000px);
+        padding: 0px;
+        padding-top: 10px;
+    }
+    .AddContent-right, .AddContent-left
+    {
+        padding: 0px;
+        padding-top: 10px;
+    }
 }
 
 /*1024px*/
@@ -301,7 +331,10 @@ html
 /*display right|left content*/
 @media (max-width: 1324px)
 {
-
+    .AddContent-right, .AddContent-left
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px)

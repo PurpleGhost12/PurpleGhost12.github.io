@@ -22,21 +22,21 @@
     margin-top: 15px;
     margin-bottom: 15px;
     display: inline-block;
-    background-color: white;
+    background-color: transparent;
+    border: 2px solid white;
     height: 100vh;
 }
 .content-center
 {   
-    color:  transparent;
+    color:  black;
     height: 100vh;
     margin: 0 auto;    
     margin-top: 15px;
     margin-bottom: 15px;
     display: inline-block;
-    /*background-image: -webkit-linear-gradient(transparent 1px, white 1px);*/
-    background-size: 2px 2px;
+    border: 4px solid white;
 }
-.content-fone2
+.content-fone22
 {
     height: 100%;
     width: 100%;

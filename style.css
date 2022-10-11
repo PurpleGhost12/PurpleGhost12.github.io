@@ -129,8 +129,11 @@ html
     background-image: -webkit-linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     -webkit-linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
     -webkit-linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));
+    /*adaptive*/
+    background-image: linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
+    linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
+    linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));
     background-size: 100vw 2px, 100vw 100vh, 100% 100%;
-
     box-shadow: inset 0 0 5px 3px rgb(144, 185, 205),
     inset 0 0 10vw 3px rgb(39, 61, 72);
 }

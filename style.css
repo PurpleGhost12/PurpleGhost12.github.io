@@ -47,7 +47,7 @@ html
     /*box-shadow: inset 0 0 50vw 0px cyan;*/
 }
 
-.all-dark
+.all-dark2
 {
     background: transparent;
     position: absolute;
@@ -96,8 +96,8 @@ html
     /*background-color: blueviolet;*/
     /*    background: linear-gradient(to top,#f64a46, #ffa343 );*/
     /*background-image: -webkit-linear-gradient(rgba(0,45,66,1) 1px, rgba(0,69,102,.9) 1px);*/
-    background-image: -webkit-linear-gradient(rgba(0,69,102,.9) 1px, transparent 1px), 
-    -webkit-linear-gradient(left,rgba(1, 36, 52, 0.9), rgb(2, 52, 76), rgba(1, 36, 52, 0.9));
+    background-image: -webkit-linear-gradient(rgba(139,0,255, 0.9) 1px, transparent 1px), 
+    -webkit-linear-gradient(left,rgba(109, 3, 214, 0.9), rgb(128,0,255, 0.95), rgba(109, 3, 214, 0.9));
     background-size: 2px 2px, 100vw 100vh;
     color:  var(--middle-color);
     margin: 0 auto;
@@ -107,9 +107,9 @@ html
     top: 0;
     z-index: 10;
     margin-top: 0px;
-    box-shadow: 0 0 15px 1px black,
-    inset 0 0 3px 2px rgb(44, 81, 98),
-    inset 0 0 30px 3px rgba(1, 36, 52, 0.9);
+    box-shadow: 0 0 15px rgb(31, 0, 60),
+    inset 0 0 3px 2px rgb(157, 0, 255),
+    inset 0 0 30px 3px rgba(40, 0, 134, 0.9);
 }
 .sidebar-fone555
 {
@@ -130,10 +130,10 @@ html
     padding-top: 40px;
     padding-bottom: 40px;
     /*background-color: rgb(68, 38, 115);*/
-    background-image: -webkit-linear-gradient(transparent 20px, rgb(211, 252, 255) 24px, transparent 28px),
-    -webkit-linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
-    -webkit-linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
-    -webkit-linear-gradient(rgb(153, 190, 207), rgb(200, 238, 255), rgb(109, 136, 149));
+    background-image: -webkit-linear-gradient(transparent 20px, rgb(180, 250, 255) 24px, transparent 28px),
+    -webkit-linear-gradient(rgb(139, 247, 255) 1px, transparent 1px), 
+    -webkit-linear-gradient(left, rgb(132, 214, 237), transparent, rgb(132, 214, 237)),
+    -webkit-linear-gradient(rgb(132, 214, 237), rgb(132, 214, 237), rgb(132, 214, 237));
     /*adaptive*/
     /*background-image: linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
@@ -142,8 +142,8 @@ html
     background-size:100% 100%, 100vw 2px, 100vw 100vh, 100% 100%;
 
     box-shadow: inset 0 0 5px 3px rgb(144, 185, 205),
-    inset 0 0 10vw 3px rgb(39, 61, 72),
-    0 0 20px rgb(144, 185, 205);
+    inset 0 0 10vw 3px rgb(144, 218, 255),
+    0 0 20px cyan;
 }
 .content-string
 {
@@ -170,11 +170,11 @@ html
     margin: 0 auto;    
     margin-top: 0px;
     margin-bottom: 0px;
-    border: 1px solid white;
+    border: 1px solid rgb(199, 247, 255);
     box-shadow: 0 0 5px white,
     inset 0 0 5px 0 white;
     /*background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 30%, rgba(255,255,255,0.5) 70%, rgba(255,255,255,0.2) 100%);*/
-    background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.2) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.3) 100%);
 }
 #content p
 {
@@ -191,10 +191,9 @@ html
 {
     /*border-top: 100px solid var(--dark-color);*/
    /*background:  var(--dark-color);*/
-   background-image: -webkit-linear-gradient(rgba(0,69,102,.9) 1px, transparent 1px), 
-   -webkit-linear-gradient(left,rgba(1, 36, 52, 0.9), transparent, rgba(1, 36, 52, 0.9)),
-   -webkit-linear-gradient(rgb(2, 52, 76),rgba(0, 27, 40, 0.9));
-   background-size: 2px 2px, 100vw 100vh, 100% 100%;
+   background-image: -webkit-linear-gradient(rgba(181, 8, 255, 0.9) 1px, transparent 1px), 
+   -webkit-linear-gradient(left,rgba(112, 0, 160, 0.9), rgb(151, 6, 213), rgba(112, 0, 160, 0.9));
+   background-size: 2px 2px, 100vw 100vh;
    color:  var(--middle-color);
    width: 100%;
    height: 150px;

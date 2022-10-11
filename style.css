@@ -44,7 +44,7 @@ html
     width: 100%;
     min-height: 100vh;
     position: relative;
-    box-shadow: inset 0 0 50vw 0px cyan;
+    /*box-shadow: inset 0 0 50vw 0px cyan;*/
 }
 
 #header-big
@@ -96,8 +96,10 @@ html
     /*background: linear-gradient(to top,transparent, rgb(21, 0, 90) 30px);*/
     /*background-color: blueviolet;*/
     /*    background: linear-gradient(to top,#f64a46, #ffa343 );*/
-    background-image: -webkit-linear-gradient(transparent 1px, rgb(0,69,102) 1px);
-    background-size: 2px 2px;
+    /*background-image: -webkit-linear-gradient(rgba(0,45,66,1) 1px, rgba(0,69,102,.9) 1px);*/
+    background-image: -webkit-linear-gradient(rgba(0,69,102,.9) 1px, transparent 1px), 
+    -webkit-linear-gradient(left,rgba(1, 36, 52, 0.9), rgb(2, 52, 76), rgba(1, 36, 52, 0.9));
+    background-size: 2px 2px, 100vw 100vh;
     color:  var(--middle-color);
     margin: 0 auto;
     padding:  0;
@@ -106,16 +108,18 @@ html
     top: 0;
     z-index: 10;
     margin-top: 0px;
-    box-shadow: 0 0 15px 1px black;
+    box-shadow: 0 0 15px 1px black,
+    inset 0 0 3px 2px rgb(44, 81, 98),
+    inset 0 0 30px 3px rgba(1, 36, 52, 0.9);
 }
-.sidebar-fone
+.sidebar-fone555
 {
     height: 100%;
     width: 100%;
     position: absolute;
     top:0;
     background: linear-gradient(to left,rgb(0,45,66), rgb(0,45,66));
-    opacity: 70%;
+    opacity: 90%;
     z-index: 1;
 }
 #content
@@ -125,17 +129,22 @@ html
     display: inline-block;
     color:black;
     margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     /*background-color: rgb(68, 38, 115);*/
     background-image: -webkit-linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     -webkit-linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
-    -webkit-linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));
+    -webkit-linear-gradient(rgb(153, 190, 207), rgb(200, 238, 255), rgb(109, 136, 149));
     /*adaptive*/
     background-image: linear-gradient(rgb(181, 218, 236) 1px, transparent 1px), 
     linear-gradient(left, rgb(153, 190, 207), transparent, rgb(109, 136, 149)),
     linear-gradient(rgb(153, 190, 207), rgb(166, 200, 216), rgb(109, 136, 149));
+
     background-size: 100vw 2px, 100vw 100vh, 100% 100%;
+
     box-shadow: inset 0 0 5px 3px rgb(144, 185, 205),
-    inset 0 0 10vw 3px rgb(39, 61, 72);
+    inset 0 0 10vw 3px rgb(39, 61, 72),
+    0 0 20px rgb(144, 185, 205);
 }
 .content-string
 {
@@ -158,7 +167,10 @@ html
 {
     /*border-top: 100px solid var(--dark-color);*/
    /*background:  var(--dark-color);*/
-   background: linear-gradient(to bottom,rgb(101, 57, 173),  rgb(21, 0, 90));
+   background-image: -webkit-linear-gradient(rgba(0,69,102,.9) 1px, transparent 1px), 
+   -webkit-linear-gradient(left,rgba(1, 36, 52, 0.9), transparent, rgba(1, 36, 52, 0.9)),
+   -webkit-linear-gradient(rgb(2, 52, 76),rgba(0, 27, 40, 0.9));
+   background-size: 2px 2px, 100vw 100vh, 100% 100%;
    color:  var(--middle-color);
    width: 100%;
    height: 150px;
@@ -170,14 +182,20 @@ html
 #sidebar ul 
 {
     padding:0;
-    margin:0;
+    margin:0 auto;
+    /*width:1000px;
+    border: 1px solid cyan;*/
     list-style: none;
     position: relative;   
 }
 
 #sidebar ul li 
 {
+    height: 50px;
+    margin-top: 7px;
+    width: 110px;
     display:inline-block;
+    border: 3px solid transparent;
 }
 
 #sidebar a 
@@ -196,7 +214,10 @@ html
 {
 	color:  var(--contrast-middle-color);
 }
-
+#sidebar ul li:hover
+{
+    border: 3px solid cyan;
+}
 #sidebar ul ul    
 {
     display: none;

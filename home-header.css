@@ -1,0 +1,326 @@
+#home-header
+{
+  width: 100%;
+  height: 95vh;
+  background-color: rgb(255, 228, 201);
+  overflow: hidden;
+
+}
+
+.box-5
+{
+  height: inherit;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.bottom-panel
+{
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  background-color: transparent;
+  background-image: linear-gradient(-45deg, blueviolet 50%, transparent 50%);
+  background-size: 100% 100%;
+}
+
+.bottom-left
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 90%;
+  background-color: transparent;
+}
+
+.bottom-right
+{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.text-box-up
+{
+  position: absolute;
+  height: 45%;
+  width: 50%;
+  top: 8%;
+  right: 0;
+  background-color: rgba(0, 217, 255, 0.0);
+  padding: 0;
+  margin: 0;
+  
+}
+.text-box-up p
+{
+  font-size: 5vw; /*8vw portreit 5vw landscape?*/
+  padding: 0;
+  margin: 0;
+  height: 33%;
+  background-color: transparent; border: 1px solid black;
+  /*margin-top: calc((60vh - 3*6vw)/6);*/
+}
+@media (orientation:landscape) 
+{
+  .text-box-up p
+  {
+    font-size: 8vh;
+  }
+  .text-box-bottom-left p
+  {
+    font-size: 5vh;
+  }
+}
+@media (orientation:portrait) 
+{
+  .text-box-up p
+  {
+    font-size: 8vw;
+  }
+  .text-box-bottom-left p
+  {
+    font-size: 5vw;
+  }
+}
+.text-box-bottom-left
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 247, 0, 0.0);
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+
+}
+.text-box-bottom-left p
+{
+  padding: 0;
+  margin: 0;
+  height: 40%;
+  margin-left: 10px;
+  background-color: transparent; border: 1px solid black;
+}
+.text-box-bottom-right
+{
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 247, 0, 0.1);
+  font-size: 50px;
+}
+/*линии*/
+.lines-box
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60%;
+  width: 50%;
+  background-color: transparent;
+  border-radius: 0%;
+}
+
+.line
+{
+  position: absolute;
+  height: 13%;
+  box-shadow: 0 0 0vh rgb(36, 36, 36);
+  left:-5%;
+  transition: 0.3s;
+  border-bottom-right-radius: 2vh;
+  border-top-right-radius: 0vh;
+}
+.line:hover
+{
+  left:0%
+}
+.line:nth-child(1)
+{
+  top:0;
+  width: 105%;
+  background-color: blueviolet;
+  z-index: 11;
+}
+.line:nth-child(2)
+{
+  top:12.5%;
+  width: 95%;
+  background-color: blue;
+  z-index: 10;
+}
+.line:nth-child(3)
+{
+  top:25%;
+  width: 85%;
+  background-color: cyan;
+  z-index: 9;
+}
+.line:nth-child(4)
+{
+  top:37.5%;
+  width: 75%;
+  background-color: greenyellow;
+  z-index: 8;
+}
+.line:nth-child(5)
+{
+  top:50%;
+  width: 65%;
+  background-color: yellow;
+  z-index: 7;
+}
+.line:nth-child(6)
+{
+  top:62.5%;
+  width: 55%;
+  background-color: orange;
+  z-index: 6;
+}
+.line:nth-child(7)
+{
+  top:75%;
+  width: 45%;
+  background-color: red;
+  z-index: 5;
+}
+.line:nth-child(8)
+{
+  top:87.5%;
+  width: 35%;
+  background-color: pink;
+  z-index: 4;
+}
+
+
+/*creative*/
+
+#creative
+{
+  width: 100%;
+  height: 50vh;
+  background-color: blueviolet;
+  overflow: hidden;
+}
+#creative h1
+{
+  color: blueviolet;
+  font-size: 10vw;
+}
+
+.box-creative
+{
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  background-color: transparent;
+}
+
+.box-anim
+{
+  position: absolute;
+  height: 40vh;
+  width: 40vh;
+  top:10%;
+  left: 5%;
+  background-image: url("pop.jpg"); 
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border-radius: 0;
+}
+
+.box-anim h1
+{
+  color: blueviolet;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+/*.line:nth-child(1)
+{
+  top:0;
+  width: 105%;
+  background-color: blueviolet;
+  z-index: 11;
+}
+.line:nth-child(2)
+{
+  top:10%;
+  width: 95%;
+  background-color: blue;
+  z-index: 10;
+}
+.line:nth-child(3)
+{
+  top:20%;
+  width: 85%;
+  background-color: cyan;
+  z-index: 9;
+}
+.line:nth-child(4)
+{
+  top:30%;
+  width: 75%;
+  background-color: greenyellow;
+  z-index: 8;
+}
+.line:nth-child(5)
+{
+  top:40%;
+  width: 65%;
+  background-color: yellow;
+  z-index: 7;
+}
+.line:nth-child(6)
+{
+  top:50%;
+  width: 55%;
+  background-color: orange;
+  z-index: 6;
+}
+.line:nth-child(7)
+{
+  top:60%;
+  width: 45%;
+  background-color: red;
+  z-index: 5;
+}
+.line:nth-child(8)
+{
+  top:70%;
+  width: 35%;
+  background-color: pink;
+  z-index: 4;
+}
+.line:nth-child(9)
+{
+  top:80%;
+  width: 25%;
+  background-color: papayawhip;
+  z-index: 3;
+}
+.line:nth-child(10)
+{
+  top:90%;
+  width: 15%;
+  background-color: plum;
+  z-index: 2;
+}
+*/

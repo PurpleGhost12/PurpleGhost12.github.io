@@ -1,0 +1,52 @@
+.topic
+{
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.content-area
+{
+    width: 60%;
+    margin-left: 20%; 
+    background-color: rgba(255,255,255,0.3);
+}
+
+/*colors topics*/
+.topic.a
+{
+    background-color:blanchedalmond;
+    color: cornflowerblue;
+}
+
+.topic.b
+{
+    background-color: orchid;
+    color: yellow;
+}
+
+.topic.c
+{
+    background-color:cornflowerblue;
+    color:beige
+}
+
+
+
+@media (max-width: 1280px)
+{
+    .content-area
+    {
+        width: 100%;
+        margin-left: 0%; 
+    }  
+}
+
+@media (min-width: 1280px)
+{
+    .content-area
+    {
+        width: 1280px;
+        margin-left: calc((100% - 1280px)/2); 
+    } 
+}

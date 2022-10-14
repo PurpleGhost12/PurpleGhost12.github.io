@@ -1,5 +1,5 @@
 body {
-    background: blueviolet;
+    background: #736DD1;
     color: #000;
     font-family: Arial, sans-serif;
     font-size: 14px;
@@ -48,7 +48,7 @@ html
 
 #sidebar 
 {
-    background-color: blueviolet;
+    background-color: #736DD1;
     color:  var(--middle-color);
     margin: 0 auto;
     padding: 0px;

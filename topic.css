@@ -12,6 +12,12 @@
     background-color: rgba(255,255,255,0.0);
 }
 
+/*text topic*/
+.topic.text
+{
+    background-color:#fffcd4;
+    height: 90vh;
+}
 /*colors topics*/
 
 /*light colors*/

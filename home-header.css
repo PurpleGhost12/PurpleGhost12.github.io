@@ -81,6 +81,7 @@
   /*border: 1px solid black;*/
   text-transform: uppercase;
   /*margin-top: calc((60vh - 3*6vw)/6);*/
+  transition: all 0.3s;
 }
 .text-box-up p:nth-child(2)
 {
@@ -92,7 +93,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 10%;
+  top: 15%;
   left: 0;
   background-color: rgba(255, 247, 0, 0.0);
   padding: 0;
@@ -104,10 +105,10 @@
   color: #231f20;
   padding: 0;
   margin: 0;
-  height: 40%;
-  margin-left: 0;
+  width: 100%;
   background-color: transparent; 
   /*border: 1px solid black;*/
+  transition: all 0.3s;
 }
 .text-box-bottom-right
 {
@@ -129,6 +130,7 @@
   width: 70%;
   margin:0 auto;
   background-color: transparent; 
+  transition: all 0.3s;
 }
 
 @media (orientation:landscape) 
@@ -179,7 +181,6 @@
   .text-box-bottom-left p
   {
     font-size: 4vw;
-    height: 30%;
   }
   .text-box-bottom-right p 
   {
@@ -344,12 +345,11 @@
 .box-anim
 {
   position: absolute;
-  height: 40vh;
-  width: 40vh;
-  top:10%;
-  left: 5%;
-  background-image: url("pop.jpg"); 
-  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  top:0%;
+  left: 0%;
+  background-image: url("stars2.png"); 
   background-size: auto 100%;
   border-radius: 0;
 }

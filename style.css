@@ -22,7 +22,7 @@ html
 
 #container 
 {
-    background-color: #fce373;
+    background-color: #fffcd4;
     text-align: center;
     margin: 0 auto;
     width: 100%;
@@ -58,21 +58,76 @@ html
     z-index: 5;
 }
 
-#menu
+.menu
 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     min-height: 100%;
     top:0;
     left:0;
-    background-color: blueviolet;
+    min-height: 100vh;
+    width: 100%;
+    background: #736DD1;
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+    transform: scale(0);
+    transform-origin: top right;
+    border-bottom-left-radius: 0px;
+
 }
+.menu-btn
+{
+    position: fixed;
+    z-index: 21;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    background: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  #active:checked ~ .menu-btn{
+    color: #fff;
+  }
+
+input[type="checkbox"]
+{
+    display: none;
+}
+#active:checked ~ .menu
+{
+    transform: scale(1);
+}
+
+@media (orientation:landscape) 
+{
+    .menu-btn
+    {
+        height: 5vw;
+        width: 5vw;
+        right: 2vw;
+        top: 2vw;
+    }
+}
+@media (orientation:portrait) 
+{
+    .menu-btn
+    {
+        height: 6vh;
+        width: 6vh;
+        right: 1vh;
+        top: 1vh;
+    }
+}
+
 
 #content
 {
     width: 100%;
     min-height: 90vh;
-    background-color: #fce373;
+    background-color: #fffcd4;
     margin: 0;
 }
 

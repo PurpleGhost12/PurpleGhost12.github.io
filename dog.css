@@ -1,11 +1,11 @@
 .frame 
 {
-    transform: translate(-50%);
+    transform: translate(0%);
     width: 200px; 
     height: 200px;
     border: 1px solid black;
-    position: absolute;
-    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 15px;
     background-color: white;
     z-index: 1;
     }

@@ -12,6 +12,7 @@
     height: 200px;
     border: 1px solid black;
     overflow: hidden;
+    
 
 }
 .background
@@ -64,8 +65,8 @@
     color: black;
     font-size: 16px;
     opacity:0%;
+    width: 100%;
     top:15px;
-    left: -20px;
     font-weight: bold;
 
 }
@@ -73,6 +74,8 @@
 {
     margin: 0 auto;
     display: inline-block;
+    text-align: center;
+    font-size: 16px;
 }
 .box-words2
 {

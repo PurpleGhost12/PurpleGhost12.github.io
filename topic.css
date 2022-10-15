@@ -36,7 +36,8 @@
 .content-text p
 {
     text-align: left;
-    margin: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .content-menu
 {
@@ -71,15 +72,18 @@
     background-color:#fffcd4;
     min-height: 80vh;
 }
-.topic-text p, .topic-futer p
+.content-text p, .topic-futer p
 {
-    font-size: 14px;
+    font-size: 22.5px;
 }
-.topic-text h1 
+.content-text h1 
 {
-    font-size: 18px;
+    font-size: 29px;
 }
-
+.content-text h2
+{
+    font-size: 26px;
+}
 .topic-futer, .topic-futer h1
 {
     background-color: transparent;
@@ -162,42 +166,50 @@
 {
     .content-menu
     {
-        margin-top: 5vw;
+        margin-top: 6vw;
+    }
+    .content-menu ul li
+    {
+        margin-top: 6vw;
     }
     .content-menu h1
     {
-        font-size: 7vw;
+        font-size: 6vw;
     }
     .content-area h1
     {
-        font-size: 7vw;
+        font-size: 6vw;
     }
     .content-area a
     {
-        font-size: 5vw;
+        font-size: 4vw;
     }
     .content-menu a, p
     {
-        font-size: 5vw;
+        font-size: 4vw;
     }
 }
 @media (orientation:landscape)
 {
     .content-menu
     {
-        margin-top: 5vh;
+        margin-top: 6vh;
+    }
+    .content-menu ul li
+    {
+        margin-top: 6vh;
     }
     .content-menu h1, h1
     {
-        font-size: 7vh;
+        font-size: 6vh;
     }
     .content-area h1
     {
-        font-size: 7vh;
+        font-size: 6vh;
     }
     .content-area a
     {
-        font-size: 5vh;
+        font-size: 4vh;
     }
 
     .content-menu a, p

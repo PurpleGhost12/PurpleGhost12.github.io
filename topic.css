@@ -119,14 +119,14 @@
 {
     background-color:#71bc78; 
 }
-.topic.light-green h1, a
+.topic.light-green h1
 {
-    color:#970711; 
+    color:#050861; 
     text-decoration: none;
 }
 .topic.light-green a
 {
-    color:#970711; 
+    color:#050861; 
     text-decoration: none;
 }
 @media (max-width: 1280px)

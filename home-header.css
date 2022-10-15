@@ -121,7 +121,7 @@
   font-size: 50px;
 }
 
-.text-box-bottom-right p 
+.text-box-bottom-right a 
 {
   color:#fce373;
   padding: 0;
@@ -131,6 +131,7 @@
   margin:0 auto;
   background-color: transparent; 
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 @media (orientation:landscape) 
@@ -153,12 +154,19 @@
   {
     font-size: 7vh;
   }
-  .text-box-bottom-right p 
+  .text-box-bottom-right a 
   {
     font-size: 10vh;
     line-height: 19vh;
     border: 1vh solid #fce373;
     border-radius: 1vh;
+    padding: 2vh;
+  }
+
+  
+  #creative
+  {
+    height: 20vh;
   }
   
 }
@@ -182,12 +190,18 @@
   {
     font-size: 4vw;
   }
-  .text-box-bottom-right p 
+  .text-box-bottom-right a 
   {
-    font-size: 5vw;
+    font-size: 6vw;
     line-height: 19vw;
     border: 1vw solid #fce373;
     border-radius: 1vw;
+    padding: 2vw;
+  }
+    
+  #creative
+  {
+    height: calc(100vh - 100vw);
   }
 }
 
@@ -208,7 +222,7 @@
   {
     font-size: 6vh;
   }
-  .text-box-bottom-right p 
+  .text-box-bottom-right a 
   {
     font-size: 8vh;
   }
@@ -230,7 +244,7 @@
   {
     font-size: 4vh;
   }
-  .text-box-bottom-right p 
+  .text-box-bottom-right a 
   {
     font-size: 6vh;
   }
@@ -324,7 +338,6 @@
 #creative
 {
   width: 100%;
-  height: 50vh;
   background-color: #736DD1;
   overflow: hidden;
 }
@@ -345,9 +358,9 @@
 .box-anim
 {
   position: absolute;
-  height: 100%;
+  height: 90%;
   width: 100%;
-  top:0%;
+  top:5%;
   left: 0%;
   background-image: url("stars2.png"); 
   background-size: auto 100%;

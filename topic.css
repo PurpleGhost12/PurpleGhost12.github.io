@@ -1,26 +1,90 @@
 .topic
 {
     width: 100%;
-    height: 10vh;
     overflow: hidden;
 }
-
+.topic p
+{
+    margin: 30px;
+}
+.topic a
+{
+    margin: 30px;
+    padding-top: 10px;
+}
+.topic h1
+{
+    font-size: 2vw;
+}
 .content-area
 {
-    width: 60%;
     margin-left: 20%; 
     background-color: rgba(255,255,255,0.0);
 }
 .content-area p
 {
     text-align: left;
+    margin: 30px;
+}
+
+.content-text
+{
+    margin-left: 20%;
+    margin-top: 30px; 
+    background-color: rgba(255,255,255,0.0);
+}
+.content-text p
+{
+    text-align: left;
+    margin: 30px;
+}
+.content-menu
+{
+    text-align: center;
+}
+
+.content-menu a
+{
+    text-decoration: none;
+    color:#231f20;
+}
+.content-menu ul
+{
+    text-decoration: none;
+    float:none;
+    position: relative;
+    text-align: left;
+    list-style-type: none;
+}
+.content-menu ul li
+{
+    text-decoration: none;
+    float:none;
+    display:list-item;
+    position: relative;
+    text-align: left;
+    list-style-type: none;
 }
 /*text topic*/
-.topic.text
+.topic-text
 {
     background-color:#fffcd4;
-    height: 90vh;
+    min-height: 80vh;
 }
+.topic-text p, .topic-futer p
+{
+    font-size: 14px;
+}
+.topic-text h1 
+{
+    font-size: 18px;
+}
+
+.topic-futer, .topic-futer h1
+{
+    background-color: transparent;
+}
+
 /*colors topics*/
 
 /*light colors*/
@@ -28,7 +92,10 @@
 {
     background-color:#ffa161;
 }
-
+.topic.light-orange h1
+{
+    color:#4A6EA9;
+}
 .topic.light-blue
 {
     background-color: #7fc7ff;
@@ -36,7 +103,11 @@
 
 .topic.light-wisteria
 {
-    background-color:#cda4de;
+    background-color:#cda4de; 
+}
+.topic.light-wisteria a, .topic.light-wisteria h1
+{
+    color: #503792;
 }
 
 .topic.light-salmon
@@ -46,45 +117,21 @@
 
 .topic.light-green
 {
-    background-color:#71bc78;
+    background-color:#71bc78; 
 }
-
-/*accent colors*/
-
-
-.topic.pump
+.topic.light-green h1, a
 {
-    background-color:#FF6F3B;
+    color:#970711; 
+    text-decoration: none;
 }
-.topic.mustard
+.topic.light-green a
 {
-    background-color:#ffdb58;
-}
-.topic.cornflower
-{
-    background-color:#6495ed;
-}
-.topic.pink
-{
-    background-color:#fd7b7c;
-}
-/*dark colors*/
-
-.topic.dark-blue
-{
-    background-color:#3b5998;
-}
-.topic.dark-violet
-{
-    background-color:#474389;
-}
-.topic.seroburomaline
-{
-    background-color:#735184;
+    color:#970711; 
+    text-decoration: none;
 }
 @media (max-width: 1280px)
 {
-    .content-area
+    .content-area, .content-menu, .content-text
     {
         width: 100%;
         margin-left: 0%; 
@@ -93,9 +140,109 @@
 
 @media (min-width: 1280px)
 {
-    .content-area
+    .content-area, .content-menu, .content-text
     {
         width: 1280px;
         margin-left: calc((100% - 1280px)/2); 
     } 
+}
+
+@media (max-width: 720px)
+{
+    .topic p
+    {
+        margin: 10px;
+    }
+    .content-text p
+    {
+        margin: 10px;
+    }
+}
+@media (orientation:portrait) 
+{
+    .content-menu
+    {
+        margin-top: 5vw;
+    }
+    .content-menu h1
+    {
+        font-size: 7vw;
+    }
+    .content-area h1
+    {
+        font-size: 7vw;
+    }
+    .content-area a
+    {
+        font-size: 5vw;
+    }
+    .content-menu a, p
+    {
+        font-size: 5vw;
+    }
+}
+@media (orientation:landscape)
+{
+    .content-menu
+    {
+        margin-top: 5vh;
+    }
+    .content-menu h1, h1
+    {
+        font-size: 7vh;
+    }
+    .content-area h1
+    {
+        font-size: 7vh;
+    }
+    .content-area a
+    {
+        font-size: 5vh;
+    }
+
+    .content-menu a, p
+    {
+        font-size: 5vh;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 768px) /*(min-width: 600px) and (max-width: 800px)*/
+{
+    .testColor{
+        background-color: aqua;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px)
+{
+    .testColor{
+        background-color:blueviolet;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1366px)
+{
+
+    .testColor{
+        background-color:cornsilk;
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1920px)
+{
+
+    .testColor{
+        background-color:cadetblue;
+    }
+}
+
+
+@media (min-width: 1920px)
+{
+
+    .testColor{
+        background-color:chartreuse;
+    }
 }

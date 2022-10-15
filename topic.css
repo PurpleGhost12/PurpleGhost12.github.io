@@ -11,7 +11,10 @@
     margin-left: 20%; 
     background-color: rgba(255,255,255,0.0);
 }
-
+.content-area p
+{
+    text-align: left;
+}
 /*text topic*/
 .topic.text
 {

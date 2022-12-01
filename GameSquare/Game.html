@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="game.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <!--<div class = "content-area">-->
+
+        <!--Меню которое везде-->
+            <button class="back-to-main-everywhere" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
+            <button class="back-one-step" id = "back-one-step" onclick="changeStates(oldStateSave)">step back</button>
+            <button class="back-only-back" id = "back-only-back" onclick="changeStates(states[numPreState])">back only</button>
+
+            <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
+            <div class = "menu-white-small" id = "help"></div>
+
+            <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
+            <div class = "menu-white-small" id = "main-settings">
+
+            </div>
+
+            <!--Приложеньеце-->
+            <!--Начальное окно-->
+            <div id="main-screen" class = "center-full-screen max-width">
+                <h1 class = "game-name">Find a square!</h1>
+                <button class="button-play" id="start-main"><p class = "big">Начать</p></button>
+            </div>
+
+            <!--Выбираем уровень-->
+            <div id ="choose-level" class = "center-full-screen max-width">
+                <h1 class = "menu">Выберите уровень</h1>
+                <button class="button-level" id="level-easy">ЛЕГКО</button>
+                <button class="button-level" id="level-easy">Средне</button>
+                <button class="button-level" id="level-hard">Сложно</button>
+                <button class="button-level" id="level-hard">Тренировка</button>
+                <button class="button-level" id="level-create">Настроить</button>   
+
+            </div>
+
+            <!--Создаем свой уровень-->
+            <div id ="create-level" class = "center-full-screen">
+                <div>
+                    <input type="checkbox" id="rotateAny"/>
+                    <label for="rotateAny">Поворот любой</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="anySize"/>
+                    <label for="anySize">Разный размер</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="rotate90"/>
+                    <label for="rotate90">Поворот 90 градусов</label>
+                </div>
+                <div class="input">                   
+                    <input type="number" id="count-color" min="2" max ="8" step="1" value="3">
+                    <label for="count-color">Количетсво цветов</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="count-ceils" min="2" max ="7" step="1" value="3">
+                    <label for="count-ceils">Количетсво клеток n*n</label>
+                </div>
+                <div class="input">
+                    <input type="number" id="count-square" min="2" max ="100" step="1" value="3">
+                    <label for="count-square">Количетсво квадратов</label>
+                </div>
+                <button class="button-start" id = "create-pallete" onclick="toGame()">Создать свою палитру</button>
+                <button class="button-start" id = "choose-settings" onclick="toGame()">Продолжить</button>
+
+                <div class = "menu-white-small" id = "pallete">
+                    <h2>Выберите цвета</h2>
+                    <div class = "pallete">                     
+                        <div class = "pallete-new"></div>
+                        <div class = "pallete-choose">
+                            <div class = "pallete-ceil"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Играем!-->
+            <div id ="do-game" class = "center-full-screen max-width">
+                
+                
+                <div class = "game-area" id = "game-field">
+                    <div class = "start-panel" id = "start-panel">
+                        <div class = "start-panel-square" id = "square-animate"></div>
+                        <button class="button-panel-start" id="start-game" onclick="startGame()">Начать</button>
+                    </div>
+
+                    <div id = "hide-field" class = "hide-div">
+                        <div class = "find-block" id = "find-block">
+                            <div class = "score-area" id = "score"></div>
+                            <div class = "timer-area">
+                                <h1 id="time-header" class = "timer"> <span id="time">5.0</span></h1>
+                            </div>                  
+                            <div id = "find" class = "find-area"></div>
+                        </div>
+
+                        <div class = "timer-line" id = "timerLine"></div>
+
+                        <div class = "generate-area" id = "generate"> <!--Поле для генерации квадратиков  Время игры:-->
+            
+                        </div>
+                    </div>
+   
+
+                </div>
+
+            </div>
+
+    <!--</div>-->
+    <script src = "main.js"></script>
+    <script src="game.js"></script>
+    <script src="setting.js"></script>
+    <script src="resize.js"></script>
+    <script src="generator.js"></script>
+    <script src="gameState.js"></script>
+
+    <script src="startPanel-animate.js"></script>
+
+    <!--Самый последний!!!-->
+    <script src="checkSessionStorage.js"></script>
+    
+</body>
+</html>

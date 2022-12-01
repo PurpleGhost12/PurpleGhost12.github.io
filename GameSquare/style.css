@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font: inherit;*/
+    vertical-align: baseline;
+	
+}
+
+
+body 
+{
+	background: linear-gradient(#CB356B, #fce373);
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+	min-height: 100vh;
+	position: relative;
+	top:0;
+}
+html
+{
+    padding:0;
+    margin:0;
+	background-color: #fce373;
+	font-size: 16px;
+}
+
+
+#container 
+{
+	width: 100%;
+	min-height: 0vh;
+	background-color: rgba(225, 225, 225, 0);
+}
+
+
+#content
+{
+	min-height: 60vh;
+	margin-top:30px;
+	background-color: rgb(255, 255, 255);
+}
+
+#clear 
+{
+    clear: both;
+}
+
+#footer 
+{
+	width: 100%;
+	height: 100px;
+	background-color: #1c1c1c;
+	/*display: table-row;*/
+}
+
+.content-area /*класс для ограничение области по ширине*/
+{
+	width: 1440px;
+	height: 100%;
+	background-color: rgba(215, 166, 221, 0);
+	margin:0 auto;
+	padding: 0;
+	position: relative;
+}
+.content-area.dark
+{
+	background-color: #acd8ff;
+}
+p.text-main
+{
+	color:  black;
+	margin: 0;
+	width: 100%;
+}
+h1.main
+{
+	color:  black;
+	text-align: center;
+	padding: 10px;
+}
+.content-area-small
+{
+	width: 1000px;
+	background-color: rgba(255, 139, 139, 0);
+	margin:0 auto;
+	padding: 0;
+	position: relative;
+}
+.content-area-small.transparent
+{
+	background-color: transparent;
+}
+
+
+
+
+@media (max-width: 1440px)/*1440 px max content width*/
+{
+	.content-area
+	{
+		width: 100%;
+	}
+}
+
+@media (max-width: 1000px)/*1440 px max content width*/
+{
+	.content-area-small
+	{
+		width: 100%;
+	}
+
+}
+
+

@@ -69,6 +69,7 @@ html
     float: left;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    overflow: hidden;
 }
 .home-btn a
 {
@@ -173,49 +174,49 @@ input[type="checkbox"]:checked + .menu
 {
     .menu-btn, input[type="checkbox"]
     {
-        height: 5vw;
-        width: 5vw;
+        height: 3vw;
+        width: 3vw;
         left: 2vw;
         top: 0.5vw;
     }
     #sidebar 
     {
         padding-top: 0.5vw;
-        height: 5.5vw;
+        height: 3.5vw;
     }
     .home-btn, .help-btn
     {
-        height: 5vw;
-        width: 5vw;
+        height: 3vw;
+        width: 3vw;
     }
     .logo-bar
     {
         right: 2vw;
-        height: 5vw;
-        width: 5vw;
+        height: 3vw;
+        width: 3vw;
     }
     .home-btn
     {
-        margin-left: 9vw;
+        margin-left: 6vw;
     }
     .help-btn 
     {
-        margin-left: 2vw;
-        line-height: 5vw;
+        margin-left: 1vw;
+        line-height: 3vw;
     }
     .help-btn a 
     {
-        font-size: 3vw;
+        font-size: 2.5vw;
         color: #fce373;
     }
     .home-btn a
     {
-        font-size: 3vw;
+        font-size: 10vw;
     }
 
 
 }
-@media (orientation:landscape) and (min-width: 1920px)
+/*@media (orientation:landscape) and (min-width: 1920px)
 {
     .menu-btn, input[type="checkbox"]
     {
@@ -249,7 +250,7 @@ input[type="checkbox"]:checked + .menu
         height: 3.5vw;
         width: 3.5vw;
     }
-}
+}*/
 @media (orientation:portrait) 
 {
     .menu-btn, input[type="checkbox"]
@@ -285,7 +286,7 @@ input[type="checkbox"]:checked + .menu
     }
     .home-btn a
     {
-        font-size: 3vh;
+        font-size: 10vh;
     }
     .logo-bar
     {

@@ -15,7 +15,7 @@
     top:0;
     height: 100%;
     width: 100%;
-    background-color: black; /*    0% 100%, 0% 0%, 100% 0%, 100% 100%, 50% 100%);*/
+    background-color: #231f20; /*    0% 100%, 0% 0%, 100% 0%, 100% 100%, 50% 100%);*/
     clip-path: polygon(50% 95%, 95% 30%, 80% 5%, 20% 5%, 5% 30%, 50% 95%, 
      50% 100%, 0% 30%, 18% 0%, 82% 0%, 100% 30%, 50% 100%, 50% 95%);
 }
@@ -32,7 +32,7 @@
 
 .line2 /*middle*/
 {
-    background-color: black;
+    background-color: #231f20;
     position: absolute;
     height: 4%;
     width: 93%;
@@ -42,7 +42,7 @@
 
 .line7 
 {
-    background-color: black;
+    background-color: #231f20;
     position: absolute;
     height: 4%;
     width: 96%;
@@ -54,7 +54,7 @@
 
 .line8 
 {
-    background-color: black;
+    background-color: #231f20;
     position: absolute;
     height: 4%;
     width: 96%;
@@ -66,7 +66,7 @@
 
 .line9
 {
-    background-color: black;
+    background-color: #231f20;
     position: absolute;
     height: 4%;
     width: 34%;
@@ -78,7 +78,7 @@
 
 .line10
 {
-    background-color: black;
+    background-color: #231f20;
     position: absolute;
     height: 4%;
     width: 34%;

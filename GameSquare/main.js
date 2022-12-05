@@ -17,10 +17,24 @@ let $mainHelp= document.getElementById("help");
 $checkBoxHelp.addEventListener('change', function(){
     if (this.checked)
     {
-        $mainSet.style.display="block";
+        $mainHelp.style.display="block";
     }
     else 
     {
-        $mainSet.style.display="none";
+        $mainHelp.style.display="none";
     }
 })
+
+let $chooseBack = document.getElementsByClassName("fone");
+//$chooseBack.addEventListener(onchange, changeBackground('mango'))
+let $background = document.getElementById("background");
+function changeBackground(newColors, who)
+{
+    console.log(who);
+    console.log(newColors);
+    $background.className='background '+ newColors;
+    for (let i =0; i<$chooseBack.length; i++){
+        $chooseBack[i].checked=false;
+    }
+    who.checked=true;
+}

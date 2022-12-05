@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body 
 {
-	background: linear-gradient(#CB356B, #fce373);
+	background: transparent;
     color: #000;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -20,6 +20,7 @@ body
 	position: relative;
 	top:0;
 }
+
 html
 {
     padding:0;
@@ -28,7 +29,29 @@ html
 	font-size: 16px;
 }
 
-
+.background{
+	
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+}
+.mango{
+	background: linear-gradient(#CB356B, #fce373);
+}
+.sunrise{
+	background: linear-gradient(#3f47dc, #ee73fc);
+}
+.sea{
+	background: linear-gradient(#35bccb, #cfff99);
+}
+.bubblegum{
+	background: linear-gradient(#fc73ec,#359ecb);
+}
+.magic{
+	background: linear-gradient(#7335cb, #73fce1);
+}
 #container 
 {
 	width: 100%;

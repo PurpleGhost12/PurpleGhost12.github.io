@@ -2,15 +2,26 @@
 {
     width: 100%;
     overflow: hidden;
+    border-bottom:5px dotted #503792;
+    padding: 10px 0 30px 0;
 }
+.topic.end
+{
+    border-bottom:0px solid black;
+}
+
 .topic p
 {
     margin: 30px;
+    font-size:calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 16px);
 }
 .topic a
 {
     margin: 30px;
     padding-top: 10px;
+    text-align: left;
+    text-decoration: none;
+    color: black;
 }
 .topic h1
 {
@@ -75,6 +86,7 @@
 .content-text p, .topic-futer p
 {
     font-size: 1.1em;
+    
 }
 .content-text h1 
 {
@@ -151,7 +163,7 @@
     } 
 }
 
-@media (max-width: 720px)
+/*@media (max-width: 720px)
 {
     .topic p
     {
@@ -161,7 +173,7 @@
     {
         margin: 10px;
     }
-}
+}*/
 @media (orientation:portrait) 
 {
     .content-menu

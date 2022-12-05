@@ -1,4 +1,4 @@
-.conteiner-f
+.conteiner-f2
 {
     height: 85vh;
     width: 1010px;
@@ -10,12 +10,13 @@
 .frame-f
 {
     width: 1000px;
-    height: 80vh;
-    position: absolute;
+    height: 70vh;
+    position: relative;
     background-color: transparent;
     border: 5px solid black;
-    margin: 0 auto;
+    margin: 20px auto;
     overflow: hidden;
+
 }
 .block
 {

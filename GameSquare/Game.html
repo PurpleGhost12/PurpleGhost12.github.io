@@ -10,9 +10,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body>
+<body >
     <!--<div class = "content-area">-->
-
+        <div class = "background mango" id = "background"></div>
         <!--Меню которое везде-->
             <button class="back-to-main-everywhere" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
             <button class="back-one-step" id = "back-one-step" onclick="changeStates(oldStateSave)">step back</button>
@@ -23,24 +23,33 @@
 
             <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
             <div class = "menu-white-small" id = "main-settings">
-
+                <input type="checkbox" id="mango" class ="fone" onclick="changeBackground('mango', this)"/>
+                <label for="mango">Манго</label>
+                <input type="checkbox" id="sunrise" class ="fone" onclick="changeBackground('sunrise', this)"/>
+                <label for="sunrise">Закат</label>
+                <input type="checkbox" id="sea" class ="fone" onclick="changeBackground('sea', this)"/>
+                <label for="sea">море</label>
+                <input type="checkbox" id="bubblegum" class ="fone" onclick="changeBackground('bubblegum', this)"/>
+                <label for="bubblegum">bubblegum</label>
+                <input type="checkbox" id="magic" class ="fone" onclick="changeBackground('magic', this)"/>
+                <label for="magic">Магия</label>
             </div>
 
             <!--Приложеньеце-->
             <!--Начальное окно-->
             <div id="main-screen" class = "center-full-screen max-width">
                 <h1 class = "game-name">Find a square!</h1>
-                <button class="button-play" id="start-main"><p class = "big">Начать</p></button>
+                <button class="button-play allbtn" id="start-main"><p class = "big">Начать</p></button>
             </div>
 
             <!--Выбираем уровень-->
             <div id ="choose-level" class = "center-full-screen max-width">
                 <h1 class = "menu">Выберите уровень</h1>
-                <button class="button-level" id="level-easy">ЛЕГКО</button>
-                <button class="button-level" id="level-easy">Средне</button>
-                <button class="button-level" id="level-hard">Сложно</button>
-                <button class="button-level" id="level-hard">Тренировка</button>
-                <button class="button-level" id="level-create">Настроить</button>   
+                <button class="button-level easy" id="level-easy">ЛЕГКО</button>
+                <button class="button-level medium" id="level-easy">СРЕДНЕ</button>
+                <button class="button-level hard" id="level-hard">СЛОЖНО</button>
+                <button class="button-level allbtn" id="level-hard">ТРЕНИРОВКА</button>
+                <button class="button-level allbtn" id="level-create">НАСТРОИТЬ</button>   
 
             </div>
 
@@ -92,7 +101,7 @@
                 <div class = "game-area" id = "game-field">
                     <div class = "start-panel" id = "start-panel">
                         <div class = "start-panel-square" id = "square-animate"></div>
-                        <button class="button-panel-start" id="start-game" onclick="startGame()">Начать</button>
+                        <button class="button-panel-start" id="start-game" onclick="startGame()">СТАРТ</button>
                     </div>
 
                     <div id = "hide-field" class = "hide-div">

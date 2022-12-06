@@ -93,8 +93,13 @@
     border-radius: 30px;
     padding: 15px;
     box-sizing: border-box;
+}
+.menu-white-small.hide
+{
+
     display: none;
     z-index: 6;
+
 }
 @media (orientation: portrait)
 {

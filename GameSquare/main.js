@@ -33,6 +33,7 @@ function changeBackground(newColors, who)
     console.log(who);
     console.log(newColors);
     $background.className='background '+ newColors;
+    localStorage.userBackground = newColors;
     for (let i =0; i<$chooseBack.length; i++){
         $chooseBack[i].checked=false;
     }

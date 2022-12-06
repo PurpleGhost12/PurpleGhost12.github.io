@@ -18,21 +18,50 @@
             <button class="back-one-step" id = "back-one-step" onclick="changeStates(oldStateSave)">step back</button>
             <button class="back-only-back" id = "back-only-back" onclick="changeStates(states[numPreState])">back only</button>
 
-            <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
-            <div class = "menu-white-small" id = "help"></div>
+            <div class = "hide-checkbox">
+                <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
+            </div>
+            <div class = "menu-white-small hide" id = "help"></div>
 
-            <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
-            <div class = "menu-white-small" id = "main-settings">
-                <input type="checkbox" id="mango" class ="fone" onclick="changeBackground('mango', this)"/>
-                <label for="mango">Манго</label>
-                <input type="checkbox" id="sunrise" class ="fone" onclick="changeBackground('sunrise', this)"/>
-                <label for="sunrise">Закат</label>
-                <input type="checkbox" id="sea" class ="fone" onclick="changeBackground('sea', this)"/>
-                <label for="sea">море</label>
-                <input type="checkbox" id="bubblegum" class ="fone" onclick="changeBackground('bubblegum', this)"/>
-                <label for="bubblegum">bubblegum</label>
-                <input type="checkbox" id="magic" class ="fone" onclick="changeBackground('magic', this)"/>
-                <label for="magic">Магия</label>
+            <div class = "hide-checkbox">
+                <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
+            </div>
+
+            <div class = "menu-white-small hide" id = "main-settings">
+                <h2>НАСТРОЙКИ</h2>
+                <h3>ФОН</h3>
+                <div class = "choose-background">
+                    <div class = "hide-checkbox size-ch">
+                        <div class = 'preview-back mango'></div>
+                        <input type="checkbox" id="mango" class ="fone" onclick="changeBackground('mango', this)"/>
+                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                    </div>
+    
+                    <div class = "hide-checkbox size-ch">
+                        <div class = 'preview-back sunrise'></div>
+                        <input type="checkbox" id="sunrise" class ="fone" onclick="changeBackground('sunrise', this)"/>
+                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                    </div>
+    
+                    <div class = "hide-checkbox size-ch">
+                        <div class = 'preview-back sea'></div>
+                        <input type="checkbox" id="sea" class ="fone" onclick="changeBackground('sea', this)"/>
+                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                    </div>
+    
+                    <div class = "hide-checkbox size-ch">
+                        <div class = 'preview-back bubblegum'></div>
+                        <input type="checkbox" id="bubblegum" class ="fone" onclick="changeBackground('bubblegum', this)"/>
+                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                    </div>
+    
+                    <div class = "hide-checkbox size-ch">
+                        <div class = 'preview-back magic'></div>
+                        <input type="checkbox" id="magic" class ="fone" onclick="changeBackground('magic', this)"/>
+                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                    </div>
+                </div>
+                
             </div>
 
             <!--Приложеньеце-->
@@ -55,42 +84,45 @@
 
             <!--Создаем свой уровень-->
             <div id ="create-level" class = "center-full-screen">
-                <div>
-                    <input type="checkbox" id="rotateAny"/>
-                    <label for="rotateAny">Поворот любой</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="anySize"/>
-                    <label for="anySize">Разный размер</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="rotate90"/>
-                    <label for="rotate90">Поворот 90 градусов</label>
-                </div>
-                <div class="input">                   
-                    <input type="number" id="count-color" min="2" max ="8" step="1" value="3">
-                    <label for="count-color">Количетсво цветов</label>
-                </div>
-                <div class="input">
-                    <input type="number" id="count-ceils" min="2" max ="7" step="1" value="3">
-                    <label for="count-ceils">Количетсво клеток n*n</label>
-                </div>
-                <div class="input">
-                    <input type="number" id="count-square" min="2" max ="100" step="1" value="3">
-                    <label for="count-square">Количетсво квадратов</label>
-                </div>
-                <button class="button-start" id = "create-pallete" onclick="toGame()">Создать свою палитру</button>
-                <button class="button-start" id = "choose-settings" onclick="toGame()">Продолжить</button>
-
-                <div class = "menu-white-small" id = "pallete">
-                    <h2>Выберите цвета</h2>
-                    <div class = "pallete">                     
-                        <div class = "pallete-new"></div>
-                        <div class = "pallete-choose">
-                            <div class = "pallete-ceil"></div>
+                <div class = "menu-white-small">
+                    <div>
+                        <input type="checkbox" id="rotateAny"/>
+                        <label for="rotateAny">Поворот любой</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="anySize"/>
+                        <label for="anySize">Разный размер</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="rotate90"/>
+                        <label for="rotate90">Поворот 90 градусов</label>
+                    </div>
+                    <div class="input">                   
+                        <input type="number" id="count-color" min="2" max ="8" step="1" value="3">
+                        <label for="count-color">Количетсво цветов</label>
+                    </div>
+                    <div class="input">
+                        <input type="number" id="count-ceils" min="2" max ="7" step="1" value="3">
+                        <label for="count-ceils">Количетсво клеток n*n</label>
+                    </div>
+                    <div class="input">
+                        <input type="number" id="count-square" min="2" max ="100" step="1" value="3">
+                        <label for="count-square">Количетсво квадратов</label>
+                    </div>
+                    <button class="button-start" id = "create-pallete" onclick="toGame()">Создать свою палитру</button>
+                    <button class="button-start" id = "choose-settings" onclick="toGame()">Продолжить</button>
+    
+                    <div class = "menu-white-small hide" id = "pallete">
+                        <h2>Выберите цвета</h2>
+                        <div class = "pallete">                     
+                            <div class = "pallete-new"></div>
+                            <div class = "pallete-choose">
+                                <div class = "pallete-ceil"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
 
             </div>
 
@@ -136,7 +168,7 @@
     <script src="startPanel-animate.js"></script>
 
     <!--Самый последний!!!-->
-    <script src="checkSessionStorage.js"></script>
+    <script src="checkStorage.js"></script>
     
 </body>
 </html>

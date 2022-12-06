@@ -115,8 +115,26 @@ function checkSettings()
         $inputCountSquare.value = countSquare;
     }
 }
+
+function checkUserPref(){
+    let nowFone;
+    if (localStorage.userBackground != undefined)
+    {
+        $background.className='background ' + localStorage.userBackground;
+        nowFone = localStorage.userBackground;
+    }
+    else {
+        $background.className='background mango';
+        nowFone = 'mango';
+    }
+
+    for (let i =0; i<$chooseBack.length; i++){
+        if ($chooseBack[i].id === nowFone) $chooseBack[i].checked=true;
+    }
+}
 checkSettings();
 checkState();
+checkUserPref();
 
 
 function saveAllSettings()

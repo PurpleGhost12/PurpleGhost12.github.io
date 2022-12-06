@@ -52,33 +52,67 @@ html
 .magic{
 	background: linear-gradient(#7335cb, #73fce1);
 }
-#container 
+
+.hide-checkbox
+{
+	position: relative;
+	display: inline-block;
+}
+
+.choose-background{
+	text-align: center;
+	width: 100%;
+}
+.size-ch{
+	height: 7vw;
+	width: 7vw;
+	margin: 0 0.5vw;
+}
+.fone
 {
 	width: 100%;
-	min-height: 0vh;
-	background-color: rgba(225, 225, 225, 0);
+	height: 100%;
+	padding: 0;
+	z-index: 5;
+	position: relative;
+	opacity: 0;
+	margin: 0;
 }
-
-
-#content
-{
-	min-height: 60vh;
-	margin-top:30px;
-	background-color: rgb(255, 255, 255);
-}
-
-#clear 
-{
-    clear: both;
-}
-
-#footer 
+.checkedIcon 
 {
 	width: 100%;
-	height: 100px;
-	background-color: #1c1c1c;
-	/*display: table-row;*/
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	display: none;
+	z-index: 2;
 }
+.checkedIcon img {
+	height: 80%;
+	width: 80%;
+	object-fit: contain;
+	position: relative;
+	top:50%;
+	transform: translate(0, -50%);
+}
+.fone:checked ~ .checkedIcon 
+{
+	display: block;
+}
+
+.preview-back
+{
+	width: 100%;
+	height: 100%;
+	border-radius: min(1vh, 1vw);
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 1;
+}
+
+
 
 .content-area /*класс для ограничение области по ширине*/
 {
@@ -88,34 +122,6 @@ html
 	margin:0 auto;
 	padding: 0;
 	position: relative;
-}
-.content-area.dark
-{
-	background-color: #acd8ff;
-}
-p.text-main
-{
-	color:  black;
-	margin: 0;
-	width: 100%;
-}
-h1.main
-{
-	color:  black;
-	text-align: center;
-	padding: 10px;
-}
-.content-area-small
-{
-	width: 1000px;
-	background-color: rgba(255, 139, 139, 0);
-	margin:0 auto;
-	padding: 0;
-	position: relative;
-}
-.content-area-small.transparent
-{
-	background-color: transparent;
 }
 
 
@@ -135,7 +141,14 @@ h1.main
 	{
 		width: 100%;
 	}
-
 }
 
+@media (orientation: portrait)
+{
+	.size-ch{
+		height: 12vw;
+		width: 12vw;
+		margin: 0 0.5vw;
+	}
+}
 

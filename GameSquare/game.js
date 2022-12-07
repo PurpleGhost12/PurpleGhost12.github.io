@@ -146,7 +146,7 @@ function clickSquare(event)
                                 ///Штраф!
             currentTime-=1;
             if (currentTime<=0) time=0;
-            if (gameMode = "noMistakes") {
+            if (gameMode === "noMistakes") {
                 time=0;
                 $timerLine.style.width='0%';
                 endGame();

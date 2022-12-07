@@ -186,7 +186,7 @@ h1.menu
     left:0;
     transform-origin: center;
     z-index: 10;
-    scale:0;
+    transform:scale(0);
     transition: 0.5s;
 }
 @media (orientation:portrait)

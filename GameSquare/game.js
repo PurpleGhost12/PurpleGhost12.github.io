@@ -30,7 +30,7 @@ function clearField()
 
 function startGame()
 {
-    $timeOver.style.scale=0;
+    $timeOver.style.transform='scale(0)';
     endGameCheck=false;
     createNewField();
     //$timer.textContent="30.0"
@@ -172,9 +172,9 @@ function endGame()//Сделать конец игры покрасивее, т�
     let end;
     clearInterval(end);
     clearInterval(interval)
-    $timeOver.style.scale=1;
+    $timeOver.style.transform='scale(1)';
     setTimeout(function(){
-        $timeOver.style.scale=0;
+        $timeOver.style.transform='scale(0)';
         for (var i=0; i<countSquare; i++)
         {
             console.log(arraySquareReady[i].className)
@@ -230,7 +230,7 @@ function endGame()//Сделать конец игры покрасивее, т�
 }
 
 function endGameExit(){
-    $timeOver.style.scale=0;
+    $timeOver.style.transform='scale(0)';
     endGameCheck=true;
     clearField();
     clearInterval(interval)

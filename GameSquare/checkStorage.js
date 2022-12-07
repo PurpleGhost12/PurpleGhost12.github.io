@@ -28,7 +28,8 @@ function checkState()
     {
         //console.log("Yes")
         currentState = sessionStorage.state;
-        switch(sessionStorage.state)
+        changeStates(currentState);
+        /*switch(sessionStorage.state)
         {
             case "main-screen":
                 {
@@ -50,7 +51,7 @@ function checkState()
                     changeStates("do-game")
                     break;
                 }
-        }
+        }*/
     }
 }
 
@@ -114,6 +115,24 @@ function checkSettings()
         countSquare = sessionStorage.countSquare;
         $inputCountSquare.value = countSquare;
     }
+
+    //////////
+    if (sessionStorage.train != undefined) 
+    {
+        if (sessionStorage.train === "true")
+        {
+            train=true;
+
+        }
+        else
+        {
+            train = false;
+        } 
+    }
+
+    if (sessionStorage.gamemode !=undefined){
+        gameMode = sessionStorage.gamemode;
+    }
 }
 
 function checkUserPref(){
@@ -146,5 +165,7 @@ function saveAllSettings()
     sessionStorage.colorsCount = colorsCount;
     sessionStorage.countCeils = countCeils;
     sessionStorage.countSquare = countSquare;
+
+    sessionStorage.train = train;
     
 }

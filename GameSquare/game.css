@@ -45,6 +45,14 @@
     box-shadow: 0 0 15px 8px greenyellow,
     0 0 3px 3px greenyellow;
 }
+.square-true-end{
+    box-shadow: 0 0 15px 8px greenyellow,
+    0 0 3px 3px greenyellow;
+    scale: 1.2;
+    transition: scale 1s;
+    position: relative;
+    display:inline-block;
+}
 .square-section
 {
     position: absolute;
@@ -59,133 +67,7 @@
 }
 
 
-/*DeSiGn*/
-#main-screen, #choose-level, #create-level, #do-game
-{
-    /*width: 100%;*/
-    /*height: 100vh;*/
-    text-align: center;
-    display: none;
-}
 
-
-/*all*/
-.menu-white-big
-{
-    position: fixed;
-    height: 90vh;
-    margin: 0 auto;
-    top: 5vh;
-    background-color: white;
-    z-index: 1;
-    border-radius: 50px;
-    display: none;
-}
-
-.menu-white-small
-{
-    height: 80vh;
-    width: 50vw;
-    position: fixed;
-    left: 25vw;
-    top:10vh;
-    background-color: white;
-    border-radius: 30px;
-    padding: 15px;
-    box-sizing: border-box;
-}
-.menu-white-small.hide
-{
-
-    display: none;
-    z-index: 6;
-
-}
-@media (orientation: portrait)
-{
-    .menu-white-small{
-        width: 80vw;
-        left:10vw;
-    }
-}
-/*everywhere*/
-.back-to-main-everywhere
-{
-    position: fixed;
-    height: 8vh;
-    width: 8vh;
-    top: 1vh;
-    left: 1vh;
-    border-radius: 2vh;
-    z-index: 15;
-    display: none;
-}
-.back-one-step
-{
-    position: fixed;
-    height: 8vh;
-    width: 8vh;
-    top: 1vh;
-    left: 10vh;
-    border-radius: 2vh;
-    z-index: 15;
-    display: none; 
-}
-.back-only-back
-{
-    position: fixed;
-    height: 8vh;
-    width: 8vh;
-    top: 1vh;
-    left: 19vh;
-    border-radius: 2vh;
-    z-index: 15;
-    display: none;
-}
-.settings-checkbox
-{
-    height: 8vh;
-    width: 8vh;
-    position: fixed;
-    right: 1vh;
-    top:1vh;
-    opacity: 0.5;
-    z-index: 6;
-    margin: 0;
-    padding: 0;
-}
-.help-button
-{
-    position: fixed;
-    height: 8vh;
-    width: 8vh;
-    top: 1vh;
-    right: 10vh;
-    border-radius: 2vh;
-    z-index: 15;
-    margin: 0;
-    padding: 0;
-}
-.set-check-icon {
-    height: 8vh;
-    width: 8vh;
-    border-radius: 2vh;
-    position: fixed;
-    right: 1vh;
-    top:1vh;
-    z-index: 5;
-    background-color: chartreuse;
-  }
-  .set-help-icon {
-    height: 8vh;
-    width: 8vh;
-    border-radius: 2vh;
-    position: fixed;
-    right: 10vh;
-    top:1vh;
-    z-index: 5;
-    background-color: chartreuse;
-  }
 /*MAIN*/
 h1.game-name
 {
@@ -293,6 +175,20 @@ h1.menu
     /*background-color: rgb(139, 255, 139);
     background-color: rgb(255, 137, 137);*/
 }
+
+.time-over
+{
+    background-color: rgba(255, 255, 255, 0.462);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    transform-origin: center;
+    z-index: 10;
+    scale:0;
+    transition: 0.5s;
+}
 @media (orientation:portrait)
 {
     .game-area
@@ -339,6 +235,8 @@ h1.timer
     position: relative;
 }
 
+
+
 .hide-div
 {
     position: relative;
@@ -348,14 +246,14 @@ h1.timer
     width: 100%;
     opacity: 0;
 }
-.save-div
+/*.save-div
 {
     position: relative;
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-}
+}*/
 .start-panel
 {
     position: absolute;

@@ -5,6 +5,8 @@ $checkBoxMain.addEventListener('change', function(){
     if (this.checked)
     {
         $mainSet.style.display="block";
+        $mainHelp.style.display="none";
+        $checkBoxHelp.checked=false;
     }
     else 
     {
@@ -18,6 +20,8 @@ $checkBoxHelp.addEventListener('change', function(){
     if (this.checked)
     {
         $mainHelp.style.display="block";
+        $mainSet.style.display="none";
+        $checkBoxMain.checked=false;
     }
     else 
     {

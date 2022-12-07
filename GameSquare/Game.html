@@ -12,11 +12,11 @@
 </head>
 <body >
     <!--<div class = "content-area">-->
-        <div class = "background mango" id = "background"></div>
+        <!--подумать при первой игре генерить окно всплывающее с вопросом впервый раз?, есл да, то открыть правила игры-->
+        <div class = "background" id = "background"></div>
         <!--Меню которое везде-->
             <button class="back-to-main-everywhere" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
-            <button class="back-one-step" id = "back-one-step" onclick="changeStates(oldStateSave)">step back</button>
-            <button class="back-only-back" id = "back-only-back" onclick="changeStates(states[numPreState])">back only</button>
+            <button class="back-only-back" id = "back-only-back" onclick="changeStates(preState)">back only</button>
 
             <div class = "hide-checkbox">
                 <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
@@ -32,33 +32,29 @@
                 <h3>ФОН</h3>
                 <div class = "choose-background">
                     <div class = "hide-checkbox size-ch">
-                        <div class = 'preview-back mango'></div>
+                        
                         <input type="checkbox" id="mango" class ="fone" onclick="changeBackground('mango', this)"/>
-                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                        <div class = 'preview-back mango'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
-                        <div class = 'preview-back sunrise'></div>
                         <input type="checkbox" id="sunrise" class ="fone" onclick="changeBackground('sunrise', this)"/>
-                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                        <div class = 'preview-back sunrise'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
-                        <div class = 'preview-back sea'></div>
                         <input type="checkbox" id="sea" class ="fone" onclick="changeBackground('sea', this)"/>
-                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                        <div class = 'preview-back sea'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
-                        <div class = 'preview-back bubblegum'></div>
                         <input type="checkbox" id="bubblegum" class ="fone" onclick="changeBackground('bubblegum', this)"/>
-                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                        <div class = 'preview-back bubblegum'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
-                        <div class = 'preview-back magic'></div>
                         <input type="checkbox" id="magic" class ="fone" onclick="changeBackground('magic', this)"/>
-                        <div class = "checkedIcon"><img src="picture/icon/check-mark.png"></div>
+                        <div class = 'preview-back magic'></div>
                     </div>
                 </div>
                 
@@ -68,18 +64,28 @@
             <!--Начальное окно-->
             <div id="main-screen" class = "center-full-screen max-width">
                 <h1 class = "game-name">Find a square!</h1>
+                <div class="input">
+                    <label for="count-square">Ваше имя</label>
+                    <input type="string" id="user-name" value="">
+                </div>
                 <button class="button-play allbtn" id="start-main"><p class = "big">Начать</p></button>
+            </div>
+
+            <div id = "choose-gamemode" class = "center-full-screen max-width">
+                <button class="button-level allbtn" id="classicMode">КЛАССИКА</button>
+                <button class="button-level allbtn" id="monotonMode">МОНОТОН</button>
+                <button class="button-level allbtn" id="noMistakesMode">БЕЗ ПРАВА НА ОШИБКУ</button>
+                <button class="button-level allbtn" id="level-train">ТРЕНИРОВКА</button>
+                <button class="button-level allbtn" id="level-create">НАСТРОИТЬ</button>   
             </div>
 
             <!--Выбираем уровень-->
             <div id ="choose-level" class = "center-full-screen max-width">
-                <h1 class = "menu">Выберите уровень</h1>
+                <!--<h1 class = "menu">Выберите уровень</h1>-->
                 <button class="button-level easy" id="level-easy">ЛЕГКО</button>
-                <button class="button-level medium" id="level-easy">СРЕДНЕ</button>
+                <button class="button-level medium" id="level-medium">СРЕДНЕ</button>
                 <button class="button-level hard" id="level-hard">СЛОЖНО</button>
-                <button class="button-level allbtn" id="level-hard">ТРЕНИРОВКА</button>
-                <button class="button-level allbtn" id="level-create">НАСТРОИТЬ</button>   
-
+                <button class="button-level hard" id="level-veryHard">ЖЕСТЬ</button>
             </div>
 
             <!--Создаем свой уровень-->
@@ -131,6 +137,7 @@
                 
                 
                 <div class = "game-area" id = "game-field">
+                    <div class = "time-over" id = "time-over">time over</div>
                     <div class = "start-panel" id = "start-panel">
                         <div class = "start-panel-square" id = "square-animate"></div>
                         <button class="button-panel-start" id="start-game" onclick="startGame()">СТАРТ</button>

@@ -21,7 +21,13 @@ function createPanel()
     {
         for (var i=0; i<n*n;i++)
         {
-            if (getRandom(0,2)===1) sections[i].style.backgroundColor = colors[getRandom(0,colors.length)];
+            if (getRandom(0,2)===1) {
+                if (gameMode === "monoton"){
+                    var bw = getRandom(0,230);
+                    sections[i].style.backgroundColor = 'rgb('+bw+','+bw+','+bw+')';
+                }
+                else sections[i].style.backgroundColor = colors[getRandom(0,colors.length)];
+            }
             
         }
     }, 200)

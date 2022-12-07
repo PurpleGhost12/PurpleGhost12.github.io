@@ -25,7 +25,7 @@ html
 {
     padding:0;
     margin:0;
-	background-color: #fce373;
+	background-color: #ffffff;
 	font-size: 16px;
 }
 
@@ -47,7 +47,7 @@ html
 	background: linear-gradient(#35bccb, #cfff99);
 }
 .bubblegum{
-	background: linear-gradient(#fc73ec,#359ecb);
+	background: linear-gradient(#fc73ec,#55bbe7);
 }
 .magic{
 	background: linear-gradient(#7335cb, #73fce1);
@@ -78,7 +78,7 @@ html
 	opacity: 0;
 	margin: 0;
 }
-.checkedIcon 
+/*.checkedIcon 
 {
 	width: 100%;
 	height: 100%;
@@ -99,8 +99,11 @@ html
 .fone:checked ~ .checkedIcon 
 {
 	display: block;
+}*/
+.fone:checked ~ .preview-back 
+{
+	border: 0.5vw solid black;
 }
-
 .preview-back
 {
 	width: 100%;
@@ -110,6 +113,7 @@ html
 	left: 0;
 	top:0;
 	z-index: 1;
+	box-sizing: border-box;
 }
 
 
@@ -124,7 +128,121 @@ html
 	position: relative;
 }
 
+/*DeSiGn*/
+#main-screen, #choose-level, #create-level, #do-game, #choose-gamemode
+{
+    /*width: 100%;*/
+    /*height: 100vh;*/
+    text-align: center;
+    display: none;
+}
 
+/*all*/
+.menu-white-big
+{
+    position: fixed;
+    height: 90vh;
+    margin: 0 auto;
+    top: 5vh;
+    background-color: white;
+    z-index: 1;
+    border-radius: 50px;
+    display: none;
+}
+
+.menu-white-small
+{
+    height: 80vh;
+    width: 50vw;
+    position: fixed;
+    left: 25vw;
+    top:10vh;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.menu-white-small.hide
+{
+
+    display: none;
+    z-index: 6;
+
+}
+@media (orientation: portrait)
+{
+    .menu-white-small{
+        width: 80vw;
+        left:10vw;
+    }
+}
+/*everywhere*/
+.back-to-main-everywhere
+{
+    position: fixed;
+    height: 8vh;
+    width: 8vh;
+    top: 1vh;
+    left: 1vh;
+    border-radius: 2vh;
+    z-index: 15;
+    display: none;
+}
+.back-only-back
+{
+    position: fixed;
+    height: 8vh;
+    width: 8vh;
+    top: 1vh;
+    left: 10vh;
+    border-radius: 2vh;
+    z-index: 15;
+    display: none; 
+}
+.settings-checkbox
+{
+    height: 8vh;
+    width: 8vh;
+    position: fixed;
+    right: 1vh;
+    top:1vh;
+    opacity: 0.5;
+    z-index: 6;
+    margin: 0;
+    padding: 0;
+}
+.help-button
+{
+    position: fixed;
+    height: 8vh;
+    width: 8vh;
+    top: 1vh;
+    right: 10vh;
+    border-radius: 2vh;
+    z-index: 15;
+    margin: 0;
+    padding: 0;
+}
+.set-check-icon {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 2vh;
+    position: fixed;
+    right: 1vh;
+    top:1vh;
+    z-index: 5;
+    background-color: chartreuse;
+  }
+  .set-help-icon {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 2vh;
+    position: fixed;
+    right: 10vh;
+    top:1vh;
+    z-index: 5;
+    background-color: chartreuse;
+  }
 
 
 @media (max-width: 1440px)/*1440 px max content width*/
@@ -149,6 +267,10 @@ html
 		height: 12vw;
 		width: 12vw;
 		margin: 0 0.5vw;
+	}
+	.fone:checked ~ .preview-back 
+	{
+		border: 1vw solid black;
 	}
 }
 

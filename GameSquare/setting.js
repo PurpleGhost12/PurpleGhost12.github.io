@@ -16,6 +16,7 @@ var anySize = false;
 var colorsCount=3;
 var countCeils=3;
 var countSquare=10;
+var train = false;
 
 var time=(countCeils*1 + countSquare*1)*3;
 var training=false;
@@ -24,7 +25,34 @@ $inputCountColors.value = colorsCount;
 $inputCountCeils.value = countCeils;
 $inputCountSquare.value = countSquare;
 
-var colorMode = "classic";
+var gameMode = "classic"; //classic, monoton, noMistakes
+var diffMonoton=15;
+
+
+//GAMEMODE
+
+var $classicMode = document.getElementById("classicMode");
+var $monotonMode = document.getElementById("monotonMode");
+var $noMistakesMode = document.getElementById("noMistakesMode");
+
+$classicMode.addEventListener("click", function(){
+  gameMode = "classic";
+  sessionStorage.gamemode = gameMode;
+  changeStates("choose-level");
+})
+
+$monotonMode.addEventListener("click", function(){
+  gameMode = "monoton";
+  sessionStorage.gamemode = gameMode;
+  changeStates("choose-level");
+})
+
+$noMistakesMode.addEventListener("click", function(){
+  gameMode = "noMistakes";
+  sessionStorage.gamemode = gameMode;
+  changeStates("choose-level");
+})
+
 
 
 //(индивидуальные настройки)
@@ -67,6 +95,9 @@ $checkRotate90.addEventListener('change', function() {
   sessionStorage.rotate90 = rotate90;
   console.log(sessionStorage.rotate90);
 });
+
+
+
 
 //Input events
 $inputCountColors.addEventListener('change', function() {

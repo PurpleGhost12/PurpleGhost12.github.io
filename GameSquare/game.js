@@ -4,6 +4,8 @@ var $findSquareArea = document.getElementById("find");
 var $timer = document.querySelector('#time');
 var $hideField = document.getElementById("hide-field");
 
+var $timeOver = document.getElementById("time-over");
+
 var $doGame = document.getElementById("do-game");
 
 var $timerLine = document.getElementById("timerLine");
@@ -11,11 +13,14 @@ var $timerLine = document.getElementById("timerLine");
 window.addEventListener('resize', setSizeSquare)
 //parametres of the game
 
-var gameState=false;
+var gameState=false;  //Check i use?
 var readySquare=false;
+
+var endGameCheck=true;
 
 var maxTime;
 var currentTime;
+
 
 function clearField()
 {
@@ -23,11 +28,10 @@ function clearField()
     $findSquareArea.innerHTML = '';
 }
 
-
-
 function startGame()
 {
-    
+    $timeOver.style.scale=0;
+    endGameCheck=false;
     createNewField();
     //$timer.textContent="30.0"
     //time = parseFloat($timer.textContent)
@@ -40,7 +44,8 @@ function startGame()
     //$timerLine.style.transition="none";
     //$timerLine.style.width='100%';
     $timerLine.style.transition="width 0.2s";
-    startTimer();
+    console.log(train)
+    if (train === false) startTimer();
 
 }
 
@@ -51,6 +56,9 @@ function startTimer(){
        //time = parseFloat($timer.textContent)
        if (currentTime <=0)
        {
+        currentTime=0;
+        $timer.textContent = currentTime.toFixed(1);
+        $timerLine.style.width='0%';
         clearInterval(interval);
         endGame();
        }
@@ -82,14 +90,12 @@ function createNewField()
 
 function addField()
 {
-    saveField = document.createElement('div');
-    saveField.className = "save-div";
+    
     $findSquareArea.appendChild(findSquare);
     for (var i=0; i<countSquare; i++)
     {
-        saveField.appendChild(arraySquareReady[i])
+        $areaSquare.appendChild(arraySquareReady[i])
     }
-    $areaSquare.appendChild(saveField)
 }
 
 function setSizeSquare()
@@ -123,6 +129,8 @@ function clickSquare(event)
 {
     //console.log("Click!");
     console.log(event.target.dataset.find);
+    if (endGameCheck) return;
+
     if (event.target.dataset.find === 'true')
     {
         console.log("Yes!");
@@ -138,6 +146,11 @@ function clickSquare(event)
                                 ///Штраф!
             currentTime-=1;
             if (currentTime<=0) time=0;
+            if (gameMode = "noMistakes") {
+                time=0;
+                $timerLine.style.width='0%';
+                endGame();
+            }
             //$timer.textContent = time.toFixed(1)
         }
 
@@ -151,18 +164,83 @@ function gameShow()
     $hideField.style.opacity = 1;
 
 }
-function endGame()
+function endGame()//Сделать конец игры покрасивее, тип отобразить где ыбл верный и тд
 {
+ //Нужно два завершения игры
+    endGameCheck=true;
+    var one=0;
+    let end;
+    clearInterval(end);
+    clearInterval(interval)
+    $timeOver.style.scale=1;
+    setTimeout(function(){
+        $timeOver.style.scale=0;
+        for (var i=0; i<countSquare; i++)
+        {
+            console.log(arraySquareReady[i].className)
+            if (arraySquareReady[i].className === "square-find")
+            {
+                arraySquareReady[i].className="square-true-end";
+            }
+        }
+    }, 3000)
+
+    setTimeout(function(){
+        clearField();
+        $startPanel.style.display = "block";
+        $hideField.style.opacity = 0;
+        readySquare = false;
+        gameState=false;
+        sessionStorage.gameState = false;
+        $timerLine.style.transition="none";
+        $timerLine.style.width=100+'%';
+        console.log("end")
+    },10000);
+
+    /*end = setInterval(function() //timer
+    {
+        //square-true-end - class name
+       if (one===0)
+       {
+            $timeOver.style.scale=0;
+            for (var i=0; i<countSquare; i++)
+            {
+                console.log(arraySquareReady[i].className)
+                if (arraySquareReady[i].className === "square-find")
+                {
+                    arraySquareReady[i].className="square-true-end";
+                }
+            }
+
+       }
+       if (one>0) {
+        clearInterval(end);
+        clearField();
+        $startPanel.style.display = "block";
+        $hideField.style.opacity = 0;
+        readySquare = false;
+        gameState=false;
+        sessionStorage.gameState = false;
+        $timerLine.style.transition="none";
+        $timerLine.style.width=100+'%';
+        console.log("end")
+       }
+       one++;
+    }, 5000)*/
+}
+
+function endGameExit(){
+    $timeOver.style.scale=0;
+    endGameCheck=true;
     clearField();
+    clearInterval(interval)
     $startPanel.style.display = "block";
     $hideField.style.opacity = 0;
     readySquare = false;
     gameState=false;
     sessionStorage.gameState = false;
-    clearInterval(interval);
     $timerLine.style.transition="none";
     $timerLine.style.width=100+'%';
     console.log("end")
 
-    
 }

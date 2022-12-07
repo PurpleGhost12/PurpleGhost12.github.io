@@ -23,19 +23,47 @@ function test(){
 
 function selectColors() //отбираем цвета
 {
-    if (colorsCount < contrastColors.length)
+    console.log(gameMode);
+    if (gameMode === "classic" || gameMode === "noMistakes")
     {
-        currentColor = contrastColors.slice(0);
+        if (colorsCount < contrastColors.length)
+        {
+            currentColor = contrastColors.slice(0);
+        }
+        else
+        {
+            currentColor = colors.slice(0);
+        }
+    
+        while(currentColor.length > colorsCount)
+        {
+            currentColor.splice(getRandom(0,currentColor.length-1),1);
+        }
     }
-    else
+    if (gameMode === "monoton")
     {
-        currentColor = colors.slice(0);
+        var startColor = getRandom(0,230-colorsCount*diffMonoton);
+        currentColor = new Array(colorsCount);
+        for (var i=0; i<colorsCount; i++){
+            currentColor[i] = "rgb("+(startColor+i*diffMonoton)+','+(startColor+i*diffMonoton)+','+(startColor+i*diffMonoton)+')';
+        }
     }
+    /*else {
+        if (colorsCount < contrastColors.length)
+        {
+            currentColor = contrastColors.slice(0);
+        }
+        else
+        {
+            currentColor = colors.slice(0);
+        }
+    
+        while(currentColor.length > colorsCount)
+        {
+            currentColor.splice(getRandom(0,currentColor.length-1),1);
+        }
+    }*/
 
-    while(currentColor.length > colorsCount)
-    {
-        currentColor.splice(getRandom(0,currentColor.length-1),1);
-    }
 }
 
 

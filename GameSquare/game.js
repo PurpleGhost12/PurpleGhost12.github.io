@@ -1,16 +1,16 @@
 
 //манипуляция dom
-var $findSquareArea = document.getElementById("find");
-var $timer = document.querySelector('#time');
-var $hideField = document.getElementById("hide-field");
+const $findSquareArea = document.getElementById("find");
+const $timer = document.querySelector('#time');
+const $hideField = document.getElementById("hide-field");
 
-var $timeOver = document.getElementById("time-over");
-var $score = document.getElementById("score");
+const $timeOver = document.getElementById("time-over");
+const $score = document.getElementById("score");
 //var $closeScore = document.getElementById("close-score");
 
-var $doGame = document.getElementById("do-game");
+//var $doGame = document.getElementById("do-game");
 
-var $timerLine = document.getElementById("timerLine");
+const $timerLine = document.getElementById("timerLine");
 
 window.addEventListener('resize', setSizeSquare)
 //parametres of the game

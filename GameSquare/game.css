@@ -309,19 +309,21 @@ p.big
 }
 .allbtn:hover
 {
-    background-color: #f5ffb2;
+    background-color: #ffffff;
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 .button-level
 {
     background-color: #ffffff;/*#0400266a; #1009536a*/
-    color: #2e2e2e;
+    color: #1f1f1f;
     font-weight: 900;
     border: 0px solid white;
     display:block;
     border-radius: 10px;
     margin: 50px auto;
-    height: 50px;
-    width: 200px;
+    height: 60px;
+    width: 250px;
     font-size: 25px;
 }
 .easy:hover

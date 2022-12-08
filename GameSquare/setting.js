@@ -4,9 +4,9 @@ console.log(sessionStorage.abc)
 
 
 //buttons
-var $inputCountColors = document.getElementById("count-color");
-var $inputCountCeils = document.getElementById("count-ceils");
-var $inputCountSquare = document.getElementById("count-square");
+const $inputCountColors = document.getElementById("count-color");
+const $inputCountCeils = document.getElementById("count-ceils");
+const $inputCountSquare = document.getElementById("count-square");
 
 //text
 $textGamemode = document.getElementById("gamemode-text");
@@ -35,15 +35,15 @@ var diffMonoton=15;
 
 //GAMEMODE
 
-var $classicMode = document.getElementById("classicMode");
-var $monotonMode = document.getElementById("monotonMode");
-var $noMistakesMode = document.getElementById("noMistakesMode");
+const $classicMode = document.getElementById("classicMode");
+const $monotonMode = document.getElementById("monotonMode");
+const $noMistakesMode = document.getElementById("noMistakesMode");
 
 $classicMode.addEventListener("click", function(){
   gameMode = "classic";
   sessionStorage.gamemode = gameMode;
-  $textGamemode.textContent = "КЛАССИЧЕСКИЙ"
-  sessionStorage.textGamemode = "КЛАССИЧЕСКИЙ";
+  $textGamemode.textContent = "СТАНДАРТ"
+  sessionStorage.textGamemode = "СТАНДАРТ";
   changeStates("choose-level");
 })
 

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+:root {
+   --dino_body: #5aff1e;
+   --dino_scales: #01908e;
+   --dino_outline: #00182f;
+}
+
+h1 {
+   font-family: "Fredoka One", cursive;
+   color: rgb(69, 69, 69);
+   font-weight: 400;
+   font-size: 3rem;
+   text-align: center;
+   margin: 1rem;
+}
+
+.color_picker_toggle {
+   position: relative;
+   padding: 0;
+   aspect-ratio: 1/1;
+   padding: 0.5rem;
+   border: none;
+   background-color: rgb(95, 123, 235);
+   color: white;
+   border-radius: 50%;
+   cursor: pointer;
+   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.508);
+   margin: auto;
+   display: block;
+}
+
+#color_picker_container {
+   border-radius: 1rem;
+   bottom: 100%;
+   background-color: white;
+   height: 120px;
+   width: 215px;
+   border: solid 1px #ccc;
+   padding: 1rem;
+   display: inline-block;
+   display: block;
+   margin: auto;
+}
+
+canvas:hover {
+   cursor: crosshair;
+}
+
+#color_block {
+   border-radius: 1rem;
+}
+
+#hue_bar {
+   border-radius: 0.5rem;
+   margin-left: 1rem;
+}
+
+.select_container {
+   font-family: "Fredoka One", cursive;
+   font-weight: 100;
+   display: flex;
+   justify-content: center;
+   padding: 1rem;
+}
+
+label {
+    margin-right: 0.5rem;
+ }
+
+
+.dino_container {
+   max-width: 300px;
+   margin: auto;
+}
+   #behindbod,
+   #basebody {
+      fill: var(--dino_body);
+      stroke: var(--dino_outline);
+   }
+
+   .svg_dino_scales {
+      fill: var(--dino_scales);
+      stroke: var(--dino_outline);
+      stroke-width: 14;
+      stroke-miterlimit: 10;
+   }
+
+   .st3,
+   .st4 {
+      fill: #01908e;
+      stroke: var(--dino_outline);
+      stroke-width: 14;
+      stroke-miterlimit: 10;
+   }
+
+   .st3,
+   .st4 {
+      fill: #5e54ff;
+      stroke-linecap: round;
+   }
+
+   .st4 {
+      fill: none;
+   }
+

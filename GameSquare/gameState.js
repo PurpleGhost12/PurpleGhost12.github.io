@@ -1,9 +1,9 @@
 
-var $mainMenu = document.getElementById("main-screen");
-var $chooseGamemode = document.getElementById("choose-gamemode");
-var $chooseLevel = document.getElementById("choose-level");
-var $createLevel = document.getElementById("create-level");
-var $doGame = document.getElementById("do-game");
+const $mainMenu = document.getElementById("main-screen");
+const $chooseGamemode = document.getElementById("choose-gamemode");
+const $chooseLevel = document.getElementById("choose-level");
+const $createLevel = document.getElementById("create-level");
+const $doGame = document.getElementById("do-game");
 
 
 
@@ -118,7 +118,7 @@ $buttonLevelTrain.addEventListener('click', function() {
       sessionStorage.gamemode = "classic"
       sessionStorage.train=true;
       $textGamemodeBlack.textContent = "ТРЕНИРОВКА"
-      sessionStorage.textGamemodeBlack = "ТРЕНИРОВКА!"
+      sessionStorage.textGamemodeBlack = "ТРЕНИРОВКА"
       //gameState в конце!!!!
       changeStates("create-level");
     });
@@ -129,8 +129,8 @@ $buttonHandle.addEventListener('click', function() {
       gameMode = "classic"
       sessionStorage.gamemode = "classic"
       sessionStorage.train=false;
-      $textGamemodeBlack.textContent = "СОЗДАЙТЕ!"
-      sessionStorage.textGamemodeBlack = "СОЗДАЙТЕ!"
+      $textGamemodeBlack.textContent = "СОЗДАЙТЕ"
+      sessionStorage.textGamemodeBlack = "СОЗДАЙТЕ"
       console.log(train);
       changeStates("create-level");
       //настройки

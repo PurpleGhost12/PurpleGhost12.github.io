@@ -30,7 +30,7 @@
             </div>
 
             <div class = "menu-white-small hide" id = "main-settings">
-                <h2>НАСТРОЙКИ</h2>
+                <h2 class = "settings">НАСТРОЙКИ</h2>
                 <h3>ФОН</h3>
                 <div class = "choose-background">
                     <div class = "hide-checkbox size-ch">
@@ -74,20 +74,25 @@
             </div>
 
             <div id = "choose-gamemode" class = "center-full-screen max-width">
-                <button class="button-level allbtn" id="classicMode">КЛАССИКА</button>
-                <button class="button-level allbtn" id="monotonMode">МОНОТОН</button>
-                <button class="button-level allbtn" id="noMistakesMode">БЕЗ ПРАВА НА ОШИБКУ</button>
-                <button class="button-level allbtn" id="level-train">ТРЕНИРОВКА</button>
-                <button class="button-level allbtn" id="level-create">НАСТРОИТЬ</button>   
+                <div class = "vertical-align-level5">
+                    <button class="button-level allbtn" id="classicMode">СТАНДАРТ</button>
+                    <button class="button-level allbtn" id="monotonMode">МОНОТОН</button>
+                    <button class="button-level allbtn" id="noMistakesMode">1 ПОПЫТКА</button>
+                    <button class="button-level allbtn" id="level-train">ТРЕНИРОВКА</button>
+                    <button class="button-level allbtn" id="level-create">СОЗДАТЬ</button> 
+                </div>
+  
             </div>
 
             <!--Выбираем уровень-->
             <div id ="choose-level" class = "center-full-screen max-width">
-                <h2 class = "gamemode" id = "gamemode-text"></h2>
-                <button class="button-level easy" id="level-easy">ЛЕГКО</button>
-                <button class="button-level medium" id="level-medium">СРЕДНЕ</button>
-                <button class="button-level hard" id="level-hard">СЛОЖНО</button>
-                <button class="button-level hard" id="level-veryHard">ЖЕСТЬ</button>
+                <div class = "vertical-align-level5">
+                    <h2 class = "gamemode" id = "gamemode-text"></h2>
+                    <button class="button-level allbtn" id="level-easy">ЛЕГКО</button>
+                    <button class="button-level allbtn" id="level-medium">СРЕДНЕ</button>
+                    <button class="button-level allbtn" id="level-hard">СЛОЖНО</button>
+                    <button class="button-level allbtn" id="level-veryHard">ЖЕСТЬ</button>
+                </div>
             </div>
 
             <!--Создаем свой уровень-->

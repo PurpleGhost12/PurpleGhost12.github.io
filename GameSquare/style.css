@@ -65,6 +65,8 @@ html
 .size-ch{
 	height: 7vw;
 	width: 7vw;
+	max-width: 100px;
+	max-height: 100px;
 	margin: 0 0.5vw;
 	display: inline-block;
 }
@@ -135,12 +137,14 @@ html
     /*height: 100vh;*/
     text-align: center;
     display: none;
+	position: relative;
 }
 /*first-second-menu*/
 .center-full-screen
 {
     /*width: 1440px;*/
     height: 88vh;
+	min-height: 88vh;
     padding-top: 8vh;
     margin: 0 auto;
     position: relative;
@@ -170,6 +174,7 @@ html
     border-radius: 30px;
     padding: 15px;
     box-sizing: border-box;
+	overflow: auto;
 }
 .menu-white-small.hide
 {
@@ -181,9 +186,22 @@ html
 
 h2.gamemode{
 	color: white;
+	font-size: 24px;
+	height: 60px;
+	margin: 50px auto;
+	line-height: 60px;
+	text-align: center;
 }
 h2.gamemodeBlack{
 	color: black;
+	font-size: 24px;
+}
+
+h2.settings{
+	text-align: center;
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
 }
 @media (orientation: portrait)
 {
@@ -261,7 +279,10 @@ h2.gamemodeBlack{
   }
 
 
-
+.vertical-align-level5{
+	position: relative;
+	margin-top: calc((88vh - 100px*5)/2);
+}
 @media (max-width: 1440px)/*1440 px max content width*/
 {
 	.content-area

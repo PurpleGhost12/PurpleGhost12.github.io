@@ -1,5 +1,5 @@
-var $findBlock = document.getElementById("find");
-var $areaSquare = document.getElementById("generate");
+const $findBlock = document.getElementById("find");
+const $areaSquare = document.getElementById("generate");
 $areaSquare.addEventListener('click', clickSquare);
 
 var sizeExample;

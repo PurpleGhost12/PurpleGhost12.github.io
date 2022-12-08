@@ -1,6 +1,6 @@
 
-let $checkBoxMain = document.getElementById("setOpen");
-let $mainSet= document.getElementById("main-settings");
+const $checkBoxMain = document.getElementById("setOpen");
+const $mainSet= document.getElementById("main-settings");
 $checkBoxMain.addEventListener('change', function(){
     if (this.checked)
     {
@@ -14,8 +14,8 @@ $checkBoxMain.addEventListener('change', function(){
     }
 })
 
-let $checkBoxHelp = document.getElementById("setOpenHelp");
-let $mainHelp= document.getElementById("help");
+const $checkBoxHelp = document.getElementById("setOpenHelp");
+const $mainHelp= document.getElementById("help");
 $checkBoxHelp.addEventListener('change', function(){
     if (this.checked)
     {
@@ -29,9 +29,9 @@ $checkBoxHelp.addEventListener('change', function(){
     }
 })
 
-let $chooseBack = document.getElementsByClassName("fone");
+const $chooseBack = document.getElementsByClassName("fone");
 //$chooseBack.addEventListener(onchange, changeBackground('mango'))
-let $background = document.getElementById("background");
+const $background = document.getElementById("background");
 function changeBackground(newColors, who)
 {
     console.log(who);

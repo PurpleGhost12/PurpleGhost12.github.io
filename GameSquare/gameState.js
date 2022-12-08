@@ -114,6 +114,8 @@ var $buttonLevelTrain = document.getElementById("level-train");
 $buttonLevelTrain.addEventListener('click', function() { 
       //настройки
       train = true;
+      gameMode = "classic"
+      sessionStorage.gamemode = "classic"
       sessionStorage.train=true;
       $textGamemodeBlack.textContent = "ТРЕНИРОВКА"
       sessionStorage.textGamemodeBlack = "ТРЕНИРОВКА!"
@@ -124,6 +126,8 @@ $buttonLevelTrain.addEventListener('click', function() {
 var $buttonHandle = document.getElementById("level-create");
 $buttonHandle.addEventListener('click', function() {
       train = false;
+      gameMode = "classic"
+      sessionStorage.gamemode = "classic"
       sessionStorage.train=false;
       $textGamemodeBlack.textContent = "СОЗДАЙТЕ!"
       sessionStorage.textGamemodeBlack = "СОЗДАЙТЕ!"

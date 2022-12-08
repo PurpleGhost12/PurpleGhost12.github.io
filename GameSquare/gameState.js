@@ -1,13 +1,11 @@
 
 var $mainMenu = document.getElementById("main-screen");
-
 var $chooseGamemode = document.getElementById("choose-gamemode");
-
 var $chooseLevel = document.getElementById("choose-level");
-
 var $createLevel = document.getElementById("create-level");
-
 var $doGame = document.getElementById("do-game");
+
+
 
 //session storage - сохраняем на случай перезагрузки! и только состояние игры
 //local storage - для сохранения пользователей!
@@ -41,6 +39,8 @@ $buttonLevelEasy.addEventListener('click', function() {
       countCeils=3;
       countSquare=10;
 
+      diffMonoton=20;
+
       train = false;
 
       saveAllSettings();
@@ -59,6 +59,8 @@ $buttonLevelMedium.addEventListener('click', function() {
       countCeils=4;
       countSquare=12;
 
+      diffMonoton=15;
+
       train = false;
 
       saveAllSettings();
@@ -76,6 +78,8 @@ $buttonLevelHard.addEventListener('click', function() {
       colorsCount=5;
       countCeils=5;
       countSquare=15;
+
+      diffMonoton=13;
 
       train = false; 
 
@@ -96,6 +100,8 @@ $buttonLevelVeryHard.addEventListener('click', function() {
       countCeils=5;
       countSquare=20;
 
+      diffMonoton=10;
+
       train = false; 
 
       saveAllSettings();
@@ -109,6 +115,8 @@ $buttonLevelTrain.addEventListener('click', function() {
       //настройки
       train = true;
       sessionStorage.train=true;
+      $textGamemodeBlack.textContent = "ТРЕНИРОВКА"
+      sessionStorage.textGamemodeBlack = "ТРЕНИРОВКА!"
       //gameState в конце!!!!
       changeStates("create-level");
     });
@@ -117,6 +125,8 @@ var $buttonHandle = document.getElementById("level-create");
 $buttonHandle.addEventListener('click', function() {
       train = false;
       sessionStorage.train=false;
+      $textGamemodeBlack.textContent = "СОЗДАЙТЕ!"
+      sessionStorage.textGamemodeBlack = "СОЗДАЙТЕ!"
       console.log(train);
       changeStates("create-level");
       //настройки
@@ -131,13 +141,15 @@ $buttonHandle.addEventListener('click', function() {
   {
     //console.log(sessionStorage.state);
     //console.log(newState);
-    numPreState=0;
+    //numPreState=0;
     oldStateSave = currentState;
 
     findState(currentState, 'none');
     findState(newState, 'block');
 
     sessionStorage.state = newState;
+    sessionStorage.oldStateSave = oldStateSave;
+
     currentState = newState;
     if (newState === 'main-screen') 
     {
@@ -190,8 +202,8 @@ $buttonHandle.addEventListener('click', function() {
                     $doGame.style.display = doWhat;
                     if (doWhat === "block")
                      {
-                      if (oldStateSave === "create-level" && train === false) numPreState="create-level";
-                      else preState="choose-level";     
+                      if (oldStateSave === "choose-level") preState="choose-level";
+                      else preState="choose-gamemode";     
                       createPanel();
                      }
                     else 

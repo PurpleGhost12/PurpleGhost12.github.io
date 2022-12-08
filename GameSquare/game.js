@@ -5,6 +5,8 @@ var $timer = document.querySelector('#time');
 var $hideField = document.getElementById("hide-field");
 
 var $timeOver = document.getElementById("time-over");
+var $score = document.getElementById("score");
+//var $closeScore = document.getElementById("close-score");
 
 var $doGame = document.getElementById("do-game");
 
@@ -21,7 +23,15 @@ var endGameCheck=true;
 var maxTime;
 var currentTime;
 
+//Подсказка
+$findSquareArea.addEventListener("dblclick",function(){
+    if (train) {
+        seeFindSquare();
+    }
+})
 
+
+//Clear field
 function clearField()
 {
     $areaSquare.innerHTML = '';
@@ -39,10 +49,13 @@ function startGame()
     maxTime=currentTime; // рассчет времени
     $timer.textContent = currentTime.toFixed(1)
     currentTime+=0.2;
+
     $startPanel.style.display = "none";
+    $score.style.display="none";
+
     $hideField.style.opacity = 1;
-    //$timerLine.style.transition="none";
-    //$timerLine.style.width='100%';
+    $timerLine.style.transition="none";
+    $timerLine.style.width='100%';
     $timerLine.style.transition="width 0.2s";
     console.log(train)
     if (train === false) startTimer();
@@ -164,29 +177,36 @@ function gameShow()
     $hideField.style.opacity = 1;
 
 }
+
+function seeFindSquare(){
+    for (var i=0; i<countSquare; i++)
+    {
+        console.log(arraySquareReady[i].className)
+        if (arraySquareReady[i].className === "square-find")
+        {
+            arraySquareReady[i].className="square-true-end";
+            arraySquareReady[i].style.width = maxSizeSquare +'px';
+            arraySquareReady[i].style.height = maxSizeSquare + 'px';
+            arraySquareReady[i].style.transform="scale(1.1) rotate(0)";
+        }
+    }
+}
 function endGame()//Сделать конец игры покрасивее, тип отобразить где ыбл верный и тд
 {
  //Нужно два завершения игры
     endGameCheck=true;
-    var one=0;
     let end;
     clearInterval(end);
     clearInterval(interval)
     $timeOver.style.transform='scale(1)';
     setTimeout(function(){
         $timeOver.style.transform='scale(0)';
-        for (var i=0; i<countSquare; i++)
-        {
-            console.log(arraySquareReady[i].className)
-            if (arraySquareReady[i].className === "square-find")
-            {
-                arraySquareReady[i].className="square-true-end";
-            }
-        }
-    }, 3000)
+        seeFindSquare()
+    }, 2000)
 
     setTimeout(function(){
-        clearField();
+        seeScore()
+        /*clearField();
         $startPanel.style.display = "block";
         $hideField.style.opacity = 0;
         readySquare = false;
@@ -194,39 +214,30 @@ function endGame()//Сделать конец игры покрасивее, т�
         sessionStorage.gameState = false;
         $timerLine.style.transition="none";
         $timerLine.style.width=100+'%';
-        console.log("end")
-    },10000);
+        console.log("end")*/
+    },5000);
+}
 
-    /*end = setInterval(function() //timer
-    {
-        //square-true-end - class name
-       if (one===0)
-       {
-            $timeOver.style.scale=0;
-            for (var i=0; i<countSquare; i++)
-            {
-                console.log(arraySquareReady[i].className)
-                if (arraySquareReady[i].className === "square-find")
-                {
-                    arraySquareReady[i].className="square-true-end";
-                }
-            }
+function seeScore()
+{
+    //hide game field
+    clearField();
+    $hideField.style.opacity = 0;
 
-       }
-       if (one>0) {
-        clearInterval(end);
-        clearField();
-        $startPanel.style.display = "block";
-        $hideField.style.opacity = 0;
-        readySquare = false;
-        gameState=false;
-        sessionStorage.gameState = false;
-        $timerLine.style.transition="none";
-        $timerLine.style.width=100+'%';
-        console.log("end")
-       }
-       one++;
-    }, 5000)*/
+    //see score
+    $score.style.display="block";
+
+    //clear 
+    readySquare = false;
+    gameState=false;
+    sessionStorage.gameState = false;
+    $timerLine.style.transition="none";
+    $timerLine.style.width=100+'%';
+}
+
+function closeScore(){
+    $score.style.display="none";
+    $startPanel.style.display = "block";
 }
 
 function endGameExit(){
@@ -235,6 +246,9 @@ function endGameExit(){
     clearField();
     clearInterval(interval)
     $startPanel.style.display = "block";
+    
+    closeScore();
+
     $hideField.style.opacity = 0;
     readySquare = false;
     gameState=false;

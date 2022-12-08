@@ -42,7 +42,7 @@ function getSizeSquare()
     //console.log(Math.floor(width/sizeS));
     //console.log(Math.floor(height/sizeS));
 
-    maxSizeSquare = sizeS*0.65;
+    maxSizeSquare = sizeS*0.60;
 
 
     var row, column;

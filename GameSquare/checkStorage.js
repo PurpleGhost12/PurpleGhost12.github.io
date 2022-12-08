@@ -18,6 +18,9 @@ var countSquare=10;
 
 function checkState()
 {
+    if (sessionStorage.oldStateSave != undefined){
+        currentState = sessionStorage.oldStateSave;
+    }
     if (sessionStorage.state === undefined)
     {
         sessionStorage.state = 'main-screen'
@@ -27,8 +30,8 @@ function checkState()
     else 
     {
         //console.log("Yes")
-        currentState = sessionStorage.state;
-        changeStates(currentState);
+         //= sessionStorage.state;
+        changeStates(sessionStorage.state);
         /*switch(sessionStorage.state)
         {
             case "main-screen":
@@ -132,6 +135,12 @@ function checkSettings()
 
     if (sessionStorage.gamemode !=undefined){
         gameMode = sessionStorage.gamemode;
+    }
+    if (sessionStorage.textGamemode != undefined){
+        $textGamemode.textContent = sessionStorage.textGamemode;
+    }
+    if (sessionStorage.textGamemodeBlack !=undefined){
+        $textGamemodeBlack.textContent = sessionStorage.textGamemodeBlack
     }
 }
 

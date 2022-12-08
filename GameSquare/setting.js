@@ -8,6 +8,10 @@ var $inputCountColors = document.getElementById("count-color");
 var $inputCountCeils = document.getElementById("count-ceils");
 var $inputCountSquare = document.getElementById("count-square");
 
+//text
+$textGamemode = document.getElementById("gamemode-text");
+$textGamemodeBlack = document.getElementById("gamemode-textBlack");
+
 //настройки игры
 var rotateAny = false;
 var rotate90 = false;
@@ -38,18 +42,24 @@ var $noMistakesMode = document.getElementById("noMistakesMode");
 $classicMode.addEventListener("click", function(){
   gameMode = "classic";
   sessionStorage.gamemode = gameMode;
+  $textGamemode.textContent = "КЛАССИЧЕСКИЙ"
+  sessionStorage.textGamemode = "КЛАССИЧЕСКИЙ";
   changeStates("choose-level");
 })
 
 $monotonMode.addEventListener("click", function(){
   gameMode = "monoton";
   sessionStorage.gamemode = gameMode;
+  $textGamemode.textContent = "МОНОТОН"
+  sessionStorage.textGamemode = "МОНОТОН";
   changeStates("choose-level");
 })
 
 $noMistakesMode.addEventListener("click", function(){
   gameMode = "noMistakes";
   sessionStorage.gamemode = gameMode;
+  $textGamemode.textContent = "БЕЗ ОШИБОК"
+  sessionStorage.textGamemode = "БЕЗ ОШИБОК";
   changeStates("choose-level");
 })
 

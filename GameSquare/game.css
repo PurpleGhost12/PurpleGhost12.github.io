@@ -48,8 +48,8 @@
 .square-true-end{
     box-shadow: 0 0 15px 8px greenyellow,
     0 0 3px 3px greenyellow;
-    scale: 1.2;
-    transition: scale 1s;
+    Transform:scale(1.2) rotate(0);
+    transition: scale 1s, 1s;
     position: relative;
     display:inline-block;
 }
@@ -110,15 +110,7 @@ h1.menu
     height: 50%;
     background-color: gainsboro;
 }
-/*first-second-menu*/
-.center-full-screen
-{
-    /*width: 1440px;*/
-    height: 85vh;
-    padding-top: 10vh;
-    margin: 0 auto;
-    position: relative;
-}
+
 
 .max-width
 {

@@ -100,6 +100,7 @@ function generateSquare(n) //создаем квадрат
     while (checkColors(colorListForCheck) === false)
     {
         colorListForCheck = generateColors(colorListForCheck);
+        console.log("bad1")
     }
     //allColorsUsing.push(colorListForCheck);
     //////////////
@@ -161,7 +162,7 @@ function doSquare()
     //var deleteS = $areaSquare.getElementsByClassName('square');
     //$areaSquare.removeChild(deleteS);
     arraySquareReady = new Array(countSquare);
-    allColorsUsing = [];
+    allColorsUsing = []
     
 
     selectColors();
@@ -206,14 +207,23 @@ function checkColors(check)
 {
     for (var i = 0; i<allColorsUsing.length; i++)
     {
-        console.log("check");
-        if(allColorsUsing[i] === check) 
+        //console.log("check");
+        //console.log(allColorsUsing[i])
+        //console.log(check)
+        var count=0;
+        for (var j =0; j<countCeils;j++){
+            for (var k=0; k <countCeils; k++){
+                if (allColorsUsing[i][j][k] === check[j][k]) count++;
+            }
+        }
+        if (count===countCeils*countCeils) {console.log("bad");return false;}
+        /*if(allColorsUsing[i] === check) 
         {
             console.log("bad");
             console.log(allColorsUsing[i])
             console.log(check)
             return false;
-        }
+        }*/
     }
     return true;
 }

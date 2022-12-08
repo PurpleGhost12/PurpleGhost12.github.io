@@ -56,7 +56,6 @@ html
 .hide-checkbox
 {
 	position: relative;
-	display: inline-block;
 }
 
 .choose-background{
@@ -67,6 +66,7 @@ html
 	height: 7vw;
 	width: 7vw;
 	margin: 0 0.5vw;
+	display: inline-block;
 }
 .fone
 {
@@ -136,7 +136,16 @@ html
     text-align: center;
     display: none;
 }
-
+/*first-second-menu*/
+.center-full-screen
+{
+    /*width: 1440px;*/
+    height: 88vh;
+    padding-top: 8vh;
+    margin: 0 auto;
+    position: relative;
+	top: 0;
+}
 /*all*/
 .menu-white-big
 {
@@ -169,6 +178,13 @@ html
     z-index: 6;
 
 }
+
+h2.gamemode{
+	color: white;
+}
+h2.gamemodeBlack{
+	color: black;
+}
 @media (orientation: portrait)
 {
     .menu-white-small{
@@ -180,7 +196,7 @@ html
 .back-to-main-everywhere
 {
     position: fixed;
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     top: 1vh;
     left: 1vh;
@@ -191,7 +207,7 @@ html
 .back-only-back
 {
     position: fixed;
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     top: 1vh;
     left: 10vh;
@@ -201,7 +217,7 @@ html
 }
 .settings-checkbox
 {
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     position: fixed;
     right: 1vh;
@@ -214,7 +230,7 @@ html
 .help-button
 {
     position: fixed;
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     top: 1vh;
     right: 10vh;
@@ -224,7 +240,7 @@ html
     padding: 0;
 }
 .set-check-icon {
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     border-radius: 2vh;
     position: fixed;
@@ -234,7 +250,7 @@ html
     background-color: chartreuse;
   }
   .set-help-icon {
-    height: 8vh;
+    height: 5vh;
     width: 8vh;
     border-radius: 2vh;
     position: fixed;
@@ -243,6 +259,7 @@ html
     z-index: 5;
     background-color: chartreuse;
   }
+
 
 
 @media (max-width: 1440px)/*1440 px max content width*/

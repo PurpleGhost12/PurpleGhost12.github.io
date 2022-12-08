@@ -21,7 +21,9 @@
             <div class = "hide-checkbox">
                 <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
             </div>
-            <div class = "menu-white-small hide" id = "help"></div>
+            <div class = "menu-white-small hide" id = "help">
+                Правила игры
+            </div>
 
             <div class = "hide-checkbox">
                 <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
@@ -81,7 +83,7 @@
 
             <!--Выбираем уровень-->
             <div id ="choose-level" class = "center-full-screen max-width">
-                <!--<h1 class = "menu">Выберите уровень</h1>-->
+                <h2 class = "gamemode" id = "gamemode-text"></h2>
                 <button class="button-level easy" id="level-easy">ЛЕГКО</button>
                 <button class="button-level medium" id="level-medium">СРЕДНЕ</button>
                 <button class="button-level hard" id="level-hard">СЛОЖНО</button>
@@ -89,8 +91,9 @@
             </div>
 
             <!--Создаем свой уровень-->
-            <div id ="create-level" class = "center-full-screen">
+            <div id ="create-level" class = "center-full-screen">              
                 <div class = "menu-white-small">
+                    <h2 class = "gamemodeBlack" id = "gamemode-textBlack"></h2>
                     <div>
                         <input type="checkbox" id="rotateAny"/>
                         <label for="rotateAny">Поворот любой</label>
@@ -138,6 +141,10 @@
                 
                 <div class = "game-area" id = "game-field">
                     <div class = "time-over" id = "time-over">time over</div>
+                    <div class = "menu-white-small hide" id = "score">
+                        <button class="button-level allbtn" id="close-score" onclick="closeScore()">ПРОДОЛЖИТЬ</button>
+                    </div>
+
                     <div class = "start-panel" id = "start-panel">
                         <div class = "start-panel-square" id = "square-animate"></div>
                         <button class="button-panel-start" id="start-game" onclick="startGame()">СТАРТ</button>
@@ -165,7 +172,7 @@
             </div>
 
     <!--</div>-->
-    <script src = "main.js"></script>
+    <script src ="main.js"></script>
     <script src="game.js"></script>
     <script src="setting.js"></script>
     <script src="resize.js"></script>

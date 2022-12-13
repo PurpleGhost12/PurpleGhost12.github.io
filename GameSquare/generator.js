@@ -48,7 +48,7 @@ function selectColors() //отбираем цвета
             currentColor[i] = "rgb("+(startColor+i*diffMonoton)+','+(startColor+i*diffMonoton)+','+(startColor+i*diffMonoton)+')';
         }
     }
-    if (gameMode = "ownColors")
+    if (gameMode === "ownColors")
     {
         currentColor = addColorsP.slice(0);
         while(currentColor.length > colorsCount)

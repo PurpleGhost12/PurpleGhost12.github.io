@@ -170,11 +170,6 @@ $inputCountSquare.addEventListener('change', function() {
       $ownColors.style.display="none";
 
     }
-    if (name === "monoton"){
-      gameMode = "monoton"
-      sessionStorage.gamemode = "monoton"
-      $ownColors.style.display="none";
-    }
     if (name === "myColors"){
       //$randomColorsChoose.style.display="none";
       $ownColors.style.display="block";

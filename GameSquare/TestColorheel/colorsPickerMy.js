@@ -29,7 +29,7 @@ $hueBarContainer.addEventListener("mousedown", mousedownHueBar);
 $hueBarContainer.addEventListener("mouseup", mouseupHueBar);
 $hueBarContainer.addEventListener("mousemove", mousemoveHueBar);
 //color now
-var currentColor = "rgba(255,0,0,1)";
+var currentColorPicker = "rgba(255,0,0,1)";
 //see color
 const $seeColor = document.getElementById("see-color");
 
@@ -85,8 +85,8 @@ function fillHueGradient(){
 }
 
 function fillColorBlockGradient() {
-   colorBlockContext.fillStyle = currentColor;
-   //console.log(currentColor)
+   colorBlockContext.fillStyle = currentColorPicker;
+   //console.log(currentColorPicker)
    colorBlockContext.fillRect(0, 0, colorBlockWidth, colorBlockHeight);
 
    let grdWhite = hueBarContext.createLinearGradient(0, 0, colorBlockWidth, 0);
@@ -101,7 +101,7 @@ function fillColorBlockGradient() {
    colorBlockContext.fillStyle = grdBlack;
    colorBlockContext.fillRect(0, 0, colorBlockWidth, colorBlockHeight);
 
-   $seeColor.style.backgroundColor = currentColor;
+   $seeColor.style.backgroundColor = currentColorPicker;
    //$seeColor.textContent = currentColor;
 }
 
@@ -205,9 +205,9 @@ function changeColorVariable(e) {
    }
    console.log(colorBlockState.x)
    let imageData = colorBlockContext.getImageData(colorBlockState.x,colorBlockState.y, 1,1).data;
-   currentColor ="rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
-   $seeColor.style.backgroundColor = currentColor;
-   //console.log(currentColor)
+   currentColorPicker ="rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
+   $seeColor.style.backgroundColor = currentColorPicker;
+   //console.log(currentColorPicker)
    //$seeColor.textContent = currentColor;
 }
 
@@ -219,7 +219,7 @@ function clickOnHueBar(e) {
    colorHueState.y = offsetY;
 
    let imageData = hueBarContext.getImageData(colorHueState.x, colorHueState.y, 1, 1).data;
-    currentColor = "rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
+   currentColorPicker = "rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
 
     //console.log(currentColor +"do")
    fillColorBlockGradient();
@@ -227,6 +227,6 @@ function clickOnHueBar(e) {
    changeColorVariable();
 
    $seeColor.style.backgroundColor = currentColor;
-   console.log(currentColor+"posle")
+   console.log(currentColorPicker+"posle")
    //$seeColor.textContent = currentColor;
 }

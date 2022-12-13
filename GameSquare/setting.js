@@ -122,6 +122,7 @@ $inputCountColors.addEventListener('change', function() {
         $inputCountColors.value = $inputCountColors.max;
     }
     sessionStorage.colorsCount = colorsCount;
+    setButtonTextSettings();
   });
 
 $inputCountCeils.addEventListener('change', function() {

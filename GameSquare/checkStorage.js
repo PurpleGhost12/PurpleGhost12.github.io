@@ -142,6 +142,33 @@ function checkSettings()
     if (sessionStorage.textGamemodeBlack !=undefined){
         $textGamemodeBlack.textContent = sessionStorage.textGamemodeBlack
     }
+
+    //colors
+    if (sessionStorage.colorWinName !=undefined){
+        changeColorWinInput(sessionStorage.colorWinName)
+        $chooseColorMode.value = sessionStorage.colorWinName;
+        $chooseColorMode.dispatchEvent(new Event('change'));
+
+    }
+    else {
+        changeColorWinInput("random")
+    }
+
+
+}
+
+function checkPalleteArray(){
+    if (sessionStorage.arrayOwnColors !=undefined)
+    {
+        console.log("one one")
+        addColorsP = JSON.parse(sessionStorage.arrayOwnColors);
+        recoverPallete();
+        //sessionStorage.arrayOwnColors = JSON.stringify(addColorsP);
+    }
+}
+function stringToBool(str){
+    if (str === "true") return true;
+    else return false;
 }
 
 function checkUserPref(){
@@ -163,6 +190,8 @@ function checkUserPref(){
 checkSettings();
 checkState();
 checkUserPref();
+checkPalleteArray()
+
 
 
 function saveAllSettings()

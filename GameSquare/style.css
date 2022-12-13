@@ -4,6 +4,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0;
     /*font: inherit;*/
     vertical-align: baseline;
+    
 	
 }
 
@@ -12,7 +13,8 @@ body
 {
 	background: transparent;
     color: #000;
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif;*/
+    font-family: 'Comfortaa', cursive;
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -26,9 +28,12 @@ html
     padding:0;
     margin:0;
 	background-color: #ffffff;
+    font-family: 'Comfortaa', cursive;
 	font-size: 16px;
 }
-
+button{
+    font-family: 'Comfortaa', cursive;
+}
 .background{
 	
 	height: 100%;
@@ -167,6 +172,7 @@ html
 {
     height: 80vh;
     width: 50vw;
+    max-width: 1200px;
     position: fixed;
     left: 25vw;
     top:10vh;
@@ -178,12 +184,22 @@ html
 }
 .menu-white-small.hide
 {
-
     display: none;
     z-index: 6;
-
+}
+.menu-white-small.settings{
+    max-height: 80vh;
+    height: auto;
 }
 
+.text-left{
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+.padding-settings{
+    padding: 10px 10% 0px 10%;
+}
 h2.gamemode{
 	color: white;
 	font-size: 24px;
@@ -200,14 +216,39 @@ h2.gamemodeBlack{
 h2.settings{
 	text-align: center;
 	font-size: 24px;
-	height: 30px;
-	line-height: 30px;
+    padding: 10px;
+}
+h3.settings{
+	text-align: center;
+	font-size: 18.7px;
+    padding: 10px;
 }
 @media (orientation: portrait)
 {
     .menu-white-small{
         width: 80vw;
         left:10vw;
+    }
+    .text-left{
+        width: 100%;
+    }
+    .padding-settings{
+        padding: 10px 0% 0px 0%;
+    }
+}
+@media (max-width:900px){
+    .menu-white-small{
+        width: 96%;
+        height: 87vh;
+        left:2%;
+        padding: 5px;
+        top:8vh;
+    }
+}
+@media (max-height:700px){
+    .menu-white-small{
+        height: 87vh;
+        top:8vh;
     }
 }
 /*everywhere*/
@@ -221,6 +262,7 @@ h2.settings{
     border-radius: 2vh;
     z-index: 15;
     display: none;
+    border:none;
 }
 .back-only-back
 {
@@ -232,6 +274,7 @@ h2.settings{
     border-radius: 2vh;
     z-index: 15;
     display: none; 
+    border:none;
 }
 .settings-checkbox
 {
@@ -245,6 +288,11 @@ h2.settings{
     margin: 0;
     padding: 0;
 }
+.settings-checkbox:hover ~ .set-check-icon
+{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
 .help-button
 {
     position: fixed;
@@ -257,6 +305,11 @@ h2.settings{
     margin: 0;
     padding: 0;
 }
+.help-button:hover ~ .set-help-icon
+{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
 .set-check-icon {
     height: 5vh;
     width: 8vh;
@@ -265,7 +318,7 @@ h2.settings{
     right: 1vh;
     top:1vh;
     z-index: 5;
-    background-color: chartreuse;
+    background-color: white;
   }
   .set-help-icon {
     height: 5vh;
@@ -275,7 +328,7 @@ h2.settings{
     right: 10vh;
     top:1vh;
     z-index: 5;
-    background-color: chartreuse;
+    background-color: white;
   }
 
 

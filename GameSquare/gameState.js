@@ -207,7 +207,7 @@ $buttonHandle.addEventListener('click', function() {
                     if (doWhat === "block")
                      {
                       if (oldStateSave === "choose-level") preState="choose-level";
-                      else preState="choose-gamemode";     
+                      else preState="create-level";     
                       createPanel();
                      }
                     else 
@@ -231,5 +231,6 @@ function toLevel()
 }
   function toGame()
   {
+    console.log("game?")
     changeStates('do-game');
   }

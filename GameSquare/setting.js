@@ -29,7 +29,8 @@ $inputCountColors.value = colorsCount;
 $inputCountCeils.value = countCeils;
 $inputCountSquare.value = countSquare;
 
-var gameMode = "classic"; //classic, monoton, noMistakes
+var gameMode = "classic"; //classic, monoton, noMistakes, ownColors
+var myPallete = false;
 var diffMonoton=15;
 
 
@@ -67,7 +68,7 @@ $noMistakesMode.addEventListener("click", function(){
 
 //(индивидуальные настройки)
 //prefer check EVENTS 
-var $checkRotateAny = document.getElementById("rotateAny");
+const $checkRotateAny = document.getElementById("rotateAny");
 $checkRotateAny.addEventListener('change', function() {
   if (this.checked) {
     rotateAny=true;
@@ -82,7 +83,7 @@ $checkRotateAny.addEventListener('change', function() {
   //console.log(sessionStorage.rotateAny);
 });
 
-var $checkAnySize = document.getElementById("anySize");
+const $checkAnySize = document.getElementById("anySize");
 $checkAnySize.addEventListener('change', function() {
   if (this.checked) {
     anySize=true;
@@ -92,7 +93,7 @@ $checkAnySize.addEventListener('change', function() {
   sessionStorage.anySize = anySize;
 });
 
-var $checkRotate90 = document.getElementById("rotate90");
+const $checkRotate90 = document.getElementById("rotate90");
 $checkRotate90.addEventListener('change', function() {
   if (this.checked) {
     rotate90=true;
@@ -150,3 +151,36 @@ $inputCountSquare.addEventListener('change', function() {
   });
 
   
+  //CHOOSE COLORE RANDOM OR MY OWN
+  const $chooseColorMode = document.getElementById("select-color-mode");
+  const $randomColorsChoose = document.getElementById("random-colors")
+  const $ownColors = document.getElementById("create-colors")
+
+  $chooseColorMode.addEventListener("change", function(e){
+    changeColorWinInput(e.target.value)
+  })
+
+  function changeColorWinInput(name){
+    sessionStorage.colorWinName = name
+    setButtonTextSettings()
+    console.log("i");
+    if (name === "random") {
+      gameMode = "classic"
+      sessionStorage.gamemode = "classic"
+      $ownColors.style.display="none";
+
+    }
+    if (name === "monoton"){
+      gameMode = "monoton"
+      sessionStorage.gamemode = "monoton"
+      $ownColors.style.display="none";
+    }
+    if (name === "myColors"){
+      //$randomColorsChoose.style.display="none";
+      $ownColors.style.display="block";
+      gameMode = "ownColors"
+      sessionStorage.gamemode = "ownColors"
+      createColorPicker();
+    }
+    sessionStorage.myPallete = myPallete;
+  }

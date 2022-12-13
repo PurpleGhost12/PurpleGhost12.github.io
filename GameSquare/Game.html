@@ -8,54 +8,68 @@
 
     <link rel="stylesheet" type="text/css" href="game.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="TestColorheel/colorPicker.css">
 
+    <!-- fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 </head>
+<style> @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap'); </style>
 <body >
     <!--<div class = "content-area">-->
         <!--подумать при первой игре генерить окно всплывающее с вопросом впервый раз?, есл да, то открыть правила игры-->
         <div class = "background" id = "background"></div>
         <!--Меню которое везде-->
-            <button class="back-to-main-everywhere" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
-            <button class="back-only-back" id = "back-only-back" onclick="changeStates(preState)">back only</button>
+            <button class="back-to-main-everywhere allbtn" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
+            <button class="back-only-back allbtn" id = "back-only-back" onclick="changeStates(preState)">back only</button>
 
             <div class = "hide-checkbox">
-                <input type = "checkbox" class = "help-button" id = "setOpenHelp"><div class = "set-check-icon"></div>
+                <input type = "checkbox" class = "help-button" id = "setOpenHelp">
+                <label for = "setOpenHelp"></label>
+                <div class = "set-help-icon"></div>
             </div>
             <div class = "menu-white-small hide" id = "help">
                 Правила игры
             </div>
 
             <div class = "hide-checkbox">
-                <input type = "checkbox" class = "settings-checkbox" id = "setOpen"><div class = "set-help-icon"></div>
+                <input type = "checkbox" class = "settings-checkbox" id = "setOpen">
+                <label for = "setOpen"></label>
+                <div class = "set-check-icon"></div>
             </div>
 
             <div class = "menu-white-small hide" id = "main-settings">
                 <h2 class = "settings">НАСТРОЙКИ</h2>
-                <h3>ФОН</h3>
+                <h3 class = "settings">ФОН</h3>
                 <div class = "choose-background">
-                    <div class = "hide-checkbox size-ch">
-                        
+                    <div class = "hide-checkbox size-ch">           
                         <input type="checkbox" id="mango" class ="fone" onclick="changeBackground('mango', this)"/>
+                        <label for = "mango"></label>
                         <div class = 'preview-back mango'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
                         <input type="checkbox" id="sunrise" class ="fone" onclick="changeBackground('sunrise', this)"/>
+                        <label for = "sunrise"></label>
                         <div class = 'preview-back sunrise'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
                         <input type="checkbox" id="sea" class ="fone" onclick="changeBackground('sea', this)"/>
+                        <label for = "sea"></label>
                         <div class = 'preview-back sea'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
                         <input type="checkbox" id="bubblegum" class ="fone" onclick="changeBackground('bubblegum', this)"/>
+                        <label for = "bubblegum"></label>
                         <div class = 'preview-back bubblegum'></div>
                     </div>
     
                     <div class = "hide-checkbox size-ch">
                         <input type="checkbox" id="magic" class ="fone" onclick="changeBackground('magic', this)"/>
+                        <label for = "magic"></label>
                         <div class = 'preview-back magic'></div>
                     </div>
                 </div>
@@ -99,34 +113,72 @@
             <div id ="create-level" class = "center-full-screen">              
                 <div class = "menu-white-small">
                     <h2 class = "gamemodeBlack" id = "gamemode-textBlack"></h2>
+                    <div class  = "text-left">
+                        <div class = "padding-settings">
+                            <input type="checkbox" id="rotateAny"/>
+                            <label for="rotateAny">Поворот любой</label>
+                        </div>
+                        <div class = "padding-settings">
+                            <input type="checkbox" id="anySize"/>
+                            <label for="anySize">Разный размер</label>
+                        </div>
+                        <div class = "padding-settings">
+                            <input type="checkbox" id="rotate90"/>
+                            <label for="rotate90">Поворот 90 градусов</label>
+                        </div>
+                        <div class = "padding-settings">
+                            <input type="number" id="count-ceils" min="2" max ="7" step="1" value="3">
+                            <label for="count-ceils">Количество клеток n*n</label>
+                        </div>
+                        <div class = "padding-settings">
+                            <input type="number" id="count-square" min="2" max ="100" step="1" value="3">
+                            <label for="count-square">Количество квадратов</label>
+                        </div>
+                        <!--<button class="button-start" id = "create-pallete" onclick="toGame()">Создать свою палитру</button>-->
+                        <div class = "padding-settings">                   
+                            <input type="number" id="count-color" min="2" max ="8" step="1" value="3">
+                            <label for="count-color">Количество цветов в кубике</label>
+                        </div>
+                    </div>
+
+
                     <div>
-                        <input type="checkbox" id="rotateAny"/>
-                        <label for="rotateAny">Поворот любой</label>
+                        <div class = 'padding-settings'>
+                            <label for="select-color-mode">ПАЛИТРА:</label>
+                            <select name="select-color-mode" id="select-color-mode">
+                               <option value="random">РАНДОМНЫЕ ЦВЕТА</option>
+                               <option value="monoton">МОНОТОН</option>
+                               <option value="myColors">СВОЯ ПАЛИТРА</option>
+                            </select>
+                        </div>
+       
+                        <div id = "create-colors">
+                            <!--<h3 class = "settings">СВОЯ ПАЛИТРА</h3>-->
+                            <div class = "pallete-choose" id = "pallete-choose">
+
+
+                                <div class = "delete-color" id = "delete-color"></div>
+                            </div>
+
+                            <div id="color-picker-container"> 
+                                <div id = "point-conteiner">
+                                   <div class = "point-color" id = "point-color"></div>
+                                   <canvas id="color-block"></canvas>
+                                </div>
+                                <div id = "line-point-conteiner">
+                                   <div class = "line-point-color" id = "line-point-color"></div>
+                                   <canvas id="hue-bar"></canvas>
+                                </div>
+                                <button class = "seeColor" id = "see-color">ДОБАВИТЬ ЦВЕТ</button>
+                             </div>
+                        </div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="anySize"/>
-                        <label for="anySize">Разный размер</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="rotate90"/>
-                        <label for="rotate90">Поворот 90 градусов</label>
-                    </div>
-                    <div class="input">                   
-                        <input type="number" id="count-color" min="2" max ="8" step="1" value="3">
-                        <label for="count-color">Количетсво цветов</label>
-                    </div>
-                    <div class="input">
-                        <input type="number" id="count-ceils" min="2" max ="7" step="1" value="3">
-                        <label for="count-ceils">Количетсво клеток n*n</label>
-                    </div>
-                    <div class="input">
-                        <input type="number" id="count-square" min="2" max ="100" step="1" value="3">
-                        <label for="count-square">Количетсво квадратов</label>
-                    </div>
-                    <button class="button-start" id = "create-pallete" onclick="toGame()">Создать свою палитру</button>
-                    <button class="button-start" id = "choose-settings" onclick="toGame()">Продолжить</button>
-    
-                    <div class = "menu-white-small hide" id = "pallete">
+
+        
+                     
+                     <button class="button-start" id = "choose-settings" onclick="checkInputColors()">Продолжить</button>
+
+                    <!--<div class = "menu-white-small hide" id = "pallete">
                         <h2>Выберите цвета</h2>
                         <div class = "pallete">                     
                             <div class = "pallete-new"></div>
@@ -134,10 +186,10 @@
                                 <div class = "pallete-ceil"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
+                    </div>-->
 
+    
+                </div>
             </div>
 
             <!--Играем!-->
@@ -183,6 +235,10 @@
     <script src="resize.js"></script>
     <script src="generator.js"></script>
     <script src="gameState.js"></script>
+
+    
+    <script src="TestColorheel/colorsPickerMy.js"></script>
+    <script src = "createPallete.js"></script>
 
     <script src="startPanel-animate.js"></script>
 

@@ -26,6 +26,9 @@ function createPanel()
                     var bw = getRandom(0,230);
                     sections[i].style.backgroundColor = 'rgb('+bw+','+bw+','+bw+')';
                 }
+                if (gameMode === "ownColors"){
+                    sections[i].style.backgroundColor = addColorsP[getRandom(0,colors.length)];
+                }
                 else sections[i].style.backgroundColor = colors[getRandom(0,colors.length)];
             }
             

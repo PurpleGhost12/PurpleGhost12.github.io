@@ -1,13 +1,13 @@
 //канвас для picker
 const colorBlock = document.getElementById("color-block");
 const colorBlockContext = colorBlock.getContext("2d", {willReadFrequently:true});
-const colorBlockWidth = colorBlock.scrollWidth
-const colorBlockHeight = colorBlock.scrollHeight;
+var colorBlockWidth = colorBlock.scrollWidth
+var colorBlockHeight = colorBlock.scrollHeight;
 
 const hueBar = document.getElementById("hue-bar");
 const hueBarContext = hueBar.getContext("2d", {willReadFrequently:true});
-const hueBarWidth = hueBar.scrollWidth
-const hueBarHeight = hueBar.scrollHeight;
+var hueBarWidth = hueBar.scrollWidth
+var hueBarHeight = hueBar.scrollHeight;
 
 var dragPoint=false;
 var dragLine=false;
@@ -40,19 +40,26 @@ window.addEventListener("resize", function(){
 })
 
 function resizeCanvas(){
-   let displayWidth  = hueBar.clientWidth;
-   let displayHeight = hueBar.clientHeight;
+   var displayWidth  = hueBar.clientWidth;
+   var displayHeight = hueBar.clientHeight;
+   //console.log(displayWidth, displayHeight)
    hueBar.width = displayWidth;
    hueBar.height = displayHeight;
+   hueBarWidth = displayWidth;
+   hueBarHeight = displayHeight;
+
    displayWidth  = colorBlock.clientWidth;
    displayHeight = colorBlock.clientHeight;
+   //console.log(displayWidth, displayHeight)
    colorBlock.width = displayWidth;
    colorBlock.height = displayHeight;
+   colorBlockWidth = displayWidth;
+   colorBlockHeight = displayHeight;
 }
 //point coords
 const colorBlockState = {
-   x: 0,
-   y: 0
+   x: 10,
+   y: 10
 };
 const colorHueState = {
    x: 0,
@@ -71,14 +78,15 @@ function fillHueGradient(){
    grd1.addColorStop(1, "rgba(255, 0, 0, 1)");
    hueBarContext.fillStyle = grd1;
    hueBarContext.fill();
-   console.log(hueBarWidth, hueBarHeight)
-   console.log(colorBlockHeight, colorBlockWidth)
-   console.log(hueBar.width,hueBar.height)
+   ////console.log(hueBarWidth, hueBarHeight)
+   //console.log(colorBlockHeight, colorBlockWidth)
+   //console.log(hueBar.width,hueBar.height)
    
 }
 
 function fillColorBlockGradient() {
    colorBlockContext.fillStyle = currentColor;
+   //console.log(currentColor)
    colorBlockContext.fillRect(0, 0, colorBlockWidth, colorBlockHeight);
 
    let grdWhite = hueBarContext.createLinearGradient(0, 0, colorBlockWidth, 0);
@@ -94,14 +102,22 @@ function fillColorBlockGradient() {
    colorBlockContext.fillRect(0, 0, colorBlockWidth, colorBlockHeight);
 
    $seeColor.style.backgroundColor = currentColor;
-   $seeColor.textContent = currentColor;
+   //$seeColor.textContent = currentColor;
 }
 
-resizeCanvas();
+
+
+function createColorPicker(){
+   resizeCanvas();
+
 fillHueGradient()
 fillColorBlockGradient()
+colorBlockState.x=120;
+colorBlockState.y=0;
 
+}
 
+//createColorPicker()
 /*colorBlock.addEventListener("mouseout", mouseoutColorBlock, false); //! testing
 colorBlock.addEventListener("mousedown", mousedownColorBlock, false);
 colorBlock.addEventListener("mouseup", mouseupColorBlock, true);
@@ -139,7 +155,7 @@ function mousemoveColorBlock(event)
       changeColorVariable(event);
       setPointCoords(event)
    }
-   console.log("move", dragPoint);
+   //console.log("move", dragPoint);
    //console.log(event.offsetX,event.offsetY)
 }
 
@@ -174,7 +190,7 @@ function setLineCoords(e){
    var rect = e.currentTarget.getBoundingClientRect();
    var offsetY = e.clientY - rect.top;
    $pointLineCursor.style.top = offsetY-$pointLineCursor.offsetHeight/2 + 'px';
-   console.log(offsetY);
+   //console.log(offsetY);
 }
 
 
@@ -187,12 +203,12 @@ function changeColorVariable(e) {
       colorBlockState.x = offsetX;
       colorBlockState.y = offsetY;
    }
-
+   console.log(colorBlockState.x)
    let imageData = colorBlockContext.getImageData(colorBlockState.x,colorBlockState.y, 1,1).data;
    currentColor ="rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
-   // elementToChangeColor.style.backgroundColor = colorPickerState.rgbaColor;
    $seeColor.style.backgroundColor = currentColor;
-   $seeColor.textContent = currentColor;
+   //console.log(currentColor)
+   //$seeColor.textContent = currentColor;
 }
 
 function clickOnHueBar(e) {
@@ -205,9 +221,12 @@ function clickOnHueBar(e) {
    let imageData = hueBarContext.getImageData(colorHueState.x, colorHueState.y, 1, 1).data;
     currentColor = "rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
 
+    //console.log(currentColor +"do")
    fillColorBlockGradient();
+   //console.log(currentColor+"sered")
    changeColorVariable();
 
    $seeColor.style.backgroundColor = currentColor;
-   $seeColor.textContent = currentColor;
+   console.log(currentColor+"posle")
+   //$seeColor.textContent = currentColor;
 }

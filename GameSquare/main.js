@@ -1,4 +1,7 @@
 
+//const soundPopBTN = new Audio("GameSquare/music/pop.waw");
+//const soundWrong = new Audio("GameSquare/music/wrong.waw");
+
 const $checkBoxMain = document.getElementById("setOpen");
 const $mainSet= document.getElementById("main-settings");
 $checkBoxMain.addEventListener('change', function(){

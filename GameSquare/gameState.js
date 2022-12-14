@@ -197,6 +197,7 @@ $buttonHandle.addEventListener('click', function() {
                     $createLevel.style.display = doWhat;
                     if (doWhat === "block") {
                       checkSettings();
+                      changeGamemodePallete()
                       preState="choose-gamemode";
                     }
                     break;

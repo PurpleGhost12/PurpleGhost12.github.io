@@ -5,10 +5,13 @@ const $timer = document.querySelector('#time');
 const $hideField = document.getElementById("hide-field");
 
 const $timeOver = document.getElementById("time-over");
-const $score = document.getElementById("score");
+
 //var $closeScore = document.getElementById("close-score");
 
 //var $doGame = document.getElementById("do-game");
+
+//records/score output
+const $score = document.getElementById("score");
 
 const $timerLine = document.getElementById("timerLine");
 
@@ -198,6 +201,9 @@ function endGame()//Сделать конец игры покрасивее, т�
     let end;
     clearInterval(end);
     clearInterval(interval)
+    if (gameMode === "noMistakes") $timeOver.textContent = "НЕВЕРНО!"
+    else $timeOver.textContent = "ВРЕМЯ ВЫШЛО!"
+
     $timeOver.style.transform='scale(1)';
     setTimeout(function(){
         $timeOver.style.transform='scale(0)';

@@ -170,16 +170,21 @@ h1.menu
 
 .time-over
 {
-    background-color: rgba(255, 255, 255, 0.462);
-    height: 100%;
-    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    line-height: 200px;
+    width: 50%;
     position: absolute;
-    top:0;
-    left:0;
+    top: calc((100% - 200px)/2);
+    left:25%;
     transform-origin: center;
     z-index: 10;
     transform:scale(0);
     transition: 0.5s;
+    box-shadow: 0 0 100vh 100vh rgba(50, 50, 50, 0.5);
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 30px;
 }
 @media (orientation:portrait)
 {
@@ -194,6 +199,11 @@ h1.menu
     .find-block
     {
         height: 20%;
+    }
+    .time-over
+    {
+        width: 90%;
+        left: 5%;
     }
 }
 .timer-area
@@ -341,6 +351,14 @@ p.big
     margin: 0 auto;
 }
 
+.button-nextST{
+    border-radius: 15px;
+    border:3px solid black;
+    padding: 10px;
+    margin: 15px auto;
+    background-color: white;
+}
+
 /*COLORS WINDOW*/
 #random-colors,#create-colors{
     display: none;
@@ -374,4 +392,11 @@ p.big
     top:0;
     background-color: red;
     border-radius: 5px;
+}
+
+
+/*END*/
+#score-out{
+    font-size: 60px;
+    color: rgb(209, 77, 77);
 }

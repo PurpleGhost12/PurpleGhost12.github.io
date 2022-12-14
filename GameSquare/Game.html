@@ -143,13 +143,16 @@
 
 
                     <div>
-                        <div class = 'padding-settings'>
-                            <label for="select-color-mode">ПАЛИТРА:</label>
-                            <select name="select-color-mode" id="select-color-mode">
-                               <option value="random">РАНДОМНЫЕ ЦВЕТА</option>
-                               <option value="myColors">СВОЯ ПАЛИТРА</option>
-                            </select>
+                        <div class = "text-left">
+                            <div class = 'padding-settings'>
+                                <label for="select-color-mode">ПАЛИТРА:</label>
+                                <select name="select-color-mode" id="select-color-mode">
+                                   <option value="random">РАНДОМНЫЕ ЦВЕТА</option>
+                                   <option value="myColors">СВОЯ ПАЛИТРА</option>
+                                </select>
+                            </div>
                         </div>
+     
        
                         <div id = "create-colors">
                             <!--<h3 class = "settings">СВОЯ ПАЛИТРА</h3>-->
@@ -175,17 +178,7 @@
 
         
                      
-                     <button class="button-start" id = "choose-settings" onclick="checkInputColors()">Продолжить</button>
-
-                    <!--<div class = "menu-white-small hide" id = "pallete">
-                        <h2>Выберите цвета</h2>
-                        <div class = "pallete">                     
-                            <div class = "pallete-new"></div>
-                            <div class = "pallete-choose">
-                                <div class = "pallete-ceil"></div>
-                            </div>
-                        </div>
-                    </div>-->
+                     <button class="button-nextST allbtn" id = "choose-settings" onclick="checkInputColors()">Продолжить</button>
 
     
                 </div>
@@ -193,11 +186,18 @@
 
             <!--Играем!-->
             <div id ="do-game" class = "center-full-screen max-width">
-                
-                
+                           
                 <div class = "game-area" id = "game-field">
+
                     <div class = "time-over" id = "time-over">time over</div>
+
                     <div class = "menu-white-small hide" id = "score">
+                        <p>РЕЖИМ ИГРЫ:<span>0</span></p>
+                        <p>ИГРОК<span>0</span></p>
+                        <p class = "padding-settings"><span id ="score-out">000</span></p>
+                        <p class = "score text-left padding-settings">РЕКОРД ИГРОКА:<span id ="record-out">0</span></p>
+                        <p class = "score text-left padding-settings">ЛУЧШИЙ РЕКОРД:<span id ="record-out">0</span> <span id ="">ИГРОК</span></p>
+                        <p class = "score text-left padding-settings">ОШИБКИ:<span id ="mistakes-out">0</span></p>
                         <button class="button-level allbtn" id="close-score" onclick="closeScore()">ПРОДОЛЖИТЬ</button>
                     </div>
 

@@ -130,23 +130,26 @@ $hueBarContainer.addEventListener("mousemove", mousemoveHueBar);
 
 function mousedownHueBar(event){
    dragLine=true;
-   clickOnHueBar(event);
    setLineCoords(event)
+   clickOnHueBar(event);
+   
 }
 function mouseupHueBar(){
    dragLine=false;
 }
 function mousemoveHueBar(event){
    if (dragLine){
-      clickOnHueBar(event)
       setLineCoords(event)
+      clickOnHueBar(event)
+      
    }
 }
 
 function mousedownColorBlock(event){
    dragPoint = true;
-   changeColorVariable(event);
    setPointCoords(event)
+   changeColorVariable(event);
+   
 }
 
 function mousemoveColorBlock(event)
@@ -181,8 +184,15 @@ function setPointCoords(e)
    var rect = e.currentTarget.getBoundingClientRect();
    var offsetX = e.clientX - rect.left;
    var offsetY = e.clientY - rect.top;
+
    $pointCursor.style.left = offsetX-$pointCursor.offsetWidth/2+ 'px';
    $pointCursor.style.top = offsetY-$pointCursor.offsetHeight/2 + 'px';
+
+   if (e.clientX <=rect.left) $pointCursor.style.left = 0;
+   if (e.clientX >=rect.right) $pointCursor.style.left = '135px'
+
+   if (e.clientY <=rect.top) $pointCursor.style.top = 0;
+   if (e.clientY >=rect.bottom) $pointCursor.style.top = '105px';
    
 }
 
@@ -203,7 +213,7 @@ function changeColorVariable(e) {
       colorBlockState.x = offsetX;
       colorBlockState.y = offsetY;
    }
-   console.log(colorBlockState.x)
+   //console.log(colorBlockState.x)
    let imageData = colorBlockContext.getImageData(colorBlockState.x,colorBlockState.y, 1,1).data;
    currentColorPicker ="rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";
    $seeColor.style.backgroundColor = currentColorPicker;
@@ -215,8 +225,9 @@ function clickOnHueBar(e) {
    var rect = e.currentTarget.getBoundingClientRect();
    var offsetX = e.clientX - rect.left;
    var offsetY = e.clientY - rect.top;
-   colorHueState.x = offsetX;
+   colorHueState.x = 15;
    colorHueState.y = offsetY;
+   //console.log(offsetX)
 
    let imageData = hueBarContext.getImageData(colorHueState.x, colorHueState.y, 1, 1).data;
    currentColorPicker = "rgba(" + imageData[0] + "," + imageData[1] + "," + imageData[2] + ",1)";

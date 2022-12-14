@@ -48,7 +48,6 @@ function clearPallete(){
     let child = $pallete.children;
     console.log(child.length)
     console.log(child)
-    let len =child.length;
     for (var i=0; i< child.length; i++)
     {
         if (child[i].className === 'ceil-color') 
@@ -97,4 +96,10 @@ function recoverPallete(){
         $pallete.appendChild(ceil)
     }
     setButtonTextSettings();
+}
+
+function changeGamemodePallete(){
+    if ($chooseColorMode.value === "myColors") gameMode="ownColors"
+    else gameMode = "classic"
+    sessionStorage.gamemode = gameMode;
 }

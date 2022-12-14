@@ -166,17 +166,24 @@ $inputCountSquare.addEventListener('change', function() {
     setButtonTextSettings()
     console.log("i");
     if (name === "random") {
-      gameMode = "classic"
-      sessionStorage.gamemode = "classic"
+
       $ownColors.style.display="none";
+      if (currentState === "create-level"){
+
+        gameMode = "classic"
+        sessionStorage.gamemode = "classic"
+      }
 
     }
     if (name === "myColors"){
       //$randomColorsChoose.style.display="none";
       $ownColors.style.display="block";
-      gameMode = "ownColors"
-      sessionStorage.gamemode = "ownColors"
+      
+      if (currentState === "create-level"){
+        gameMode = "ownColors"
+        sessionStorage.gamemode = "ownColors"
+      } 
       createColorPicker();
     }
-    sessionStorage.myPallete = myPallete;
+    //sessionStorage.myPallete = myPallete;
   }

@@ -170,6 +170,19 @@ button{
 
 .menu-white-small
 {
+    min-height: 80vh;
+    width: 50vw;
+    max-width: 1200px;
+    position: relative;
+    margin: 1vh auto;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+.menu-white-small.hide
+{
     height: 80vh;
     width: 50vw;
     max-width: 1200px;
@@ -181,11 +194,9 @@ button{
     padding: 15px;
     box-sizing: border-box;
 	overflow: auto;
-}
-.menu-white-small.hide
-{
     display: none;
-    z-index: 6;
+    z-index: 100;
+    box-shadow: 0 0 100vh 100vh rgba(31, 30, 30, 0.627);
 }
 .menu-white-small.settings{
     max-height: 80vh;
@@ -227,34 +238,39 @@ h3.settings{
 {
     .menu-white-small{
         width: 80vw;
-        left:10vw;
+    }
+    .menu-white-small.hide{
+        width: 90vw;
+        left: 5vw;
     }
     .text-left{
         width: 100%;
     }
     .padding-settings{
-        padding: 10px 0% 0px 0%;
+        padding: 20px 0% 0px 0%;
     }
 }
 @media (max-width:900px){
     .menu-white-small{
         width: 96%;
-        height: 87vh;
-        left:2%;
-        padding: 5px;
-        top:8vh;
+        padding: 10px;
     }
-}
+    .menu-white-small.hide{
+        width: 90vw;
+        left: 5vw;
+    }
+}/*
 @media (max-height:700px){
     .menu-white-small{
-        height: 87vh;
-        top:8vh;
+    height: 87vh;
     }
-}
+}*/
+
 /*everywhere*/
 .back-to-main-everywhere
 {
     position: fixed;
+    background-color: white;
     height: 5vh;
     width: 8vh;
     top: 1vh;
@@ -266,6 +282,7 @@ h3.settings{
 }
 .back-only-back
 {
+    background-color: white;
     position: fixed;
     height: 5vh;
     width: 8vh;

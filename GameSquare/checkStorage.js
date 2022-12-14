@@ -135,6 +135,7 @@ function checkSettings()
 
     if (sessionStorage.gamemode !=undefined){
         gameMode = sessionStorage.gamemode;
+        //console.log(sessionStorage.gamemode)
     }
     if (sessionStorage.textGamemode != undefined){
         $textGamemode.textContent = sessionStorage.textGamemode;

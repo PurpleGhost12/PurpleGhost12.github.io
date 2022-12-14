@@ -9,8 +9,30 @@ $deleteColor.addEventListener('dblclick', clearPallete)
 
 //const $buttonAddColor = document.getElementById("")
 let addColorsP=[];
-
+let draggCeil;
+//let deleteCeilP = false;
 $seeColor.addEventListener('click', addColorCeil)
+$deleteColor.addEventListener('dragover',function(e){
+    e.preventDefault();
+} )
+$deleteColor.addEventListener('drop', function(evt){
+    evt.preventDefault();
+    //$pallete.removeChild(draggCeil)
+    //deleteCeilP = true;
+    var colord = draggCeil.style.backgroundColor;
+    
+    for (var i=0; i <addColorsP.length; i++){
+        if (addColorsP[i] === colord) addColorsP.splice(i,1);
+        console.log(addColorsP[i],colord,addColorsP[i] === colord)
+    }
+
+    sessionStorage.arrayOwnColors = JSON.stringify(addColorsP);
+    $pallete.removeChild(draggCeil)
+    setButtonTextSettings()
+})
+/*$deleteColor.addEventListener("dragleave", function(){
+    deleteCeilP = false;
+})*/
 
 
 function addColorCeil(){
@@ -28,7 +50,16 @@ function addColorCeil(){
     let ceil = document.createElement('div');
     ceil.className = "ceil-color"
     ceil.style.backgroundColor = colorC;
+
     ceil.draggable=true;
+
+
+    ceil.addEventListener("dragstart", function(e){
+        console.log("drag!!!!")
+        if (this.className === "ceil-color") draggCeil = this;
+        console.log(draggCeil, this, e.target)
+    })
+
     $pallete.appendChild(ceil)
 
     setButtonTextSettings();
@@ -93,10 +124,16 @@ function recoverPallete(){
         ceil.className = "ceil-color"
         ceil.style.backgroundColor = colorRC;
         ceil.draggable=true;
+        ceil.addEventListener("dragstart", function(e){
+            console.log("drag!!!!")
+            if (this.className === "ceil-color") draggCeil = this;
+            console.log(draggCeil, this, e.target)
+        })
         $pallete.appendChild(ceil)
     }
     setButtonTextSettings();
 }
+
 
 function changeGamemodePallete(){
     if ($chooseColorMode.value === "myColors") gameMode="ownColors"

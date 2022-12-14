@@ -222,6 +222,7 @@ h2.gamemode{
 h2.gamemodeBlack{
 	color: black;
 	font-size: 24px;
+    padding: 10px 0;
 }
 
 h2.settings{

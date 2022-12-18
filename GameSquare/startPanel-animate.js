@@ -25,7 +25,6 @@ function createPanel()
                 if (gameMode === "monoton"){
                     var bw = getRandom(0,230);
                     sections[i].style.backgroundColor = 'rgb('+bw+','+bw+','+bw+')';
-                    console.log("mono?")
                 }
                 else if (gameMode === "ownColors"){
                     sections[i].style.backgroundColor = addColorsP[getRandom(0,colors.length)];

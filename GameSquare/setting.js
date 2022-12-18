@@ -20,10 +20,13 @@ var anySize = false;
 var colorsCount=3;
 var countCeils=3;
 var countSquare=10;
+
+var level=0;
 var train = false;
+var created = false;
 
 var time=(countCeils*1 + countSquare*1)*3;
-var training=false;
+//var training=false;
 
 $inputCountColors.value = colorsCount;
 $inputCountCeils.value = countCeils;
@@ -42,30 +45,61 @@ const $noMistakesMode = document.getElementById("noMistakesMode");
 
 $classicMode.addEventListener("click", function(){
   gameMode = "classic";
+  train=false;
+  sessionStorage.train = train;
+  created = false;
+  sessionStorage.created = created;
+
   sessionStorage.gamemode = gameMode;
-  $textGamemode.textContent = "СТАНДАРТ"
-  sessionStorage.textGamemode = "СТАНДАРТ";
+  $textGamemode.textContent = outStringGamemode()
+  sessionStorage.textGamemode = outStringGamemode();
   changeStates("choose-level");
 })
 
 $monotonMode.addEventListener("click", function(){
   gameMode = "monoton";
+  train=false;
+  sessionStorage.train = train;
+  created = false;
+  sessionStorage.created = created;
+
   sessionStorage.gamemode = gameMode;
-  $textGamemode.textContent = "МОНОТОН"
-  sessionStorage.textGamemode = "МОНОТОН";
+  $textGamemode.textContent = outStringGamemode()
+  sessionStorage.textGamemode = outStringGamemode();
   changeStates("choose-level");
 })
 
 $noMistakesMode.addEventListener("click", function(){
   gameMode = "noMistakes";
+  train=false;
+  sessionStorage.train = train;
+  created = false;
+  sessionStorage.created = created;
+
   sessionStorage.gamemode = gameMode;
-  $textGamemode.textContent = "БЕЗ ОШИБОК"
-  sessionStorage.textGamemode = "БЕЗ ОШИБОК";
+  $textGamemode.textContent = outStringGamemode()
+  sessionStorage.textGamemode = outStringGamemode();
   changeStates("choose-level");
 })
 
+function outStringGamemode(){
+  if (train) return "ТРЕНИРОВКА"
+  if (created) return "НАСТРАЕВАЕМЫЙ"
+  if (gameMode === "classic") return "СТАНДАРТ";
+  if (gameMode === "monoton") return "МОНОТОН"
+  if (gameMode === "noMistakes") return "БЕЗ ОШИБОК"
 
+  return "?"
+}
 
+function levelToString(level){
+  if (parseInt(level) === 0) return "ЛЕГКО"
+  if (parseInt(level) === 1) return "СРЕДНЕ"
+  if (parseInt(level) === 2) return "СЛОЖНО"
+  if (parseInt(level) === 3) return "ЖЕСТЬ"
+  if (created || train) return '-'
+  return ""
+}
 //(индивидуальные настройки)
 //prefer check EVENTS 
 const $checkRotateAny = document.getElementById("rotateAny");

@@ -133,6 +133,23 @@ function checkSettings()
         } 
     }
 
+    if (sessionStorage.created != undefined) 
+    {
+        if (sessionStorage.created === "true")
+        {
+            created=true;
+
+        }
+        else
+        {
+            created = false;
+        } 
+    }
+
+    if (sessionStorage.level != undefined){
+        level = sessionStorage.level;
+    }
+
     if (sessionStorage.gamemode !=undefined){
         gameMode = sessionStorage.gamemode;
         //console.log(sessionStorage.gamemode)
@@ -201,10 +218,13 @@ function saveAllSettings()
     sessionStorage.rotate90 = rotate90;
     sessionStorage.anySize = anySize;
     
-    sessionStorage.colorsCount = colorsCount;
-    sessionStorage.countCeils = countCeils;
-    sessionStorage.countSquare = countSquare;
+    sessionStorage.colorsCount = parseInt(colorsCount);
+    sessionStorage.countCeils = parseInt(countCeils);
+    sessionStorage.countSquare = parseInt(countSquare);
 
     sessionStorage.train = train;
+    sessionStorage.created = created;
+    //sessionStorage.level = parseInt(level);
+    sessionStorage.level = parseInt(level);
     
 }

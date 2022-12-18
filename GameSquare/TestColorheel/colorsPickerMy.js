@@ -35,6 +35,10 @@ const $seeColor = document.getElementById("see-color");
 
 window.addEventListener("resize", function(){
    resizeCanvas()
+   colorBlockState.x=10;
+   colorBlockState.y=10;
+   $pointCursor.style.top = '5px';
+   $pointCursor.style.left = '135px'
    fillHueGradient()
    fillColorBlockGradient()
 })

@@ -400,3 +400,17 @@ p.big
     font-size: 60px;
     color: rgb(209, 77, 77);
 }
+
+#text-about-records{
+    display: none;
+    color: rgb(209, 77, 77);
+}
+
+.button-end-game{
+    margin: 15px 0 0 0;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 5px;
+}

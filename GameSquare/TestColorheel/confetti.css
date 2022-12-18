@@ -1,0 +1,19 @@
+body {
+    font-family: 'Shojumaru', cursive;
+    background-color: #b38867;
+  }
+  
+  .title {
+    font-size: 100px;
+    color: white;
+    text-align: center;
+  }
+  
+  .confetti-conteiner{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(202, 255, 255);
+  }

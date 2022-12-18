@@ -25,6 +25,9 @@ var endGameCheck=true;
 
 var maxTime;
 var currentTime;
+var mistakesCount;
+var currScore;
+
 
 //Подсказка
 $findSquareArea.addEventListener("dblclick",function(){
@@ -43,6 +46,9 @@ function clearField()
 
 function startGame()
 {
+    mistakesCount=0;
+    currScore=0;
+
     $timeOver.style.transform='scale(0)';
     endGameCheck=false;
     createNewField();
@@ -153,6 +159,7 @@ function clickSquare(event)
         console.log(event.target.dataset.find);
         createNewField();
         currentTime+=1;
+        currScore++;
 
     }
     else 
@@ -161,6 +168,7 @@ function clickSquare(event)
         {
                                 ///Штраф!
             currentTime-=1;
+            mistakesCount++;
             if (currentTime<=0) time=0;
             if (gameMode === "noMistakes") {
                 time=0;
@@ -187,10 +195,21 @@ function seeFindSquare(){
         console.log(arraySquareReady[i].className)
         if (arraySquareReady[i].className === "square-find")
         {
-            arraySquareReady[i].className="square-true-end";
+            arraySquareReady[i].dataset.size=1;
+            let cSize = (maxSizeSquare*arraySquareReady[i].dataset.size);
+            let marginPlus = ((maxSizeSquare-cSize)/2)
+
+            arraySquareReady[i].className="square-true-end"
+
+            arraySquareReady[i].style.width = cSize +'px';
+            arraySquareReady[i].style.height = cSize + 'px';
+            arraySquareReady[i].style.margin = (marginTop+marginPlus)+'px ' + (marginLeft+marginPlus)+'px';
+            arraySquareReady[i].style.transform="rotate(0)";
+
+            /*arraySquareReady[i].className="square-true-end";
             arraySquareReady[i].style.width = maxSizeSquare +'px';
             arraySquareReady[i].style.height = maxSizeSquare + 'px';
-            arraySquareReady[i].style.transform="scale(1.1) rotate(0)";
+            arraySquareReady[i].style.transform="scale(1.1) rotate(0)";*/
         }
     }
 }
@@ -201,9 +220,12 @@ function endGame()//Сделать конец игры покрасивее, т�
     let end;
     clearInterval(end);
     clearInterval(interval)
-    if (gameMode === "noMistakes") $timeOver.textContent = "НЕВЕРНО!"
+
+
+    if (gameMode === "noMistakes" && mistakesCount>0) $timeOver.textContent = "НЕВЕРНО!"
     else $timeOver.textContent = "ВРЕМЯ ВЫШЛО!"
 
+    
     $timeOver.style.transform='scale(1)';
     setTimeout(function(){
         $timeOver.style.transform='scale(0)';
@@ -228,6 +250,10 @@ function seeScore()
 {
     //hide game field
     clearField();
+    //set score
+    saveUsersScore(gameMode, level, currScore);
+    outAllRecords(currScore, mistakesCount)
+
     $hideField.style.opacity = 0;
 
     //see score

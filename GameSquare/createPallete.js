@@ -30,10 +30,20 @@ $deleteColor.addEventListener('drop', function(evt){
     $pallete.removeChild(draggCeil)
     setButtonTextSettings()
 })
-/*$deleteColor.addEventListener("dragleave", function(){
-    deleteCeilP = false;
-})*/
 
+/*
+$deleteColor.addEventListener("dragleave", function(){
+    deleteCeilP = false;
+})
+*/
+
+/*
+  el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  el.addEventListener("touchcancel", handleCancel, false);
+  el.addEventListener("touchleave", handleEnd, false);
+  el.addEventListener("touchmove", handleMove, false);
+*/
 
 function addColorCeil(){
     console.log("t")
@@ -109,8 +119,7 @@ function checkInputColors(){
     {if ($chooseColorMode.value != "myColors") changeStates("do-game")
         else 
         {
-            if (addColorsP.length<=1) $chooseSettings.textContent ="ПАЛИТРА ПУСТА";
-            else $chooseSettings.textContent ="ЦВЕТОВ НЕ ХАВАТАЕТ";
+            setButtonTextSettings()
         }
     }
 }

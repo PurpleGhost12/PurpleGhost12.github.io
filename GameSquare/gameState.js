@@ -1,5 +1,6 @@
 
 const $mainMenu = document.getElementById("main-screen");
+const $statistic = document.getElementById("statistic-creen")
 const $chooseGamemode = document.getElementById("choose-gamemode");
 const $chooseLevel = document.getElementById("choose-level");
 const $createLevel = document.getElementById("create-level");
@@ -22,13 +23,20 @@ var $buttonBackToMain = document.getElementById("back-to-main-everywhere")
 var $buttonOnlyBack = document.getElementById("back-only-back")
 
 //menu start
-var $buttonMain = document.getElementById("start-main");
+const $buttonMain = document.getElementById("start-main");
 $buttonMain.addEventListener('click', function() {
     changeStates("choose-gamemode");
   });
 
+//statictic
+const $buttonStatistic = document.getElementById("staristic-btn")
+$buttonStatistic.addEventListener('click', function(){
+  changeStates("statistic-screen");
+})
+
+
   //choose level
-var $buttonLevelEasy = document.getElementById("level-easy");
+const $buttonLevelEasy = document.getElementById("level-easy");
 $buttonLevelEasy.addEventListener('click', function() { 
       //настройки
       rotateAny = false;  
@@ -42,7 +50,7 @@ $buttonLevelEasy.addEventListener('click', function() {
       diffMonoton=20;
 
       train = false;
-
+      level=0;
       saveAllSettings();
       //gameState в конце!!!!
       changeStates("do-game");
@@ -62,7 +70,7 @@ $buttonLevelMedium.addEventListener('click', function() {
       diffMonoton=15;
 
       train = false;
-
+      level=1;
       saveAllSettings();
       //gameState в конце!!!!
       changeStates("do-game");
@@ -82,7 +90,7 @@ $buttonLevelHard.addEventListener('click', function() {
       diffMonoton=13;
 
       train = false; 
-
+      level=2;
       saveAllSettings();
       //gameState в конце!!!!
       changeStates("do-game");
@@ -103,6 +111,7 @@ $buttonLevelVeryHard.addEventListener('click', function() {
       diffMonoton=10;
 
       train = false; 
+      level=3;
 
       saveAllSettings();
       //gameState в конце!!!!
@@ -117,8 +126,10 @@ $buttonLevelTrain.addEventListener('click', function() {
       gameMode = "classic"
       sessionStorage.gamemode = "classic"
       sessionStorage.train=true;
-      $textGamemodeBlack.textContent = "ТРЕНИРОВКА"
-      sessionStorage.textGamemodeBlack = "ТРЕНИРОВКА"
+      created = true;
+      sessionStorage.created = created;
+      $textGamemodeBlack.textContent = outStringGamemode()
+      sessionStorage.textGamemodeBlack = outStringGamemode()
       //gameState в конце!!!!
       changeStates("create-level");
     });
@@ -126,17 +137,18 @@ $buttonLevelTrain.addEventListener('click', function() {
 var $buttonHandle = document.getElementById("level-create");
 $buttonHandle.addEventListener('click', function() {
       train = false;
+      created = true;
+      sessionStorage.created = created;
       gameMode = "classic"
       sessionStorage.gamemode = "classic"
       sessionStorage.train=false;
-      $textGamemodeBlack.textContent = "СОЗДАЙТЕ"
-      sessionStorage.textGamemodeBlack = "СОЗДАЙТЕ"
+      $textGamemodeBlack.textContent = outStringGamemode()
+      sessionStorage.textGamemodeBlack = outStringGamemode()
       console.log(train);
       changeStates("create-level");
       //настройки
     });
   
-
 
 
 
@@ -180,6 +192,12 @@ $buttonHandle.addEventListener('click', function() {
                     if (doWhat === "none") clearField();
                     break;
                 }
+            case "statistic-creen":
+                {
+                    $statistic.style.display = doWhat
+                    break;
+                }
+
             case "choose-gamemode":
                 {
                     $chooseGamemode.style.display = doWhat;

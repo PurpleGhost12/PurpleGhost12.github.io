@@ -136,7 +136,7 @@ button{
 }
 
 /*DeSiGn*/
-#main-screen, #choose-level, #create-level, #do-game, #choose-gamemode
+#main-screen, #choose-level, #create-level, #do-game, #choose-gamemode, #statistic-creen
 {
     /*width: 100%;*/
     /*height: 100vh;*/
@@ -170,7 +170,7 @@ button{
 
 .menu-white-small
 {
-    min-height: 80vh;
+    /*min-height: 80vh;*/
     width: 50vw;
     max-width: 1200px;
     position: relative;
@@ -179,7 +179,16 @@ button{
     border-radius: 30px;
     padding: 15px;
     box-sizing: border-box;
-
+}
+.vertcal-align-tabel{
+    display: table;
+    width: 100%;
+    min-height: 90vh;
+}
+.vertcal-align-tabel-ceil{
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
 }
 .menu-white-small.hide
 {
@@ -187,7 +196,8 @@ button{
     width: 50vw;
     max-width: 1200px;
     position: fixed;
-    left: 25vw;
+    left: 50%;
+    transform: translate(-50%);
     top:10vh;
     background-color: white;
     border-radius: 30px;
@@ -195,12 +205,36 @@ button{
     box-sizing: border-box;
 	overflow: auto;
     display: none;
-    z-index: 100;
+    z-index: 190;
     box-shadow: 0 0 100vh 100vh rgba(31, 30, 30, 0.627);
 }
 .menu-white-small.settings{
     max-height: 80vh;
     height: auto;
+}
+
+.menu-records-out{
+    position: fixed;
+    width: 50vw;
+    height: auto;
+    max-height: 80vh;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 190;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+	overflow: auto;
+    display: none;
+    /*box-shadow: 0 0 100vh 100vh rgba(31, 30, 30, 0.627);*/
+}
+.line-decor{
+    height: 2px;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    border-top: 2px dotted black;
 }
 
 .text-left{
@@ -209,7 +243,7 @@ button{
     margin: 0 auto;
 }
 .padding-settings{
-    padding: 10px 10% 0px 10%;
+    padding: 2vh 10% 0px 10%;
 }
 h2.gamemode{
 	color: white;
@@ -240,15 +274,14 @@ h3.settings{
     .menu-white-small{
         width: 80vw;
     }
-    .menu-white-small.hide{
+    .menu-white-small.hide, .menu-records-out{
         width: 90vw;
-        left: 5vw;
     }
     .text-left{
         width: 100%;
     }
     .padding-settings{
-        padding: 20px 0% 0px 0%;
+        padding: 3vh 0% 0px 0%;
     }
 }
 @media (max-width:900px){
@@ -256,9 +289,8 @@ h3.settings{
         width: 96%;
         padding: 10px;
     }
-    .menu-white-small.hide{
+    .menu-white-small.hide, .menu-records-out{
         width: 90vw;
-        left: 5vw;
     }
 }/*
 @media (max-height:700px){
@@ -277,7 +309,7 @@ h3.settings{
     top: 1vh;
     left: 1vh;
     border-radius: 2vh;
-    z-index: 15;
+    z-index: 200;
     display: none;
     border:none;
 }
@@ -290,7 +322,7 @@ h3.settings{
     top: 1vh;
     left: 10vh;
     border-radius: 2vh;
-    z-index: 15;
+    z-index: 200;
     display: none; 
     border:none;
 }
@@ -302,7 +334,7 @@ h3.settings{
     right: 1vh;
     top:1vh;
     opacity: 0.5;
-    z-index: 6;
+    z-index: 200;
     margin: 0;
     padding: 0;
 }
@@ -319,7 +351,7 @@ h3.settings{
     top: 1vh;
     right: 10vh;
     border-radius: 2vh;
-    z-index: 15;
+    z-index: 200;
     margin: 0;
     padding: 0;
 }
@@ -335,7 +367,7 @@ h3.settings{
     position: fixed;
     right: 1vh;
     top:1vh;
-    z-index: 5;
+    z-index: 199;
     background-color: white;
   }
   .set-help-icon {
@@ -345,7 +377,7 @@ h3.settings{
     position: fixed;
     right: 10vh;
     top:1vh;
-    z-index: 5;
+    z-index: 199;
     background-color: white;
   }
 

@@ -36,10 +36,10 @@ $buttonMain.addEventListener('click', function() {
   });
 
 //statictic
-const $buttonStatistic = document.getElementById("staristic-btn")
+/*const $buttonStatistic = document.getElementById("staristic-btn")
 $buttonStatistic.addEventListener('click', function(){
   changeStates("statistic-creen");
-})
+})*/
 
 
   //choose level

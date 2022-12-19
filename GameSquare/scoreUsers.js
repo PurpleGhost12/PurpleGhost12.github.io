@@ -25,8 +25,8 @@ const $userName = document.getElementById("user-name");
 $userName.addEventListener("change", function(){
     let name = this.value;
     //console.log(usersListSave)
-    //currentUser = checkUserInput(name)
-
+    currentUser = checkUserInput(name)
+    localStorage.currentUser = currentUser;
     //console.log(usersListSave, currentUser, name)
     saveuserList()
 
@@ -36,10 +36,22 @@ function checkUserName(){
     if ($userName.value === ''){
         return false;
     }
-    currentUser = checkUserInput($userName.value)
+    if (newUserKnow()) saveNewUser()
     return true
 }
+//let newUser = false;
+function saveNewUser(){
+    console.log("?")
+    usersListSave.push(currentUser)
+    saveuserList()
+}
 
+function newUserKnow(){
+    for (var i=0; i<usersListSave.length; i++){
+        if (usersListSave[i].name === currentUser.name) return false
+    }
+    return true
+}
 //current player
 const $gamemode_text = document.getElementById("gamemode_text")
 const $user_name_text = document.getElementById("user_name_text")
@@ -61,7 +73,7 @@ function initUserStart(){
     else {
         usersListSave = [];
     }
-    if (localStorage.getItem('currentUser')){
+    if (localStorage.getItem('currentUser') && localStorage.currentUser != 'undefined'){
         currentUser = JSON.parse(localStorage.currentUser)
         $userName.value = currentUser.name
     }
@@ -75,8 +87,6 @@ function saveuserList(){
     localStorage.usersListSave = JSON.stringify(usersListSave);
     localStorage.currentUser = JSON.stringify(currentUser)
 }
-
-
 
 function checkUserInput(nameCh){
     for (var i=0; i<usersListSave.length; i++){
@@ -92,7 +102,7 @@ function createPlayer(nameN){
     }
     currentUser = newUser;
     console.log(usersListSave)
-    usersListSave.push(newUser)
+    //usersListSave.push(newUser)
     return newUser;
 }
 

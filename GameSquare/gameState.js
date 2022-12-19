@@ -35,7 +35,7 @@ $buttonMain.addEventListener('click', function() {
     
   });
 
-//statictic
+//statistic
 /*const $buttonStatistic = document.getElementById("staristic-btn")
 $buttonStatistic.addEventListener('click', function(){
   changeStates("statistic-creen");

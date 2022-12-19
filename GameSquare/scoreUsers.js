@@ -55,13 +55,13 @@ const $best_player = document.getElementById("best_player");
 
 function initUserStart(){
     usersListSave = [];
-    if (localStorage.usersListSave != undefined){
+    if (localStorage.getItem('usersListSave')){
         usersListSave = JSON.parse(localStorage.usersListSave)
     }
     else {
         usersListSave = [];
     }
-    if (localStorage.currentUser !=undefined){
+    if (localStorage.getItem('currentUser')){
         currentUser = JSON.parse(localStorage.currentUser)
         $userName.value = currentUser.name
     }

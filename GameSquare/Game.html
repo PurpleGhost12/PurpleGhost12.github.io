@@ -40,12 +40,19 @@
                     <input type="string" id="user-name" value="">
                 </div>
                 <button class="button-play allbtn" id="start-main"><p class = "big">ИГРАТЬ</p></button>
-                <button class="button-play allbtn" id="staristic-btn"><p class = "big">СТАТИСТИКА</p></button>
+                <!--<button class="button-play allbtn" id="staristic-btn"><p class = "big">СТАТИСТИКА</p></button>-->
             </div>
 
 
             <div id = "statistic-creen" class = "center-full-screen max-width">
-                <div class = "menu-white-small"></div>
+                <div class = "vertcal-align-tabel">
+                    <div class = "vertcal-align-tabel-ceil">
+                        <div class = "menu-white-small">text
+                            <button class="button-level allbtn">СТАНДАРТ</button>
+                        </div>
+                    </div>
+              
+                </div>    
             </div>
 
 
@@ -182,10 +189,15 @@
 
                     <div id = "hide-field" class = "hide-div">
                         <div class = "find-block" id = "find-block">
-                            <div class = "score-area" id = "score"></div>
+                            <div class = "score-area" id = "score">
+                                <div class = "ceil-table-max"><span id="scoreCurrent">5.0</span></div>
+
+                            </div>
                             <div class = "timer-area">
-                                <h1 id="time-header" class = "timer"> <span id="time">5.0</span></h1>
-                            </div>                  
+                                <!--<h1 id="time-header" class = "timer"> <span id="time">5.0</span></h1>-->
+                                <div class = "ceil-table-max"> <span id="bestScoreOut">5.0</span></div>
+                            </div>       
+
                             <div id = "find" class = "find-area"></div>
                         </div>
 

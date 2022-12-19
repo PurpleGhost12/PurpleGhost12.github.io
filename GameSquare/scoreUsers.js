@@ -24,14 +24,21 @@ var newBestUser = false;
 const $userName = document.getElementById("user-name");
 $userName.addEventListener("change", function(){
     let name = this.value;
-    console.log(usersListSave)
-    currentUser = checkUserInput(name)
+    //console.log(usersListSave)
+    //currentUser = checkUserInput(name)
 
-    console.log(usersListSave, currentUser, name)
+    //console.log(usersListSave, currentUser, name)
     saveuserList()
 
 })
 
+function checkUserName(){
+    if ($userName.value === ''){
+        return false;
+    }
+    currentUser = checkUserInput($userName.value)
+    return true
+}
 
 //current player
 const $gamemode_text = document.getElementById("gamemode_text")
@@ -93,6 +100,10 @@ function createPlayer(nameN){
 function getPlayerRecords(gamemode, level, user){
     if (level >3) return 0;
 
+    if (created){
+        return createdCurrScore;
+    }
+
     for (var i=0; i<user.recordsBest.length; i++){
         if (user.recordsBest[i].mode === gamemode) return user.recordsBest[i].score[level]
     }
@@ -101,7 +112,7 @@ function getPlayerRecords(gamemode, level, user){
 
 function getBestPlayerRecords(gamemode, level){
     let bestCurrentPlayer = currentUser;
-    let userScore = 0;
+    let userScore = getPlayerRecords(gamemode, level,currentUser)
     for (var i=0; i<usersListSave.length; i++){
         let cScore = getPlayerRecords(gamemode, level, usersListSave[i])
         if (userScore < cScore){
@@ -118,7 +129,6 @@ function outAllRecords(score, mistakes)
     console.log(gameMode, outStringGamemode())
     console.log(levelToString(level))
     console.log(levelToString(level), level)
-    
     $gamemode_text.textContent =outStringGamemode() +" / " + levelToString(level)
     $user_name_text.textContent =currentUser.name
     $score_out.textContent = score;
@@ -144,8 +154,9 @@ function outAllRecords(score, mistakes)
         console.log("new")
     }
 
-    if (train || gameMode === "ownColors"){
-        $record_out_user.textContent = '-'
+    if (created) $record_out_user.textContent = createdCurrScore;
+
+    if (train || created){
         $record_out_best.textContent = '-'
         $best_player.textContent = '-'
     }
@@ -155,7 +166,14 @@ function outAllRecords(score, mistakes)
 function saveUsersScore(gamemode, level, score){
     console.log(currentUser.recordsBest[0])
 
-    if (level >3) return 0;
+    if (level > 3) return 0;
+
+    if (created){
+        if (score> createdCurrScore) createdCurrScore = score;
+        sessionStorage.createdCurrScore = createdCurrScore;
+        return
+    }
+
     newBestUser = false;
     for (var i=0; i<currentUser.recordsBest.length; i++){
         if (currentUser.recordsBest[i].mode === gamemode) {
@@ -166,4 +184,24 @@ function saveUsersScore(gamemode, level, score){
         }
     }
     saveuserList()
+}
+
+//game score out best
+const $outBestscoreGame = document.getElementById("bestScoreOut");
+function setBestOutScore(){
+    if (train) {
+        $outBestscoreGame.textContent = '-'
+        return;
+    }
+    $outBestscoreGame.textContent = getPlayerRecords(gameMode, level, currentUser);
+    
+
+}
+
+//save created mode score
+var createdCurrScore=0;
+function resetCreatedScore()
+{
+    createdCurrScore=0;
+    sessionStorage.createdCurrScore = createdCurrScore;
 }

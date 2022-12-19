@@ -25,36 +25,10 @@ function checkState()
     {
         sessionStorage.state = 'main-screen'
         changeStates('main-screen')
-        //console.log("No")
     }
     else 
     {
-        //console.log("Yes")
-         //= sessionStorage.state;
         changeStates(sessionStorage.state);
-        /*switch(sessionStorage.state)
-        {
-            case "main-screen":
-                {
-                    changeStates('main-screen')
-                    break;
-                }
-            case "choose-level":
-                {
-                    changeStates('choose-level')
-                    break;
-                }
-            case "create-level":
-                {
-                    changeStates("create-level")
-                    break;
-                }
-            case "do-game":
-                {
-                    changeStates("do-game")
-                    break;
-                }
-        }*/
     }
 }
 
@@ -170,6 +144,11 @@ function checkSettings()
     }
     else {
         changeColorWinInput("random")
+    }
+
+    //current created score 
+    if (sessionStorage.createdCurrScore != undefined){
+        createdCurrScore = parseInt(sessionStorage.createdCurrScore);
     }
 
 

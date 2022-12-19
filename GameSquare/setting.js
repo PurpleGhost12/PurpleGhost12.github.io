@@ -93,11 +93,11 @@ function outStringGamemode(){
 }
 
 function levelToString(level){
+  if (created || train) return '-'
   if (parseInt(level) === 0) return "ЛЕГКО"
   if (parseInt(level) === 1) return "СРЕДНЕ"
   if (parseInt(level) === 2) return "СЛОЖНО"
   if (parseInt(level) === 3) return "ЖЕСТЬ"
-  if (created || train) return '-'
   return ""
 }
 //(индивидуальные настройки)

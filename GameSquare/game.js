@@ -1,8 +1,8 @@
 
 //манипуляция dom
 const $findSquareArea = document.getElementById("find");
-const $timer = document.querySelector('#time');
 const $hideField = document.getElementById("hide-field");
+const $currentScoreOut = document.getElementById("scoreCurrent");
 
 const $timeOver = document.getElementById("time-over");
 
@@ -48,15 +48,13 @@ function startGame()
 {
     mistakesCount=0;
     currScore=0;
-
+    $currentScoreOut.textContent = currScore;
     $timeOver.style.transform='scale(0)';
     endGameCheck=false;
     createNewField();
-    //$timer.textContent="30.0"
-    //time = parseFloat($timer.textContent)
+    setBestOutScore()
     currentTime=(countCeils*1*countSquare);
     maxTime=currentTime; // рассчет времени
-    $timer.textContent = currentTime.toFixed(1)
     currentTime+=0.2;
 
     $startPanel.style.display = "none";
@@ -75,11 +73,9 @@ var interval;
 function startTimer(){
     interval = setInterval(function() //timer
     {
-       //time = parseFloat($timer.textContent)
        if (currentTime <=0)
        {
         currentTime=0;
-        $timer.textContent = currentTime.toFixed(1);
         $timerLine.style.width='0%';
         clearInterval(interval);
         endGame();
@@ -87,8 +83,7 @@ function startTimer(){
        else 
        {
         currentTime-=0.1;
-        if (currentTime<=0) currentTime=0;
-        $timer.textContent = currentTime.toFixed(1)    
+        if (currentTime<=0) currentTime=0;  
         $timerLine.style.width=(currentTime/maxTime)*100+'%';
        }
        
@@ -160,6 +155,7 @@ function clickSquare(event)
         createNewField();
         currentTime+=1;
         currScore++;
+        $currentScoreOut.textContent = currScore;
 
     }
     else 
@@ -175,7 +171,6 @@ function clickSquare(event)
                 $timerLine.style.width='0%';
                 endGame();
             }
-            //$timer.textContent = time.toFixed(1)
         }
 
     }
@@ -234,15 +229,6 @@ function endGame()//Сделать конец игры покрасивее, т�
 
     setTimeout(function(){
         seeScore()
-        /*clearField();
-        $startPanel.style.display = "block";
-        $hideField.style.opacity = 0;
-        readySquare = false;
-        gameState=false;
-        sessionStorage.gameState = false;
-        $timerLine.style.transition="none";
-        $timerLine.style.width=100+'%';
-        console.log("end")*/
     },5000);
 }
 

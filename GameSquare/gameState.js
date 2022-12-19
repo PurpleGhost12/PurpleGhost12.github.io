@@ -25,13 +25,20 @@ var $buttonOnlyBack = document.getElementById("back-only-back")
 //menu start
 const $buttonMain = document.getElementById("start-main");
 $buttonMain.addEventListener('click', function() {
+  if (checkUserName()){
     changeStates("choose-gamemode");
+  }
+  else {
+    console.log("bad name")
+    alert( "Введите имя" );
+  }
+    
   });
 
 //statictic
 const $buttonStatistic = document.getElementById("staristic-btn")
 $buttonStatistic.addEventListener('click', function(){
-  changeStates("statistic-screen");
+  changeStates("statistic-creen");
 })
 
 
@@ -233,6 +240,7 @@ $buttonHandle.addEventListener('click', function() {
                     {
                       endGameExit();
                       hidePanel();
+                      resetCreatedScore();
                     }
                     break;
                 }

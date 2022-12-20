@@ -408,6 +408,14 @@ p.big
     border-radius: 5px;
 }
 
+.delete-color img{
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+    object-fit: contain;
+    background-color: transparent;
+}
+
 
 /*END*/
 #score-out{

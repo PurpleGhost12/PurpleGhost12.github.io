@@ -328,8 +328,8 @@ p.big
     border-radius: 10px;
     border:0px;
     height: 100px;
-    width: 200px;
-    font-size: calc((100vw - 360px)/(1280 - 360) * (40 - 30) + 30px);
+    min-width: 200px;
+    font-size: calc((100vw - 360px)/(1440 - 360) * (40 - 30) + 30px);
     color:black;
 }
 .allbtn:hover

@@ -44,18 +44,23 @@ button{
 }
 .mango{
 	background: linear-gradient(#CB356B, #fce373);
+    background: -webkit-linear-gradient(#CB356B, #fce373);
 }
 .sunrise{
 	background: linear-gradient(#3f47dc, #ee73fc);
+    background: -webkit-linear-gradient(#3f47dc, #ee73fc);
 }
 .sea{
 	background: linear-gradient(#35bccb, #cfff99);
+    background: -webkit-linear-gradient(#35bccb, #cfff99);
 }
 .bubblegum{
 	background: linear-gradient(#fc73ec,#55bbe7);
+    background: -webkit-linear-gradient(#fc73ec,#55bbe7);
 }
 .magic{
 	background: linear-gradient(#7335cb, #73fce1);
+    background: -webkit-linear-gradient(#7335cb, #73fce1);
 }
 
 .hide-checkbox

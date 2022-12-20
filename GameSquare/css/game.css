@@ -50,7 +50,7 @@
     0 0 3px 3px greenyellow,
     0 0 1000vh 1000vh rgba(0, 0, 0, 0.35);*/
     box-shadow:0 0 15px 8px white, 0 0 1000vh 1000vh rgba(0, 0, 0, 0.4);
-    z-index: 10;
+    z-index: 9;
     Transform:scale(1.2) rotate(0);
     transition: scale 1s, 1s;
     position: relative;
@@ -72,12 +72,7 @@
 
 
 /*MAIN*/
-h1.game-name
-{
-    color: white;
-    text-align: center;
-    font-size: 5rem;
-}
+
 h1.menu
 {
     color: white;
@@ -212,8 +207,8 @@ h1.menu
 .timer-area
 {
     position: absolute;
-    right: 0;
-    width: 30%;
+    right: 5%;
+    width: 25%;
     height: 100%;
     background-color: rgb(255, 255, 255);
     display: table;
@@ -231,15 +226,15 @@ h1.menu
     width: 30%;
     height: 100%;
     left: 35%;
-    background-color: rgb(251, 255, 181);
+    background-color: rgb(255, 255, 255);
 }
 .score-area
 {
     position: absolute;
-    left: 0;
-    width: 30%;
+    left: 5%;
+    width: 25%;
     height: 100%;
-    background-color: rgb(250, 255, 173);
+    background-color: rgb(255, 255, 255);
     display: table;
 }
 .ceil-table-max{
@@ -329,11 +324,12 @@ p.big
 {
     background-color: #ffffff;
     display:block;
-    margin: 15vh auto;
+    margin: 10vh auto 20vh auto;
     border-radius: 10px;
     border:0px;
     height: 100px;
     width: 200px;
+    font-size: calc((100vw - 360px)/(1280 - 360) * (40 - 30) + 30px);
 }
 .allbtn:hover
 {

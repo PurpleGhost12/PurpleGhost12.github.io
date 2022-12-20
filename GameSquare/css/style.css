@@ -8,13 +8,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	
 }
 
-
 body 
 {
 	background: transparent;
     color: #000;
     /*font-family: Arial, sans-serif;*/
     font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa';
     font-size: 16px;
     margin: 0;
     padding: 0;
@@ -123,8 +123,21 @@ button{
 	box-sizing: border-box;
 }
 
-
-
+.input-name{
+    margin: 10vh auto 8vh auto;
+}
+.input-name label{
+    color: black;
+    display: block;
+    margin: 10px 0 10px 0;
+}
+h1.game-name
+{
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+    margin: 10px 0 15px 0;
+}
 .content-area /*класс для ограничение области по ширине*/
 {
 	width: 1440px;
@@ -333,7 +346,7 @@ h3.settings{
     position: fixed;
     right: 1vh;
     top:1vh;
-    opacity: 0.5;
+    opacity: 0;
     z-index: 200;
     margin: 0;
     padding: 0;
@@ -342,6 +355,9 @@ h3.settings{
 {
     transition: 0.5s;
     transform: scale(1.1);
+}
+.settings-checkbox:checked ~ .set-check-icon{
+    background-color: rgb(173, 255, 178);
 }
 .help-button
 {
@@ -354,11 +370,15 @@ h3.settings{
     z-index: 200;
     margin: 0;
     padding: 0;
+    opacity: 0;
 }
 .help-button:hover ~ .set-help-icon
 {
     transition: 0.5s;
     transform: scale(1.1);
+}
+.help-button:checked ~ .set-help-icon{
+    background-color: rgb(173, 255, 178);
 }
 .set-check-icon {
     height: 5vh;
@@ -369,6 +389,7 @@ h3.settings{
     top:1vh;
     z-index: 199;
     background-color: white;
+    overflow: hidden;
   }
   .set-help-icon {
     height: 5vh;
@@ -379,13 +400,18 @@ h3.settings{
     top:1vh;
     z-index: 199;
     background-color: white;
+    overflow: hidden;
   }
 
+  .set-help-icon img, .set-check-icon img, .back-to-main-everywhere img, .back-only-back img{
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+    object-fit: contain;
+    background-color: transparent;
 
-.vertical-align-level5{
-	position: relative;
-	margin-top: calc((88vh - 100px*5)/2);
-}
+  }
+
 @media (max-width: 1440px)/*1440 px max content width*/
 {
 	.content-area

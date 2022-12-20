@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="rus">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find a square</title>
 
-    <link rel="stylesheet" type="text/css" href="game.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="TestColorheel/colorPicker.css">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/colorPicker.css">
 
     <!-- fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,25 +21,28 @@
         <!--подумать при первой игре генерить окно всплывающее с вопросом впервый раз?, есл да, то открыть правила игры-->
         <div class = "background" id = "background"></div>
         <!--Меню которое везде-->
-            <button class="back-to-main-everywhere allbtn" id = "back-to-main-everywhere" onclick="backToMain()">Main</button>
-            <button class="back-only-back allbtn" id = "back-only-back" onclick="changeStates(preState)">back only</button>
+            <button class="back-to-main-everywhere allbtn" id = "back-to-main-everywhere" onclick="backToMain()"><img src ="picture/home.png"></button>
+            <button class="back-only-back allbtn" id = "back-only-back" onclick="changeStates(preState)"><img src ="picture/arrow-left.png"></button>
 
-            <div class = "hide-checkbox">
-                <input type = "checkbox" class = "help-button" id = "setOpenHelp">
-                <label for = "setOpenHelp"></label>
-                <div class = "set-help-icon"></div>
-            </div>
+     
 
 
             <!--Приложеньеце-->
             <!--Начальное окно-->
             <div id="main-screen" class = "center-full-screen max-width">
-                <h1 class = "game-name">Find a square!</h1>
-                <div class="input">
-                    <label for="count-square">Ваше имя</label>
-                    <input type="string" id="user-name" value="">
-                </div>
-                <button class="button-play allbtn" id="start-main"><p class = "big">ИГРАТЬ</p></button>
+                <div class = "vertcal-align-tabel">
+                    <div class = "vertcal-align-tabel-ceil">
+
+                        <h1 class = "game-name">Find a square!</h1>
+                        <div class="input-name">
+                            <label for="count-square">Ваше имя</label>
+                            <input type="string" id="user-name" value="">
+                        </div>
+                        <button class="button-play allbtn" id="start-main">ИГРАТЬ</button>
+                    </div>
+              
+                </div>   
+
                 <!--<button class="button-play allbtn" id="staristic-btn"><p class = "big">СТАТИСТИКА</p></button>-->
             </div>
 
@@ -214,7 +217,11 @@
             </div>
 
 
-
+            <div class = "hide-checkbox">
+                <input type = "checkbox" class = "help-button" id = "setOpenHelp">
+                <label for = "setOpenHelp"></label>
+                <div class = "set-help-icon"><img src ="picture/rules.png"></div>
+            </div>
             <!-- menu rules setting-->
             <div class = "menu-white-small hide" id = "help">
                 Правила игры
@@ -223,7 +230,7 @@
             <div class = "hide-checkbox">
                 <input type = "checkbox" class = "settings-checkbox" id = "setOpen">
                 <label for = "setOpen"></label>
-                <div class = "set-check-icon"></div>
+                <div class = "set-check-icon"><img src ="picture/sett.png"></div>
             </div>
 
             <div class = "menu-white-small hide" id = "main-settings">
@@ -266,24 +273,24 @@
 
 
     <!--</div>-->
-    <script src ="main.js"></script>
-    <script src="game.js"></script>
-    <script src="setting.js"></script>
-    <script src="resize.js"></script>
-    <script src="generator.js"></script>
-    <script src="gameState.js"></script>
+    <script src ="scripts/main.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/setting.js"></script>
+    <script src="scripts/resize.js"></script>
+    <script src="scripts/generator.js"></script>
+    <script src="scripts/gameState.js"></script>
 
 
     <!--UserInit-->
-    <script src="scoreUsers.js"></script>
+    <script src="scripts/scoreUsers.js"></script>
     
-    <script src="TestColorheel/colorsPickerMy.js"></script>
-    <script src = "createPallete.js"></script>
+    <script src="scripts/colorsPickerMy.js"></script>
+    <script src = "scripts/createPallete.js"></script>
 
-    <script src="startPanel-animate.js"></script>
+    <script src="scripts/startPanel-animate.js"></script>
 
     <!--Самый последний!!!-->
-    <script src="checkStorage.js"></script>
+    <script src="scripts/checkStorage.js"></script>
     
 </body>
 </html>

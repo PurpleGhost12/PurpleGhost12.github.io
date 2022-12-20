@@ -59,24 +59,12 @@ function getSizeSquare()
         column = Math.ceil(countSquare/row)
     }
 
-    console.log(row);
-    console.log(column);
+    ////console.log(row);
+    //console.log(column);
 
-    //marginLeft = (width - Math.floor(width/sizeS)*maxSizeSquare)/((Math.floor(width/sizeS)+1)*2); //min margin
-    //marginTop = (height - Math.floor(height/sizeS)*maxSizeSquare)/((Math.floor(height/sizeS)+1)*2); //min margin
 
     marginLeft = (width - column*maxSizeSquare)/((column+1)*2); //min margin
     marginTop = (height - row*maxSizeSquare)/((row+1)*2); //min margin
     
-    //marginLeft = sizeS-sizeS*0.65; //min margin
-    //marginTop = sizeS-sizeS*0.65; //min margin
-
-    //sizeSquare = sizeS*0.65;
-    //marginLeftMax = (width - Math.floor(width/sizeS)*sizeSquare)/((Math.floor(width/sizeS)+1)*2); 
-    //marginTopMax = (height - Math.floor(height/sizeS)*sizeSquare)/((Math.floor(height/sizeS)+1)*2);
-
-    //console.log(marginTopMax, marginTop)
-
-    //console.log(maxSizeSquare, countSquare)
 }
  

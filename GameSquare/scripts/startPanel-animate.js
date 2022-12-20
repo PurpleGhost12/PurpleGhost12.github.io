@@ -37,7 +37,7 @@ function createPanel()
 }
 function hidePanel()
 {
-    console.log("stop animate");
+    //console.log("stop animate");
     clearInterval(animator);
 }
 var sections;

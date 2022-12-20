@@ -242,6 +242,6 @@ function clickOnHueBar(e) {
    changeColorVariable();
 
    $seeColor.style.backgroundColor = currentColor;
-   console.log(currentColorPicker+"posle")
+   //console.log(currentColorPicker+"posle")
    //$seeColor.textContent = currentColor;
 }

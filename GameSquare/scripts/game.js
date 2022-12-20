@@ -64,7 +64,7 @@ function startGame()
     $timerLine.style.transition="none";
     $timerLine.style.width='100%';
     $timerLine.style.transition="width 0.2s";
-    console.log(train)
+    //console.log(train)
     if (train === false) startTimer();
 
 }
@@ -145,13 +145,13 @@ function setSizeSquare()
 function clickSquare(event)
 {
     //console.log("Click!");
-    console.log(event.target.dataset.find);
+    //console.log(event.target.dataset.find);
     if (endGameCheck) return;
 
     if (event.target.dataset.find === 'true')
     {
-        console.log("Yes!");
-        console.log(event.target.dataset.find);
+        //console.log("Yes!");
+        //console.log(event.target.dataset.find);
         createNewField();
         currentTime+=1;
         currScore++;
@@ -191,7 +191,7 @@ function gameShow()
 function seeFindSquare(){
     for (var i=0; i<countSquare; i++)
     {
-        console.log(arraySquareReady[i].className)
+        //console.log(arraySquareReady[i].className)
         if (arraySquareReady[i].className === "square-find")
         {
             arraySquareReady[i].dataset.size=1;
@@ -277,6 +277,6 @@ function endGameExit(){
     sessionStorage.gameState = false;
     $timerLine.style.transition="none";
     $timerLine.style.width=100+'%';
-    console.log("end")
+    //console.log("end")
 
 }

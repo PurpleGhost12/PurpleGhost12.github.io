@@ -11,9 +11,6 @@ const $doGame = document.getElementById("do-game");
 //session storage - сохраняем на случай перезагрузки! и только состояние игры
 //local storage - для сохранения пользователей!
 
-sessionStorage.test = 'test';
-console.log(sessionStorage.test) //this is works
-
 var currentState='main-screen';
 var oldStateSave="main-screen";
 var preState = 'main-screen';
@@ -151,7 +148,7 @@ $buttonHandle.addEventListener('click', function() {
       sessionStorage.train=false;
       $textGamemodeBlack.textContent = outStringGamemode()
       sessionStorage.textGamemodeBlack = outStringGamemode()
-      console.log(train);
+      //console.log(train);
       changeStates("create-level");
       //настройки
     });
@@ -258,6 +255,6 @@ function toLevel()
 }
   function toGame()
   {
-    console.log("game?")
+    //console.log("game?")
     changeStates('do-game');
   }

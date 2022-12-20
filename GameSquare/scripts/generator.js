@@ -23,7 +23,7 @@ function test(){
 
 function selectColors() //отбираем цвета
 {
-    console.log(gameMode);
+    //console.log(gameMode);
     if (gameMode === "classic" || gameMode === "noMistakes")
     {
         if (colorsCount < contrastColors.length)

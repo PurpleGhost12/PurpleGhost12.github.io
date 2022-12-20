@@ -1,7 +1,5 @@
 
 //draw// buttons// input
-console.log(sessionStorage.abc)
-
 
 //buttons
 const $inputCountColors = document.getElementById("count-color");
@@ -198,7 +196,6 @@ $inputCountSquare.addEventListener('change', function() {
   function changeColorWinInput(name){
     sessionStorage.colorWinName = name
     setButtonTextSettings()
-    console.log("i");
     if (name === "random") {
 
       $ownColors.style.display="none";

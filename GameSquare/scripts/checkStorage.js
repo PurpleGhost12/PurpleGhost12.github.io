@@ -157,7 +157,7 @@ function checkSettings()
 function checkPalleteArray(){
     if (sessionStorage.arrayOwnColors !=undefined)
     {
-        console.log("one one")
+        //console.log("one one")
         addColorsP = JSON.parse(sessionStorage.arrayOwnColors);
         recoverPallete();
         //sessionStorage.arrayOwnColors = JSON.stringify(addColorsP);

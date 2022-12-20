@@ -4,7 +4,7 @@ const $deleteColor = document.getElementById("delete-color")
 //button next
 const $chooseSettings = document.getElementById("choose-settings");
 
-console.log($deleteColor)
+//console.log($deleteColor)
 $deleteColor.addEventListener('dblclick', clearPallete)
 
 //const $buttonAddColor = document.getElementById("")
@@ -23,7 +23,7 @@ $deleteColor.addEventListener('drop', function(evt){
     
     for (var i=0; i <addColorsP.length; i++){
         if (addColorsP[i] === colord) addColorsP.splice(i,1);
-        console.log(addColorsP[i],colord,addColorsP[i] === colord)
+        //console.log(addColorsP[i],colord,addColorsP[i] === colord)
     }
 
     sessionStorage.arrayOwnColors = JSON.stringify(addColorsP);
@@ -46,13 +46,13 @@ $deleteColor.addEventListener("dragleave", function(){
 */
 
 function addColorCeil(){
-    console.log("t")
+    //console.log("t")
     if (addColorsP.length>6) return;
 
     let colorC = $seeColor.style.backgroundColor;
 
     if (checkColorInPallete(colorC) === false){
-        console.log("color use")
+        //console.log("color use")
         return;
     }
 
@@ -65,9 +65,9 @@ function addColorCeil(){
 
 
     ceil.addEventListener("dragstart", function(e){
-        console.log("drag!!!!")
+        //console.log("drag!!!!")
         if (this.className === "ceil-color") draggCeil = this;
-        console.log(draggCeil, this, e.target)
+        //console.log(draggCeil, this, e.target)
     })
 
     $pallete.appendChild(ceil)
@@ -84,11 +84,9 @@ function checkColorInPallete(colorCh){
 }
 
 function clearPallete(){
-    console.log("work?")
+    //console.log("work?")
     addColorsP=[]
     let child = $pallete.children;
-    console.log(child.length)
-    console.log(child)
     for (var i=0; i< child.length; i++)
     {
         if (child[i].className === 'ceil-color') 
@@ -96,7 +94,7 @@ function clearPallete(){
             $pallete.removeChild(child[i]);
             i--;
         }
-        console.log("check")
+        //console.log("check")
     }
     $chooseSettings.textContent ="ПАЛИТРА ПУСТА";
 }
@@ -125,8 +123,7 @@ function checkInputColors(){
 }
 
 function recoverPallete(){
-    console.log(addColorsP)
-    console.log("one???")
+
     for (var i=0; i<addColorsP.length; i++){
         let colorRC = addColorsP[i]
         let ceil = document.createElement('div');

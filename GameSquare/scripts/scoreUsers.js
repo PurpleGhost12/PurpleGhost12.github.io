@@ -200,9 +200,11 @@ function saveUsersScore(gamemode, level, score){
 const $outBestscoreGame = document.getElementById("bestScoreOut");
 function setBestOutScore(){
     if (train) {
-        $outBestscoreGame.textContent = '-'
+        $outBestscoreGame.textContent = 'нажми дважды на квадрат для подсказки'
+        $outBestscoreGame.style.fontSize = "calc( (100vw - 360px)/(1280 - 360) * (32 - 14) + 14px)"
         return;
     }
+    $outBestscoreGame.style.fontSize = "calc( (100vw - 360px)/(1280 - 360) * (90 - 50) + 50px)"
     $outBestscoreGame.textContent = getPlayerRecords(gameMode, level, currentUser);
     
 

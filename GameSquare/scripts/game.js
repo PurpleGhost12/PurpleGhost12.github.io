@@ -156,6 +156,8 @@ function clickSquare(event)
         currentTime+=1;
         currScore++;
         $currentScoreOut.textContent = currScore;
+        soundPopBTN.currentTime = 0;
+        soundPopBTN.play()
 
     }
     else 
@@ -163,6 +165,8 @@ function clickSquare(event)
         if (event.target.className === "target-bottom")
         {
                                 ///Штраф!
+            soundWrong.currentTime = 0;
+            soundWrong.play();
             currentTime-=1;
             mistakesCount++;
             if (currentTime<=0) time=0;

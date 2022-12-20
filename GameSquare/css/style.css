@@ -63,6 +63,17 @@ button{
     background: -webkit-linear-gradient(#7335cb, #73fce1);
 }
 
+p.rules {
+    font-size: calc((100vw - 360px)/(1280 - 360) * (16 - 11) + 11px);
+    margin: 10px;
+}
+ul.mode{
+    margin: 10px;
+    font-size: calc((100vw - 360px)/(1280 - 360) * (16- 11) + 11px);
+}
+ul.mode li{
+    margin: 10px 20px 10px 20px;
+}
 .hide-checkbox
 {
 	position: relative;
@@ -210,13 +221,14 @@ h1.game-name
 }
 .menu-white-small.hide
 {
-    height: 80vh;
+    height: auto;
     width: 50vw;
     max-width: 1200px;
     position: fixed;
+    max-height: 80vh;
+    top:50%;
     left: 50%;
-    transform: translate(-50%);
-    top:10vh;
+    transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 30px;
     padding: 15px;
@@ -224,7 +236,7 @@ h1.game-name
 	overflow: auto;
     display: none;
     z-index: 190;
-    box-shadow: 0 0 100vh 100vh rgba(31, 30, 30, 0.627);
+    box-shadow: 0 0 1000vh 1000vh rgba(31, 30, 30, 0.627);
 }
 .menu-white-small.settings{
     max-height: 80vh;

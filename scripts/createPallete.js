@@ -104,7 +104,7 @@ function setButtonTextSettings(){
     else 
         {
             if (addColorsP.length<1) $chooseSettings.textContent ="ПАЛИТРА ПУСТА";
-            else if (addColorsP.length<colorsCount) $chooseSettings.textContent ="ЦВЕТОВ НЕ ХАВАТАЕТ";
+            else if (addColorsP.length<colorsCount) $chooseSettings.textContent ="ЦВЕТОВ НЕ ХВАТАЕТ";
             else $chooseSettings.textContent ="ПРОДОЛЖИТЬ";
         }
 }

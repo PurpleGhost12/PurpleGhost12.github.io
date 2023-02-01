@@ -3,8 +3,6 @@ const $areaSquare = document.getElementById("generate");
 $areaSquare.addEventListener('click', clickSquare);
 
 var sizeExample;
-var marginH;
-var marginV;
 
 var marginTop;
 var marginLeft;
@@ -35,12 +33,6 @@ function getSizeSquare()
         sizeS-=1;
         k = Math.floor(width/sizeS)*Math.floor(height/sizeS);     
     }
-    //console.log(k);
-
-    //maxSizeSquare = sizeS*0.65;
-    
-    //console.log(Math.floor(width/sizeS));
-    //console.log(Math.floor(height/sizeS));
 
     maxSizeSquare = sizeS*0.60;
 
@@ -59,12 +51,8 @@ function getSizeSquare()
         column = Math.ceil(countSquare/row)
     }
 
-    ////console.log(row);
-    //console.log(column);
-
-
-    marginLeft = (width - column*maxSizeSquare)/((column+1)*2); //min margin
-    marginTop = (height - row*maxSizeSquare)/((row+1)*2); //min margin
+    marginLeft = (width - column*maxSizeSquare)/((column+1)*2); //maz margin
+    marginTop = (height - row*maxSizeSquare)/((row+1)*2); //max margin
     
 }
  
